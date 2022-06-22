@@ -15,9 +15,7 @@
 #include "NFServer/NFCommHead/NFILogicServerModule.h"
 #include "NFServer/NFCommHead/NFCommLogicHead.h"
 #include "NFServer/NFCommHead/NFIUserDetailModule.h"
-#include "NFComm/NFMessageDefine/proto_svr_rank.pb.h"
 #include "NFComm/NFMessageDefine/proto_cs_login.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
 
 class NFCUserDetailModule : public NFIUserDetailModule
 {

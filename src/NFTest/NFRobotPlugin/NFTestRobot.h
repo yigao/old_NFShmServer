@@ -3,9 +3,6 @@
 #include "NFComm/NFPluginModule/NFIDynamicModule.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFComm/NFMessageDefine/proto_cs_login.pb.h"
-#include "NFComm/NFMessageDefine/proto_cs_rank.pb.h"
-#include "NFComm/NFMessageDefine/proto_cs_email.pb.h"
-#include "NFComm/NFMessageDefine/proto_cs_bank.pb.h"
 
 enum NFTestRobotStatus
 {

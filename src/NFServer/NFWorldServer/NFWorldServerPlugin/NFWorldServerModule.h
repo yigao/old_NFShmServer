@@ -14,8 +14,6 @@
 #include "NFComm/NFCore/NFMap.hpp"
 #include "NFServer/NFCommHead/NFIWorldServerModule.h"
 #include "NFServer/NFCommHead/NFCommLogicHead.h"
-#include "NFComm/NFMessageDefine/proto_cs_game.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
 
 class NFCWorldServerModule : public NFIWorldServerModule
 {

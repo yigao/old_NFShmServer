@@ -11,8 +11,6 @@
 #include "NFWorldPlayer.h"
 #include "NFComm/NFMessageDefine/proto_svr_common.pb.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
-#include "NFComm/NFMessageDefine/proto_cs_game.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
 #include <map>
 
 IMPLEMENT_IDCREATE_WITHTYPE(NFWorldPlayerMgr, EOT_WORLD_PLAYER_MGR_ID, NFShmObj)

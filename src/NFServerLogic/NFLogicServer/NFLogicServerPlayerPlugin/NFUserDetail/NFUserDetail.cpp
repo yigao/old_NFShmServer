@@ -14,7 +14,6 @@
 #include "NFUserDetailMgr.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFMoneyLogHandle.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
 
 IMPLEMENT_IDCREATE_WITHTYPE(NFUserDetail, EOT_USER_DETAIL_ID, NFShmObj)
 
@@ -117,10 +116,6 @@ int NFUserDetail::SaveGameRoomToDB()
 int NFUserDetail::SendMoneyToClient()
 {
     NFLogTrace(NF_LOG_LOGIC_SERVER_PLUGIN, 0, "-- begin --");
-    proto_game::MoneyChangeNotify notify;
-    notify.set_cur_money(GetJetton());
-    notify.set_cur_bank_money(GetBankJetton());
-    SendMsgToClient(proto_game::NF_SC_MSG_MoneyChangeNotify, notify);
     NFLogTrace(NF_LOG_LOGIC_SERVER_PLUGIN, 0, "-- end --");
     return 0;
 }
@@ -653,16 +648,7 @@ int NFUserDetail::NotifyGameMoneyChange()
 {
     if (IsInGaming())
     {
-        proto_ff::Proto_UpdateCoinBalanceNotify notifyMsg;
-        notifyMsg.mutable_player_detail()->set_player_id(GetUserId());
-        notifyMsg.mutable_player_detail()->set_cur_money(GetJetton());
-        notifyMsg.mutable_player_detail()->set_nick_name(GetNickName());
-        notifyMsg.mutable_player_detail()->set_face(GetFaceId());
-        notifyMsg.mutable_player_detail()->set_sex(GetGender());
-        notifyMsg.mutable_player_detail()->set_vip_level(GetVipLevel());
 
-        NFMessageMgr::Instance()->SendTransToGameServer(NF_ST_LOGIC_SERVER, (uint32_t)proto_ff::E_LogicTGame_UPDATE_PLAYER_COINBALANCE,
-                                                        m_gameBusId, notifyMsg);
     }
     return 0;
 }

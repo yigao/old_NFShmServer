@@ -22,7 +22,6 @@
 #include "NFComm/NFPluginModule/NFIMysqlModule.h"
 #include "NFComm/NFPluginModule/NFIAsyMysqlModule.h"
 
-#include "NFComm/NFMessageDefine/FishResMeta_s.h"
 #include "NFComm/NFKernelMessage/yd_fieldoptions.pb.h"
 #include "NFComm/NFPluginModule/NFLogMgr.h"
 #include "NFComm/NFPluginModule/NFJson2PB/NFPbToJson.h"

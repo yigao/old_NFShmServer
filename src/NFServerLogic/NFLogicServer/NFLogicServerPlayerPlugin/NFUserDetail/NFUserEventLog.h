@@ -11,8 +11,6 @@
 
 #include "NFComm/NFMessageDefine/proto_common_s.h"
 #include "NFComm/NFShmCore/NFArray.h"
-#include "NFComm/NFMessageDefine/proto_cs_bank.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_bank.pb.h"
 
 const int MAX_EVENT_LOG_NUM = 20;
 

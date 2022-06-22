@@ -11,7 +11,6 @@
 #include "NFUserDetail.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFComm/NFMessageDefine/proto_svr_common.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
 #include "NFComm/NFPluginModule/NFConfigMgr.h"
 #include "NFTransGetEventLog.h"
 #include "NFMoneyLogHandle.h"

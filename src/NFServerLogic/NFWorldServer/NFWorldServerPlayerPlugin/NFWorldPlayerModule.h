@@ -12,7 +12,6 @@
 #include "NFServer/NFCommHead/NFIWorldPlayerModule.h"
 #include "NFWorldPlayerMgr.h"
 #include "NFComm/NFMessageDefine/proto_svr_login.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
 
 class NFCWorldPlayerModule : public NFIWorldPlayerModule
 {

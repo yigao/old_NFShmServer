@@ -2,11 +2,8 @@
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFComm/NFMessageDefine/proto_cs.pb.h"
 #include "NFComm/NFCore/NFRandom.hpp"
-#include "NFMailAction.h"
-#include "NFBankAction.h"
 #include "NFComm/NFCore/NFMD5.h"
 #include "NFComm/NFMessageDefine/proto_common.pb.h"
-#include "NFComm/NFMessageDefine/proto_cs_game.pb.h"
 
 enum RobotTimer
 {
@@ -157,15 +154,11 @@ int NFTestRobot::OnHandleProxyOtherMessage(uint64_t unLinkId, uint64_t playerId,
     {
 
     }
-	else if (nMsgId == proto_game::NF_SC_MSG_RedeemCodeRsp)
-    {
-	    OnHandleRedeemCodeRsp(unLinkId, playerId, value2, nMsgId, msg, nLen);
-    }
 	else
     {
 	   for(int i = 0; i < (int)m_statusAction.size(); i++)
        {
-           m_statusAction[i]->OnHandleMessage(unLinkId, playerId, value2, nMsgId, msg, nLen);
+           //m_statusAction[i]->OnHandleMessage(unLinkId, playerId, value2, nMsgId, msg, nLen);
        }
     }
 	return 0;
@@ -371,8 +364,8 @@ int NFTestRobot::OnHandleAction()
     int index = NFRandInt(0, (int)m_statusAction.size());
     if (index >= 0 && index < (int)m_statusAction.size())
     {
-        StatusAction* pA = m_statusAction[index];
-        pA->OnHandleAction();
+        //StatusAction* pA = m_statusAction[index];
+        //pA->OnHandleAction();
     }
     return 0;
 }
@@ -484,28 +477,10 @@ int NFTestRobot::SendMsgToServer(uint16_t nMainMsgId, uint16_t nSubMsgId, const 
 
 int NFTestRobot::RedeemCodeReq()
 {
-    static int flag = 0;
-    if (flag >= 2) return 0;
-    flag++;
-
-    proto_game::Proto_CSRedeemCodeReq xMsg;
-    xMsg.set_id("9046677585410215");
-
-    SendMsgToServer(proto_game::NF_CS_MSG_RedeemCodeReq, xMsg);
     return 0;
 }
 
 int NFTestRobot::OnHandleRedeemCodeRsp(uint64_t unLinkId, uint64_t playerId, uint64_t value2, uint32_t nMsgId, const char* msg, uint32_t nLen)
 {
-    proto_game::Proto_SCRedeemCodeRsp gcMsg;
-    CLIENT_MSG_PROCESS_WITH_PRINTF(nMsgId, playerId, msg, nLen, gcMsg);
-
-    if (gcMsg.result() == 0)
-    {
-        NFLogInfo(NF_LOG_SYSTEMLOG, 0, "OnHandleRedeemCodeRsp success");
-    } else {
-        NFLogInfo(NF_LOG_SYSTEMLOG, 0, "OnHandleRedeemCodeRsp failed");
-    }
-
     return 0;
 }

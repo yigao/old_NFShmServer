@@ -73,14 +73,6 @@ int NFTransGetUserDetail::HandleCSMsgReq(const google::protobuf::Message *pCSMsg
 		ProGetUserDetailReq(pLoginReq);
 	}
 		break;
-	case proto_ff::E_GTL_UPDATE_JETTON_REQ:
-	{
-		const proto_ff::Proto_UpdateJettonReq *pJettonReq = dynamic_cast<const proto_ff::Proto_UpdateJettonReq *>(pCSMsgReq);
-		CHECK_EXPR(pJettonReq, -1, "pJettonReq = NULL");
-
-		ProGetUserDetailReq(pJettonReq);
-	}
-	break;
     case proto_ff::NF_WTL_REGISTER_USER_TO_LOGIC_REQ:
     {
         const proto_ff::Proto_WTLRegisterUserReq *pLoginReq = dynamic_cast<const proto_ff::Proto_WTLRegisterUserReq *>(pCSMsgReq);
@@ -201,33 +193,6 @@ int NFTransGetUserDetail::ProGetUserDetailReq(const proto_ff::Proto_WorldToLogic
     }
     NFLogTrace(NF_LOG_LOGIN_SERVER_PLUGIN, 0, "-- end --");
     return 0;
-}
-
-int NFTransGetUserDetail::ProGetUserDetailReq(const proto_ff::Proto_UpdateJettonReq *pJettonReq)
-{
-	NFLogTrace(NF_LOG_LOGIN_SERVER_PLUGIN, 0, "-- begin --");
-	CHECK_EXPR(pJettonReq, -1, "pJettonReq = NULL");
-
-	m_gameId = pJettonReq->game_id();
-	m_roomId = pJettonReq->room_id();
-	m_deskId = pJettonReq->desk_id();
-	m_chairId = pJettonReq->chair_id();
-	m_moneyChange = pJettonReq->money_change();
-	m_add = pJettonReq->add_or_deduce();
-	m_accountType = pJettonReq->account_type();
-	m_optType = pJettonReq->opt_type();
-	m_optReason = pJettonReq->opt_reason();
-	m_changeTime = pJettonReq->time();
-    NFUserDetail *pUserDetail = NFUserDetailMgr::GetInstance()->GetUser(m_userId);
-    if (pUserDetail) {
-        SetFinished(0);
-    }
-    else
-    {
-        ProGetUserDetailReq();
-    }
-	NFLogTrace(NF_LOG_LOGIN_SERVER_PLUGIN, 0, "-- end --");
-	return 0;
 }
 
 int NFTransGetUserDetail::ProGetUserDetailReq(const proto_ff::Proto_NotifyChangeAgent *pJettonReq)
@@ -437,23 +402,6 @@ int NFTransGetUserDetail::HandleTransFinished(int iRunLogicRetCode) {
             }
         }
     }
-	else if (m_cmd == proto_ff::E_GTL_UPDATE_JETTON_REQ) {
-		NFUserDetail *pUserDetail = NFUserDetailMgr::GetInstance()->GetUser(m_userId);
-		if (pUserDetail) {
-			if (m_add)
-			{
-                NFUserDetailMgr::Instance()->HandleAddJetton(pUserDetail, m_gameId, m_roomId, m_deskId, m_chairId, m_moneyChange, m_optType, m_optReason, m_changeTime);
-			}
-			else
-			{
-                NFUserDetailMgr::Instance()->HandleDeduceJetton(pUserDetail, m_gameId, m_roomId, m_deskId, m_chairId, m_moneyChange, m_optType, m_optReason, m_changeTime);
-			}
-		}
-		else
-		{
-            NFLogError(NF_LOG_SYSTEMLOG, m_userId, "can't find user detail...................");
-		}
-	}
 	else if (m_cmd == proto_ff::NF_SNSTLOGIC_CHANGE_AGENT_NOTIFY)
     {
         NFUserDetail *pUserDetail = NFUserDetailMgr::GetInstance()->GetUser(m_userId);
@@ -470,22 +418,6 @@ int NFTransGetUserDetail::HandleTransFinished(int iRunLogicRetCode) {
             pUserDetail->m_userData.device_id = m_loginData.device_id.GetString();
             pUserDetail->MarkDirty();
             pUserDetail->SaveToDB(TRANS_SAVEROLEDETAIL_NORMAL, true);
-        }
-    }
-	else if (m_cmd == proto_ff::E_WTL_NOTIFY_PLAYER_EXIT_GAME)
-    {
-        NFUserDetail *pUserDetail = NFUserDetailMgr::GetInstance()->GetUser(m_userId);
-        if (pUserDetail) {
-            pUserDetail->m_userData.game_id = 0;
-            pUserDetail->m_userData.room_id = 0;
-            pUserDetail->m_gameBusId = 0;
-            pUserDetail->MarkDirty();
-            pUserDetail->SaveGameRoomToDB();
-
-            proto_ff::NotifySnsPlayerExitGame snsMsg;
-            snsMsg.set_player_id(m_userId);
-
-            pUserDetail->SendMsgToSnsServer(proto_ff::E_LTSns_NOTIFY_PLAYER_EXIT_GAME, snsMsg);
         }
     }
 

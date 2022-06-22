@@ -14,9 +14,6 @@
 #include "NFComm/NFShmCore/NFSizeString.h"
 #include "NFComm/NFMessageDefine/proto_svr_common.pb.h"
 #include "NFComm/NFMessageDefine/proto_svr_login.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_game.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_bank.pb.h"
-#include "NFComm/NFMessageDefine/proto_cs_bank.pb.h"
 #include "NFComm/NFMessageDefine/proto_common_s.h"
 #include "NFTransLogicUserBase.h"
 
@@ -37,7 +34,6 @@ public:
 
     int ProGetUserDetailReq(const proto_ff::Proto_WTLRegisterUserReq *pLoginReq);
     int ProGetUserDetailReq(const proto_ff::Proto_WorldToLogicLoginReq *pLoginReq);
-	int ProGetUserDetailReq(const proto_ff::Proto_UpdateJettonReq *pJettonReq);
     int ProGetUserDetailReq(const proto_ff::Proto_NotifyChangeAgent *pJettonReq);
     int ProGetUserDetailReq(const proto_ff::LTLPlayerDeviceChangeNotify* pNotify);
     int ProGetUserDetailReq();
