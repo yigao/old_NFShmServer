@@ -45,7 +45,7 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 * sudo apt-get install automake
 * sudo apt-get install zip unzip
 
-## 安装Excel工具
+## （非必须，除非你要修改excel,或修改proto文件）安装Excel工具, 需要安装protobuf python模块， xlrd python模块
 * 请参考文档https://github.com/yigao/NFShmServer/blob/master/doc/README.md, 安装需要的protobuf库
 * 也可以看看文档https://github.com/yigao/NFShmServer/blob/master/doc/Excel工具使用.doc
 
