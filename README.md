@@ -45,8 +45,9 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 * sudo apt-get install automake
 * sudo apt-get install zip unzip
 
-## 如果你需要编译makefile，用来编译excel，编译protobuf，用来生成代码解析excel, 并生成能放在共享内存里的代码
+## （非必须，除非你要修改excel,或修改proto文件）安装Excel工具, 需要安装protobuf python模块， xlrd python模块
 * 请参考文档https://github.com/yigao/NFShmServer/blob/master/doc/README.md, 安装需要的protobuf库
+* 也可以看看文档https://github.com/yigao/NFShmServer/blob/master/doc/Excel工具使用.doc
 
 ## Supported Compilers
 
@@ -70,6 +71,9 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
     -    内网使用TCP通信,zookpeer服务器来做分布式:执行脚本CreateScript_TcpPlugin_Zookpeer.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
     -    内网使用Bus通信,zookpeer服务器来做分布式:执行脚本CreateScript_BusPlugin_Zookpeer.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
       
+## Tutorial && Documents
+
+https://github.com/yigao/NFShmServer/wiki
 
 #### 一些很赞的项目
 
