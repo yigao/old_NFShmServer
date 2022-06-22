@@ -3,11 +3,7 @@ import "proto_common.proto";
 import "proto_kernel.proto";
 import "proto_error_code.proto";
 import "proto_cs.proto";
-import "proto_cs_bank.proto";
-import "proto_cs_email.proto";
-import "proto_cs_game.proto";
 import "proto_cs_login.proto";
-import "proto_cs_rank.proto";
 
 package proto_ff;
 

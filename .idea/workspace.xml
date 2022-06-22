@@ -38,44 +38,133 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="delete">
+    <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="shell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript2.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript3.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript4.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/VMProtectLicense.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/libVMProtectSDK64.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/LogConfig.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/LoginServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/MasterServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/Plugin.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/ProxyAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/RouteAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/RouteServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/StoreServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/LogConfig.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/LogicServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/Plugin.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/ProxyAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/ProxyServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/RouteAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/WorldServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/LogConfig.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/LoginServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/MasterServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/Plugin.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/ProxyAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/RouteAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/RouteServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/StoreServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/LogConfig.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/LogicServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/Plugin.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/ProxyAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/ProxyServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/RouteAgentServer.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/WorldServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/ConstDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/MailDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/NameDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_ConstDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogGameDetail.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogGameRecordDetail.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogGiveMoneyRecord.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogMoneyDetail.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogRechargeOrder.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogRedeemCodeRechargeRecord.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogVipRechargeRecord.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_LogZhuangRecord.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_MailDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_mysql.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbAccountTable.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbContractMgr.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbEventLog.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbGameRobot.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbGameUserManagerData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbGiveBankJetton.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbGmCtrlGiveCtrlData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbLogGameDay.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbLogSystemDay.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbMachineManagerData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbNameInfo.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbRankCommon.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbRedeemCode.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbServerMgr.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserDetailData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserMailDetail.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserMailInfo.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserMiscInfo.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserSimpleData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/proto_ff_empty.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/rebuild_db.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/ResMetaS/FishResMeta.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/ResMetaS/LinkResMeta.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/chess_3001/msg_qznn.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/chess_3002/msg_qznn.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/fish_2001/msg_fish.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/fish_2002/msg_fish.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/fish_2003/msg_fish.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/fish_2003/msg_fish_minigame.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/fish_2004/msg_fish.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/lhd_4001/msg_lhd.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1001/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1003/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1004/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1005/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1006/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1007/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/link_1008/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/msg_fafafa.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Message/proto_cs/proto_cs_extend/msg_link.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/chess/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/chess/chess_define.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/chess/chess_protoc_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/chess/chess_sql_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/define.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/define.makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fafafa/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fafafa/fafafa_define.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fafafa/fafafa_protoc_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fafafa/fafafa_sql_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fish/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fish/fish_define.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fish/fish_protoc_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/fish/fish_sql_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/link/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/link/link_define.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/link/link_protoc_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/link/link_sql_gen.makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/sql_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/sql_gen.makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/FishResMeta.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/FishResMeta.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/FishResMeta_s.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/FishResMeta_s.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/LinkResMeta.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/LinkResMeta.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/LinkResMeta_s.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/LinkResMeta_s.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta_s.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta_s.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_common.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_common.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_common_s.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_common_s.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_bank.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_bank.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_email.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_email.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_game.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_game.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_login.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_login.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_rank.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_cs_rank.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_error_code.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_error_code.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_event.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_event.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_bank.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_bank.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_behavior.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_behavior.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_common.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_common.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_email.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_email.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_error.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_error.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_game.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_game.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_login.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_login.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_rank.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_rank.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_web.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/proto_svr_web.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/protoc" beforeDir="false" afterPath="$PROJECT_DIR$/tools/protoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,14 +480,7 @@
       <workItem from="1655729978316" duration="5715000" />
       <workItem from="1655782948316" duration="5759000" />
       <workItem from="1655863482468" duration="3691000" />
-      <workItem from="1655885625821" duration="2791000" />
-    </task>
-    <task id="LOCAL-00033" summary="serial nmber">
-      <created>1627299783262</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1627299783262</updated>
+      <workItem from="1655885625821" duration="6108000" />
     </task>
     <task id="LOCAL-00034" summary="serial nmber">
       <created>1632298378259</created>
@@ -736,7 +818,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655886876091</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="shell">
+      <created>1655888486638</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1655888486638</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -805,7 +894,8 @@
     <MESSAGE value="serial nmber" />
     <MESSAGE value="frame" />
     <MESSAGE value="delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete" />
+    <MESSAGE value="shell" />
+    <option name="LAST_COMMIT_MESSAGE" value="shell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,7 +1,7 @@
 include ./define.makefile
 .PHONY:all clean
 
-ServerList:= fish link fafafa chess
+ServerList:=
 
 all:
 	@echo ${GAME_DATA_PATH}

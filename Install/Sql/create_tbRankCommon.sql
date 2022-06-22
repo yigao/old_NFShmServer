@@ -1,8 +1,0 @@
-CREATE TABLE IF NOT EXISTS tbRankCommon (
- id4db INT NOT NULL ,
- body MEDIUMBLOB /*!99104 COMPRESSED */ ,
- PRIMARY KEY(id4db))  ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*
-alter table tbRankCommon add column id4db INT NOT NULL;
- body MEDIUMMEDIUMBLOB /*!99104 COMPRESSED */;
-*/
