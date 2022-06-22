@@ -11,7 +11,7 @@
 验证Python模块是否被正确安装
 如果没有报错，说明安装正常。
 
-##windows安装make, 执行tools/mingw-get-setup
+## windows安装make, 执行tools/mingw-get-setup
 - 安装MinGW的时候选择Basic setup下选择mingw32-base包就可以了。
 - 打开MinGW的安装目录，打开bin文件夹，将mingw32-make.exe重命名为make.exe。
 - 设置环境变量，只需把bin文件夹的路径放到用户变量中去。
