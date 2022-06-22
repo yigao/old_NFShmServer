@@ -24,5 +24,3 @@ ${GAME_SQL_PATH}/create_NameDesc.sql:${RESDB_META_DESCRIPTOR}
 	${PROTO2SQL} --proto_ds=${RESDB_META_DESCRIPTOR} --message_fullname=proto_ff.NameDesc --out_path=${GAME_SQL_PATH}/ \
 	--sheet_fullname=proto_ff.Sheet_NameDesc --bin_filename=${GAME_DATA_PATH}/NameDesc.bin
 
-${GAME_SQL_PATH}/create_tbServerMgr.sql:${PROTOCOL_COMM_DESCRIPTOR}
-	${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbServerMgr --out_path=${GAME_SQL_PATH}/

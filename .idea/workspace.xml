@@ -39,18 +39,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
+      <change afterPath="$PROJECT_DIR$/Install/Config/Data/NameDesc.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Config/Data/ConstDesc.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_ConstDesc.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbAccountTable.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbEventLog.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbServerMgr.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserDetailData.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserSimpleData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Message/ResMetaS/ResMeta.proto" beforeDir="false" afterPath="$PROJECT_DIR$/Message/ResMetaS/ResMeta.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/define.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/define.makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/makefiles/excel_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/excel_gen.makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/makefiles/sql_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/sql_gen.makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta.pb.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta.pb.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,14 +385,7 @@
       <workItem from="1655782948316" duration="5759000" />
       <workItem from="1655863482468" duration="3691000" />
       <workItem from="1655885625821" duration="10216000" />
-      <workItem from="1655907203407" duration="7479000" />
-    </task>
-    <task id="LOCAL-00038" summary="serial nmber">
-      <created>1635334392726</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1635334392726</updated>
+      <workItem from="1655907203407" duration="7834000" />
     </task>
     <task id="LOCAL-00039" summary="serial nmber">
       <created>1654652721579</created>
@@ -734,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655912742502</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="makefile">
+      <created>1655915110216</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1655915110216</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

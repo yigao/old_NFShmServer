@@ -90,7 +90,6 @@ SQL_FILE= ${GAME_SQL_PATH}/create_tbAccountTable.sql\
          ${GAME_SQL_PATH}/create_tbUserDetailData.sql\
          ${GAME_SQL_PATH}/create_tbUserSimpleData.sql\
          ${GAME_SQL_PATH}/create_ConstDesc.sql \
-         ${GAME_SQL_PATH}/create_tbServerMgr.sql\
           ${GAME_SQL_PATH}/create_NameDesc.sql\
 
 
