@@ -71,6 +71,9 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
     -    内网使用TCP通信,zookpeer服务器来做分布式:执行脚本CreateScript_TcpPlugin_Zookpeer.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
     -    内网使用Bus通信,zookpeer服务器来做分布式:执行脚本CreateScript_BusPlugin_Zookpeer.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
       
+## Tutorial && Documents
+
+https://github.com/yigao/NFShmServer/wiki
 
 #### 一些很赞的项目
 
