@@ -106,4 +106,4 @@ MAKE_LINK_ERROR_LOG=./make_link_error.log
 
 NEED_CLEAN_FILES=
 
-RESDB_BIN_FILE=${GAME_DATA_PATH}/ConstDesc.bin
+RESDB_BIN_FILE=${GAME_DATA_PATH}/ConstDesc.bin ${GAME_DATA_PATH}/NameDesc.bin
