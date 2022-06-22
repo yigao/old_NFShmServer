@@ -5,8 +5,6 @@ DBNAME="proto_ff"
 
 MYSQL=mysql
 
-cd ../Install/Config/Sql/
-
 mysqldump -u${USR} -p${PASSWRD} ${DBNAME} > ${DBNAME}.sql
 mysql -u${USR} -p${PASSWRD} -e "drop database proto_ff"
 mysql -u${USR} -p${PASSWRD} -e "create database proto_ff"
