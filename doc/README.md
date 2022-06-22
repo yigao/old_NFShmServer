@@ -1,5 +1,10 @@
 ## 安装google python模块(需要安装python2.7, centos7自带)
-- 解压thirdparty/pkg目录下得protobuf-2.5.0.tar, 复制tools下面的protoc.exe/protoc到protobuf-2.5.0/src目录下,然后执行
+- 解压thirdparty/pkg目录下得protobuf-2.5.0.tar, 会有一个protobuf-2.5.0目录，里面有protobuf的源文件, cd protobuf-2.5.0
+- 编译protobuf,执行:
+- ./configure
+- make
+- make install
+- 在protobuf-2.5.0目录下有一个python目录，执行下面命令:
 - cd python 
 - python setup.py build 
 - python setup.py test 
