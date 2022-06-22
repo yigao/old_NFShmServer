@@ -39,7 +39,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
+      <change beforePath="$PROJECT_DIR$/.idea/NFShmServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NFShmServer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Excel/Constant.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Excel/Constant.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Excel/ErrorInfo.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Excel/MailTemplate.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_ConstDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbAccountTable.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbEventLog.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbServerMgr.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserDetailData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserSimpleData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/define.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/define.makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/excel_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/excel_gen.makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefiles/sql_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/sql_gen.makefile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +69,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -97,7 +111,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Install/Bin/Dynamic_Release" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -112,12 +126,7 @@
       <recent name="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerUserPlugin" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake 应用程序.NFPluginLoader">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Python.excel2bin_new">
     <configuration name="NFCommLogicPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFCommLogicPlugin" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -258,6 +267,32 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="excel2bin_new" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NFShmServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/excel_2_bin/excel2bin_new.py" />
+      <option name="PARAMETERS" value="--excel=Excel/Constant.xls --proto_ds=makefiles/temp/ResMeta.proto.ds --proto_package=proto_ff --proto_sheet_msgname=Sheet_ConstDesc --excel_sheetname=Constant --proto_msgname=ConstDesc --start_row=3 --out_path=Install/Config/Data" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="lua.app" factoryName="Lua Application">
       <option name="program" value="/usr/bin/lua" />
       <option name="file" value="" />
@@ -296,7 +331,13 @@
       <item itemvalue="CMake 应用程序.NFTestPlugin" />
       <item itemvalue="CMake 应用程序.evpp" />
       <item itemvalue="CMake 应用程序.mysqlpp" />
+      <item itemvalue="Python.excel2bin_new" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.excel2bin_new" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -355,14 +396,8 @@
       <workItem from="1655729978316" duration="5715000" />
       <workItem from="1655782948316" duration="5759000" />
       <workItem from="1655863482468" duration="3691000" />
-      <workItem from="1655885625821" duration="9355000" />
-    </task>
-    <task id="LOCAL-00036" summary="serial nmber">
-      <created>1635334215782</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1635334215783</updated>
+      <workItem from="1655885625821" duration="10216000" />
+      <workItem from="1655907203407" duration="4600000" />
     </task>
     <task id="LOCAL-00037" summary="serial nmber">
       <created>1635334323152</created>
@@ -700,7 +735,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655894116309</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="makefile">
+      <created>1655906879451</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1655906879451</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -826,7 +868,19 @@
           <line>69</line>
           <option name="timeStamp" value="248" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/excel_2_bin/excel2bin_new.py</url>
+          <line>241</line>
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

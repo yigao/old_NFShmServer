@@ -1,0 +1,481 @@
+Index: makefiles/define.makefile
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>GAME_NFRAME=..\nGAME_SRC_PATH=..\nGAME_INSTALL_PATH=${GAME_SRC_PATH}/Install\nGAME_BIN_PATH=${GAME_INSTALL_PATH}/Bin\nGAME_INSTALL_NEW_PATH=${GAME_SRC_PATH}/mmog\nGAME_BIN_NEW_PATH=${GAME_INSTALL_NEW_PATH}/\nGAME_DATA_PATH=${GAME_INSTALL_PATH}/Config/Data\nGAME_SQL_PATH=${GAME_INSTALL_PATH}/Sql\n\nMAKEFILE_PATH=${GAME_SRC_PATH}/makefiles\nMAKE_PROTOC_GEN=${MAKEFILE_PATH}/protoc_gen.makefile\nMAKE_EXCEL_GEN=${MAKEFILE_PATH}/excel_gen.makefile\nMAKE_SQL_GEN=${MAKEFILE_PATH}/sql_gen.makefile\n\nRESDB_EXCEL_PATH=${GAME_SRC_PATH}/Excel\nPROTOCGEN_FILE_PATH=${GAME_SRC_PATH}/makefiles/temp\n\nTHIRD_PARTY_PATH=${GAME_SRC_PATH}/thirdparty\nTHIRD_PARTY_TOOLS_PATH=${THIRD_PARTY_PATH}/tools\nTHIRD_PARTY_INC_PATH=${THIRD_PARTY_PATH}/\nTHIRD_PARTY_LIB_PATH=${THIRD_PARTY_PATH}/lib\n\nTOOLS_PATH=${GAME_SRC_PATH}/tools\nTHIRD_PARTY_TOOLS_PATH=${TOOLS_PATH}\nPROTOC=${THIRD_PARTY_TOOLS_PATH}/protoc\nPROTO2STRUCT=python ${TOOLS_PATH}/proto_2_struct/proto2struct.py\nEXCEL2BIN=python ${TOOLS_PATH}/excel_2_bin/excel2bin_new.py\nPROTO2SQL=python ${TOOLS_PATH}/proto_2_sql/proto2sql.py\nPROTO2STRUCT_PATH=${TOOLS_PATH}/proto_2_struct/\nEXCEL2BIN_PATH=${TOOLS_PATH}/excel_2_bin/\nPROTO2SQL_PATH=${TOOLS_PATH}/proto_2_sql/\n\nMAKE_SINGLE_JOB_NUM=4\n\n#######################\n#protocol define\n#######################\n\nPROTOCOL_PATH=${GAME_SRC_PATH}/Message\nPROTOCOL_COMM_PATH=${PROTOCOL_PATH}/common\nPROTOCOL_KERNEL_PATH=${PROTOCOL_PATH}/kernel\nPROTOCOL_CS_PATH=${PROTOCOL_PATH}/proto_cs\nPROTOCOL_STORESVR_PATH=${PROTOCOL_PATH}/storesvr\nPROTOCOL_SS_PATH=${PROTOCOL_PATH}/proto_svr\n\nPROTOCOL_COMM_XML=${PROTOCOL_COMM_PATH}/proto_common.proto\nPROTOCOL_COMM_H=${PROTOCGEN_FILE_PATH}/proto_common.pb.h ${PROTOCGEN_FILE_PATH}/proto_common_s.h\nPROTOCOL_COMM_CPP=${PROTOCGEN_FILE_PATH}/proto_common.pb.cc ${PROTOCGEN_FILE_PATH}/proto_common_s.cpp\nPROTOCOL_COMM_DESCRIPTOR=${PROTOCGEN_FILE_PATH}/proto_common.proto.ds\nPROTOCOL_COMM_PY=${PROTOCGEN_FILE_PATH}/proto_common_pb2.py\n\nPROTOCOL_EVENT_XML=${PROTOCOL_COMM_PATH}/proto_event.proto\nPROTOCOL_EVENT_H=${PROTOCGEN_FILE_PATH}/proto_event.pb.h\nPROTOCOL_EVENT_CPP=${PROTOCGEN_FILE_PATH}/proto_event.pb.cc\n\nPROTOCOL_CS_XML=$(wildcard ${PROTOCOL_CS_PATH}/*.proto)\nPROTOCOL_CS_H= $(subst $(PROTOCOL_CS_PATH),$(PROTOCGEN_FILE_PATH),$(PROTOCOL_CS_XML:.proto=.pb.h))\nPROTOCOL_CS_CPP=$(PROTOCOL_CS_H:.h=.cc)\n\nPROTOCOL_SS_XML=$(wildcard ${PROTOCOL_SS_PATH}/*.proto)\nPROTOCOL_SS_H=$(subst $(PROTOCOL_SS_PATH),$(PROTOCGEN_FILE_PATH),$(PROTOCOL_SS_XML:.proto=.pb.h))\nPROTOCOL_SS_CPP=$(PROTOCOL_SS_H:.h=.cc)\n\nRESDB_META_PATH=${PROTOCOL_PATH}/ResMetaS/\nRESDB_META_CS_XML=${RESDB_META_PATH}/ResMeta.proto\nRESDB_META_CS_H=${PROTOCGEN_FILE_PATH}/ResMeta.pb.h ${PROTOCGEN_FILE_PATH}/ResMeta_s.h\nRESDB_META_CS_CPP=${PROTOCGEN_FILE_PATH}/ResMeta.pb.cc ${PROTOCGEN_FILE_PATH}/ResMeta_s.cpp\nRESDB_META_DESCRIPTOR=${PROTOCGEN_FILE_PATH}/ResMeta.proto.ds\n\nRESDB_DESC_XML=$(wildcard ${RESDB_META_PATH}/*.proto)\nRESDB_DESC_H=$(subst $(RESDB_META_PATH),$(PROTOCGEN_FILE_PATH),$(RESDB_DESC_XML:.proto=.pb.h))\nRESDB_DESC_CPP=$(RESDB_DESC_H:.h=.cc)\nRESDB_DESC_STRUCT_H=$(RESDB_DESC_H:.pb.h=_s.h)\nRESDB_DESC_STRUCT_CPP=$(RESDB_DESC_STRUCT_H:.h=.cpp)\n\nPROTOCGEN_CPP=${PROTOCOL_CS_CPP}  ${RESDB_META_CS_CPP} ${PROTOCOL_COMM_CPP} ${PROTOCOL_EVENT_CPP}\\\n\t${PROTOCOL_CS_CMD_CPP} ${PROTOCOL_SS_CPP}\n\nPROTOCGEN_H=${PROTOCOL_CS_H} ${RESDB_META_CS_H} ${PROTOCOL_COMM_H}  ${PROTOCOL_EVENT_H}\\\n\t${PROTOCOL_CS_CMD_H} ${PROTOCOL_SS_H}\n\nALL_PROTOCGEN_FILE=${PROTOCGEN_CPP} ${PROTOCGEN_H}\nALL_PROTOC_DESCRIPTOR_FILE=${PROTOCOL_COMM_DESCRIPTOR} ${RESDB_META_DESCRIPTOR}\nALL_PROTOCGEN_PY=\n\nNEW_PROTOCGEN_FILE_PATH=${GAME_SRC_PATH}/src/NFComm/NFMessageDefine\n\nSQL_FILE= ${GAME_SQL_PATH}/create_tbAccountTable.sql\\\n         ${GAME_SQL_PATH}/create_tbEventLog.sql\\\n         ${GAME_SQL_PATH}/create_tbUserDetailData.sql\\\n         ${GAME_SQL_PATH}/create_tbUserSimpleData.sql\\\n         ${GAME_SQL_PATH}/create_ConstDesc.sql \\\n         ${GAME_SQL_PATH}/create_tbServerMgr.sql\\\n          ${GAME_SQL_PATH}/create_NameDesc.sql\\\n\n\n##########################\n#\n##########################\nMAKE_COMPILE_LOG=./make_compile.log\nMAKE_COMPILE_WARNING_LOG=./make_warning.log\nMAKE_COMPILE_ERROR_LOG=./make_error.log\nMAKE_DEPENDENT_LOG=./make_dependent.log\nMAKE_DEPENDENT_ERROR_LOG=./make_dependent_error.log\nMAKE_LINK_ERROR_LOG=./make_link_error.log\n\nNEED_CLEAN_FILES=\n\nRESDB_BIN_FILE=\n#RESDB_BIN_FILE=${GAME_DATA_PATH}/MailDesc.bin  ${GAME_DATA_PATH}/ConstDesc.bin\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/makefiles/define.makefile b/makefiles/define.makefile
+--- a/makefiles/define.makefile	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ b/makefiles/define.makefile	(date 1655908820774)
+@@ -106,5 +106,4 @@
+ 
+ NEED_CLEAN_FILES=
+ 
+-RESDB_BIN_FILE=
+-#RESDB_BIN_FILE=${GAME_DATA_PATH}/MailDesc.bin  ${GAME_DATA_PATH}/ConstDesc.bin
++RESDB_BIN_FILE=${GAME_DATA_PATH}/ConstDesc.bin
+Index: makefiles/sql_gen.makefile
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include ./define.makefile\n\n.PHONY:all\n\nall:${SQL_FILE}\n\n${GAME_SQL_PATH}/create_tbAccountTable.sql:${PROTOCOL_COMM_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbAccountTable --out_path=${GAME_SQL_PATH}/ \\\n\n${GAME_SQL_PATH}/create_tbUserDetailData.sql:${PROTOCOL_COMM_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbUserDetailData --out_path=${GAME_SQL_PATH}/ \\\n\n${GAME_SQL_PATH}/create_tbUserSimpleData.sql:${PROTOCOL_COMM_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbUserSimpleData --out_path=${GAME_SQL_PATH}/ \\\n\n${GAME_SQL_PATH}/create_ConstDesc.sql:${RESDB_META_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${RESDB_META_DESCRIPTOR} --message_fullname=proto_ff.ConstDesc --out_path=${GAME_SQL_PATH}/\n\n${GAME_SQL_PATH}/create_tbEventLog.sql:${PROTOCOL_COMM_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbEventLog --out_path=${GAME_SQL_PATH}/ \\\n\n${GAME_SQL_PATH}/create_NameDesc.sql:${RESDB_META_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${RESDB_META_DESCRIPTOR} --message_fullname=proto_ff.NameDesc --out_path=${GAME_SQL_PATH}/ \\\n\n${GAME_SQL_PATH}/create_tbServerMgr.sql:${PROTOCOL_COMM_DESCRIPTOR}\n\t${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbServerMgr --out_path=${GAME_SQL_PATH}/\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+diff --git a/makefiles/sql_gen.makefile b/makefiles/sql_gen.makefile
+--- a/makefiles/sql_gen.makefile	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ b/makefiles/sql_gen.makefile	(date 1655908820787)
+@@ -15,6 +15,7 @@
+ 
+ ${GAME_SQL_PATH}/create_ConstDesc.sql:${RESDB_META_DESCRIPTOR}
+ 	${PROTO2SQL} --proto_ds=${RESDB_META_DESCRIPTOR} --message_fullname=proto_ff.ConstDesc --out_path=${GAME_SQL_PATH}/
++	--sheet_fullname=proto_ff.Sheet_ConstDesc --bin_filename=${GAME_DATA_PATH}/ConstDesc.bin
+ 
+ ${GAME_SQL_PATH}/create_tbEventLog.sql:${PROTOCOL_COMM_DESCRIPTOR}
+ 	${PROTO2SQL} --proto_ds=${PROTOCOL_COMM_DESCRIPTOR} --message_fullname=proto_ff.tbEventLog --out_path=${GAME_SQL_PATH}/ \
+Index: makefiles/excel_gen.makefile
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+diff --git a/makefiles/excel_gen.makefile b/makefiles/excel_gen.makefile
+--- a/makefiles/excel_gen.makefile	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ b/makefiles/excel_gen.makefile	(date 1655908820792)
+@@ -1,0 +1,8 @@
++include ./define.makefile
++
++.PHONY:all
++
++all:${RESDB_BIN_FILE}
++${GAME_DATA_PATH}/ConstDesc.bin:${RESDB_META_DESCRIPTOR} ${RESDB_EXCEL_PATH}/Constant.xls
++	${EXCEL2BIN} --excel=${RESDB_EXCEL_PATH}/Constant.xls --proto_ds=${RESDB_META_DESCRIPTOR} --proto_package=proto_ff \
++		--proto_sheet_msgname=Sheet_ConstDesc --excel_sheetname=Constant --proto_msgname=ConstDesc --start_row=3 --out_path=${GAME_DATA_PATH}/
+Index: makefiles/Makefile
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include ./define.makefile\n.PHONY:all clean\n\nServerList:=\n\nall:\n\t@echo ${GAME_DATA_PATH}\n\t@chmod +x ${PROTOC}\n\tmake -f ${MAKE_PROTOC_GEN} 2>&1 | tee -a ${MAKE_COMPILE_LOG} 2>&1; if [ $${PIPESTATUS[0]} -ne 0 ]; then exit 1;fi;\n\tmake -f ${MAKE_SQL_GEN} -j${MAKE_SINGLE_JOB_NUM} 2>&1 | tee -a ${MAKE_COMPILE_LOG} 2>&1; if [ $${PIPESTATUS[0]} -ne 0 ]; then exit 1;fi;\n\t@for i in $(ServerList);do \\\n\tmake -C $$i || exit $$? ;\\\n\tdone\n\nclean:\n\trm ${ALL_PROTOCGEN_FILE} ${ALL_PROTOCGEN_PY} ${RESDB_BIN_FILE} ${SQL_FILE} ${ALL_PROTOC_DESCRIPTOR_FILE} -rf\n\t@for i in $(ServerList);do \\\n\tmake -C $$i clean || exit $$? ;\\\n\tdone\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+diff --git a/makefiles/Makefile b/makefiles/Makefile
+--- a/makefiles/Makefile	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ b/makefiles/Makefile	(date 1655908820800)
+@@ -7,6 +7,7 @@
+ 	@echo ${GAME_DATA_PATH}
+ 	@chmod +x ${PROTOC}
+ 	make -f ${MAKE_PROTOC_GEN} 2>&1 | tee -a ${MAKE_COMPILE_LOG} 2>&1; if [ $${PIPESTATUS[0]} -ne 0 ]; then exit 1;fi;
++	make -f ${MAKE_EXCEL_GEN} -j${MAKE_SINGLE_JOB_NUM} 2>&1 | tee -a ${MAKE_COMPILE_LOG} 2>&1; if [ $${PIPESTATUS[0]} -ne 0 ]; then exit 1;fi;
+ 	make -f ${MAKE_SQL_GEN} -j${MAKE_SINGLE_JOB_NUM} 2>&1 | tee -a ${MAKE_COMPILE_LOG} 2>&1; if [ $${PIPESTATUS[0]} -ne 0 ]; then exit 1;fi;
+ 	@for i in $(ServerList);do \
+ 	make -C $$i || exit $$? ;\
+Index: Install/Sql/create_tbUserDetailData.sql
+===================================================================
+diff --git a/Install/Sql/create_tbUserDetailData.sql b/Install/Sql/create_tbUserDetailData.sql
+deleted file mode 100644
+--- a/Install/Sql/create_tbUserDetailData.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,130 +0,0 @@
+-CREATE TABLE IF NOT EXISTS tbUserDetailData (
+- userid BIGINT UNSIGNED NOT NULL COMMENT "玩家ID" ,
+- nickname VARCHAR(64) COMMENT "昵称" ,
+- faceid INT UNSIGNED COMMENT "头像" ,
+- regdate BIGINT UNSIGNED COMMENT "注册时间" ,
+- gender INT UNSIGNED COMMENT "性别" ,
+- age INT UNSIGNED COMMENT "年龄" ,
+- email VARCHAR(64) COMMENT "邮件" ,
+- phonenum BIGINT UNSIGNED COMMENT "手机号码" ,
+- jetton BIGINT UNSIGNED COMMENT "金币" ,
+- country VARCHAR(64) COMMENT "国家" ,
+- province VARCHAR(64) COMMENT "省份" ,
+- city VARCHAR(64) COMMENT "城市" ,
+- isrobot BOOL COMMENT "机器人:0=否,1=是" ,
+- bank_password VARCHAR(64) ,
+- bank_jetton BIGINT UNSIGNED COMMENT "银行存款" ,
+- ip VARCHAR(64) COMMENT "IP地址" ,
+- last_login_time BIGINT UNSIGNED COMMENT "最近一次登录时间" ,
+- last_logout_time BIGINT UNSIGNED COMMENT "最近一次退出时间" ,
+- aread_id INT UNSIGNED COMMENT "地区id" ,
+- channel_id INT UNSIGNED COMMENT "渠道id" ,
+- platform_os VARCHAR(64) COMMENT "手机系统" ,
+- phone_model VARCHAR(64) COMMENT "手机型号" ,
+- first_recharge BOOL COMMENT "首冲:0=否,1=是" ,
+- agent_id BIGINT UNSIGNED COMMENT "上级代理ID" ,
+- referrer_id BIGINT UNSIGNED ,
+- vip_level INT UNSIGNED ,
+- misc_data BLOB /*!99104 COMPRESSED */ ,
+- online BOOL COMMENT "在线:0=否,1=是" ,
+- game_id INT UNSIGNED COMMENT "游戏ID:1001=水果玛丽,1002=幸运转轮,1003=水浒传,1004=鼠来宝,1005=福星高照,2001=大闹天空2,2002=大闹天空,2003=欢乐捕鱼3D,2004=海王" ,
+- room_id INT UNSIGNED COMMENT "房间ID:1=体验场,2=初级场,3=普通场,4=中级场,5=高级场" ,
+- all_win BIGINT COMMENT "总输赢" ,
+- all_recharge BIGINT UNSIGNED COMMENT "总付费" ,
+- all_give BIGINT UNSIGNED COMMENT "总赠送" ,
+- all_draw BIGINT UNSIGNED COMMENT "总出款" ,
+- today_win BIGINT COMMENT "今日输赢" ,
+- today_recharge BIGINT UNSIGNED COMMENT "今日付费" ,
+- today_give BIGINT UNSIGNED COMMENT "今日赠送" ,
+- today_draw BIGINT UNSIGNED COMMENT "今日出款" ,
+- week_win BIGINT COMMENT "周输赢" ,
+- week_recharge BIGINT UNSIGNED COMMENT "周付费" ,
+- week_give BIGINT UNSIGNED COMMENT "周赠送" ,
+- week_draw BIGINT UNSIGNED COMMENT "周出款" ,
+- month_win BIGINT COMMENT "月输赢" ,
+- month_recharge BIGINT UNSIGNED COMMENT "月付费" ,
+- month_give BIGINT UNSIGNED COMMENT "月赠送" ,
+- month_draw BIGINT UNSIGNED COMMENT "月出款" ,
+- is_ban INT UNSIGNED COMMENT "封号:0=正常,1=封号" ,
+- no_transfer INT UNSIGNED COMMENT "转账:0=正常,1=禁止" ,
+- reg_ip VARCHAR(64) COMMENT "注册IP地址" ,
+- device_id VARCHAR(128) COMMENT "机器码" ,
+- reg_device_id VARCHAR(128) COMMENT "注册机器码" ,
+- show_userid BIGINT UNSIGNED COMMENT "显示玩家ID" ,
+- all_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP总转入" ,
+- today_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP今日转入" ,
+- week_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP周转入" ,
+- month_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP月转入" ,
+- all_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP总转出" ,
+- today_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP今日转出" ,
+- week_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP周转出" ,
+- month_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP月转出" ,
+- INDEX(nickname),
+- INDEX(agent_id),
+- INDEX(game_id),
+- INDEX(room_id),
+- INDEX(all_win),
+- INDEX(show_userid),
+- PRIMARY KEY(userid))  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table tbUserDetailData add column userid BIGINT UNSIGNED NOT NULL COMMENT "玩家ID";
+-alter table tbUserDetailData add column nickname VARCHAR(64) COMMENT "昵称";
+-alter table tbUserDetailData add column faceid INT UNSIGNED COMMENT "头像";
+-alter table tbUserDetailData add column regdate BIGINT UNSIGNED COMMENT "注册时间";
+-alter table tbUserDetailData add column gender INT UNSIGNED COMMENT "性别";
+-alter table tbUserDetailData add column age INT UNSIGNED COMMENT "年龄";
+-alter table tbUserDetailData add column email VARCHAR(64) COMMENT "邮件";
+-alter table tbUserDetailData add column phonenum BIGINT UNSIGNED COMMENT "手机号码";
+-alter table tbUserDetailData add column jetton BIGINT UNSIGNED COMMENT "金币";
+-alter table tbUserDetailData add column country VARCHAR(64) COMMENT "国家";
+-alter table tbUserDetailData add column province VARCHAR(64) COMMENT "省份";
+-alter table tbUserDetailData add column city VARCHAR(64) COMMENT "城市";
+-alter table tbUserDetailData add column isrobot BOOL COMMENT "机器人:0=否,1=是";
+-alter table tbUserDetailData add column bank_password VARCHAR(64);
+-alter table tbUserDetailData add column bank_jetton BIGINT UNSIGNED COMMENT "银行存款";
+-alter table tbUserDetailData add column ip VARCHAR(64) COMMENT "IP地址";
+-alter table tbUserDetailData add column last_login_time BIGINT UNSIGNED COMMENT "最近一次登录时间";
+-alter table tbUserDetailData add column last_logout_time BIGINT UNSIGNED COMMENT "最近一次退出时间";
+-alter table tbUserDetailData add column aread_id INT UNSIGNED COMMENT "地区id";
+-alter table tbUserDetailData add column channel_id INT UNSIGNED COMMENT "渠道id";
+-alter table tbUserDetailData add column platform_os VARCHAR(64) COMMENT "手机系统";
+-alter table tbUserDetailData add column phone_model VARCHAR(64) COMMENT "手机型号";
+-alter table tbUserDetailData add column first_recharge BOOL COMMENT "首冲:0=否,1=是";
+-alter table tbUserDetailData add column agent_id BIGINT UNSIGNED COMMENT "上级代理ID";
+-alter table tbUserDetailData add column referrer_id BIGINT UNSIGNED;
+-alter table tbUserDetailData add column vip_level INT UNSIGNED;
+-alter table tbUserDetailData add column misc_data BLOB ;
+-alter table tbUserDetailData add column online BOOL COMMENT "在线:0=否,1=是";
+-alter table tbUserDetailData add column game_id INT UNSIGNED COMMENT "游戏ID:1001=水果玛丽,1002=幸运转轮,1003=水浒传,1004=鼠来宝,1005=福星高照,2001=大闹天空2,2002=大闹天空,2003=欢乐捕鱼3D,2004=海王";
+-alter table tbUserDetailData add column room_id INT UNSIGNED COMMENT "房间ID:1=体验场,2=初级场,3=普通场,4=中级场,5=高级场";
+-alter table tbUserDetailData add column all_win BIGINT COMMENT "总输赢";
+-alter table tbUserDetailData add column all_recharge BIGINT UNSIGNED COMMENT "总付费";
+-alter table tbUserDetailData add column all_give BIGINT UNSIGNED COMMENT "总赠送";
+-alter table tbUserDetailData add column all_draw BIGINT UNSIGNED COMMENT "总出款";
+-alter table tbUserDetailData add column today_win BIGINT COMMENT "今日输赢";
+-alter table tbUserDetailData add column today_recharge BIGINT UNSIGNED COMMENT "今日付费";
+-alter table tbUserDetailData add column today_give BIGINT UNSIGNED COMMENT "今日赠送";
+-alter table tbUserDetailData add column today_draw BIGINT UNSIGNED COMMENT "今日出款";
+-alter table tbUserDetailData add column week_win BIGINT COMMENT "周输赢";
+-alter table tbUserDetailData add column week_recharge BIGINT UNSIGNED COMMENT "周付费";
+-alter table tbUserDetailData add column week_give BIGINT UNSIGNED COMMENT "周赠送";
+-alter table tbUserDetailData add column week_draw BIGINT UNSIGNED COMMENT "周出款";
+-alter table tbUserDetailData add column month_win BIGINT COMMENT "月输赢";
+-alter table tbUserDetailData add column month_recharge BIGINT UNSIGNED COMMENT "月付费";
+-alter table tbUserDetailData add column month_give BIGINT UNSIGNED COMMENT "月赠送";
+-alter table tbUserDetailData add column month_draw BIGINT UNSIGNED COMMENT "月出款";
+-alter table tbUserDetailData add column is_ban INT UNSIGNED COMMENT "封号:0=正常,1=封号";
+-alter table tbUserDetailData add column no_transfer INT UNSIGNED COMMENT "转账:0=正常,1=禁止";
+-alter table tbUserDetailData add column reg_ip VARCHAR(64) COMMENT "注册IP地址";
+-alter table tbUserDetailData add column device_id VARCHAR(128) COMMENT "机器码";
+-alter table tbUserDetailData add column reg_device_id VARCHAR(128) COMMENT "注册机器码";
+-alter table tbUserDetailData add column show_userid BIGINT UNSIGNED COMMENT "显示玩家ID";
+-alter table tbUserDetailData add column all_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP总转入";
+-alter table tbUserDetailData add column today_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP今日转入";
+-alter table tbUserDetailData add column week_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP周转入";
+-alter table tbUserDetailData add column month_vip_zhuanru BIGINT UNSIGNED COMMENT "VIP月转入";
+-alter table tbUserDetailData add column all_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP总转出";
+-alter table tbUserDetailData add column today_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP今日转出";
+-alter table tbUserDetailData add column week_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP周转出";
+-alter table tbUserDetailData add column month_vip_zhuanchu BIGINT UNSIGNED COMMENT "VIP月转出";
+-*/
+Index: Install/Sql/create_tbUserSimpleData.sql
+===================================================================
+diff --git a/Install/Sql/create_tbUserSimpleData.sql b/Install/Sql/create_tbUserSimpleData.sql
+deleted file mode 100644
+--- a/Install/Sql/create_tbUserSimpleData.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,64 +0,0 @@
+-CREATE TABLE IF NOT EXISTS tbUserSimpleData (
+- userid BIGINT UNSIGNED NOT NULL COMMENT "用户ID" ,
+- nickname VARCHAR(64) COMMENT "昵称" ,
+- face INT UNSIGNED COMMENT "头像" ,
+- gender INT UNSIGNED COMMENT "性别" ,
+- age INT UNSIGNED COMMENT "年龄" ,
+- agentid BIGINT UNSIGNED COMMENT "上级代理ID" ,
+- create_time BIGINT UNSIGNED COMMENT "注册时间" ,
+- is_robot BOOL COMMENT "机器人:0=否,1=是" ,
+- agent_level INT UNSIGNED COMMENT "代理:0=普通代理,1=总代,2=一级代理,3=二级代理,4=三级代理" ,
+- ach_day BIGINT UNSIGNED COMMENT "今日流水" ,
+- ach_week BIGINT UNSIGNED COMMENT "周流水" ,
+- ach_month BIGINT UNSIGNED COMMENT "月流水" ,
+- ach_all BIGINT UNSIGNED COMMENT "总流水" ,
+- ach_team_day BIGINT UNSIGNED COMMENT "今日团队流水" ,
+- ach_team_week BIGINT UNSIGNED COMMENT "周团队流水" ,
+- ach_team_month BIGINT UNSIGNED COMMENT "月团队流水" ,
+- ach_team_all BIGINT UNSIGNED COMMENT "总团队流水" ,
+- team_user_num BIGINT UNSIGNED COMMENT "团队人数" ,
+- new_user_day BIGINT UNSIGNED COMMENT "每日新增团队人数" ,
+- activity_user_day BIGINT UNSIGNED COMMENT "团队活跃人数" ,
+- getrate INT UNSIGNED COMMENT "流水保底" ,
+- tax_getrate INT UNSIGNED COMMENT "税收保底" ,
+- takemoney INT UNSIGNED COMMENT "可提现佣金余额" ,
+- tax_takemoney INT UNSIGNED COMMENT "可提现税收佣金余额" ,
+- all_takemoney BIGINT UNSIGNED COMMENT "佣金总额" ,
+- all_fee BIGINT UNSIGNED COMMENT "抽水总额" ,
+- show_userid BIGINT UNSIGNED COMMENT "代理靓号" ,
+- vip_level BIGINT UNSIGNED COMMENT "vip" ,
+- misc_data BLOB /*!99104 COMPRESSED */ ,
+- INDEX(nickname),
+- INDEX(agentid),
+- PRIMARY KEY(userid))  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table tbUserSimpleData add column userid BIGINT UNSIGNED NOT NULL COMMENT "用户ID";
+-alter table tbUserSimpleData add column nickname VARCHAR(64) COMMENT "昵称";
+-alter table tbUserSimpleData add column face INT UNSIGNED COMMENT "头像";
+-alter table tbUserSimpleData add column gender INT UNSIGNED COMMENT "性别";
+-alter table tbUserSimpleData add column age INT UNSIGNED COMMENT "年龄";
+-alter table tbUserSimpleData add column agentid BIGINT UNSIGNED COMMENT "上级代理ID";
+-alter table tbUserSimpleData add column create_time BIGINT UNSIGNED COMMENT "注册时间";
+-alter table tbUserSimpleData add column is_robot BOOL COMMENT "机器人:0=否,1=是";
+-alter table tbUserSimpleData add column agent_level INT UNSIGNED COMMENT "代理:0=普通代理,1=总代,2=一级代理,3=二级代理,4=三级代理";
+-alter table tbUserSimpleData add column ach_day BIGINT UNSIGNED COMMENT "今日流水";
+-alter table tbUserSimpleData add column ach_week BIGINT UNSIGNED COMMENT "周流水";
+-alter table tbUserSimpleData add column ach_month BIGINT UNSIGNED COMMENT "月流水";
+-alter table tbUserSimpleData add column ach_all BIGINT UNSIGNED COMMENT "总流水";
+-alter table tbUserSimpleData add column ach_team_day BIGINT UNSIGNED COMMENT "今日团队流水";
+-alter table tbUserSimpleData add column ach_team_week BIGINT UNSIGNED COMMENT "周团队流水";
+-alter table tbUserSimpleData add column ach_team_month BIGINT UNSIGNED COMMENT "月团队流水";
+-alter table tbUserSimpleData add column ach_team_all BIGINT UNSIGNED COMMENT "总团队流水";
+-alter table tbUserSimpleData add column team_user_num BIGINT UNSIGNED COMMENT "团队人数";
+-alter table tbUserSimpleData add column new_user_day BIGINT UNSIGNED COMMENT "每日新增团队人数";
+-alter table tbUserSimpleData add column activity_user_day BIGINT UNSIGNED COMMENT "团队活跃人数";
+-alter table tbUserSimpleData add column getrate INT UNSIGNED COMMENT "流水保底";
+-alter table tbUserSimpleData add column tax_getrate INT UNSIGNED COMMENT "税收保底";
+-alter table tbUserSimpleData add column takemoney INT UNSIGNED COMMENT "可提现佣金余额";
+-alter table tbUserSimpleData add column tax_takemoney INT UNSIGNED COMMENT "可提现税收佣金余额";
+-alter table tbUserSimpleData add column all_takemoney BIGINT UNSIGNED COMMENT "佣金总额";
+-alter table tbUserSimpleData add column all_fee BIGINT UNSIGNED COMMENT "抽水总额";
+-alter table tbUserSimpleData add column show_userid BIGINT UNSIGNED COMMENT "代理靓号";
+-alter table tbUserSimpleData add column vip_level BIGINT UNSIGNED COMMENT "vip";
+-alter table tbUserSimpleData add column misc_data BLOB ;
+-*/
+Index: Install/Sql/create_tbAccountTable.sql
+===================================================================
+diff --git a/Install/Sql/create_tbAccountTable.sql b/Install/Sql/create_tbAccountTable.sql
+deleted file mode 100644
+--- a/Install/Sql/create_tbAccountTable.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,20 +0,0 @@
+-CREATE TABLE IF NOT EXISTS tbAccountTable (
+- player_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ,
+- account VARCHAR(128) ,
+- password VARCHAR(128) ,
+- account_type INT UNSIGNED ,
+- device_id VARCHAR(128) ,
+- phonenum BIGINT UNSIGNED ,
+- real_player_id BIGINT UNSIGNED ,
+- INDEX(password),
+- UNIQUE(account),
+- PRIMARY KEY(player_id)) AUTO_INCREMENT = 10000 ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table tbAccountTable add column player_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT;
+-alter table tbAccountTable add column account VARCHAR(128);
+-alter table tbAccountTable add column password VARCHAR(128);
+-alter table tbAccountTable add column account_type INT UNSIGNED;
+-alter table tbAccountTable add column device_id VARCHAR(128);
+-alter table tbAccountTable add column phonenum BIGINT UNSIGNED;
+-alter table tbAccountTable add column real_player_id BIGINT UNSIGNED;
+-*/
+Index: Install/Sql/create_ConstDesc.sql
+===================================================================
+diff --git a/Install/Sql/create_ConstDesc.sql b/Install/Sql/create_ConstDesc.sql
+deleted file mode 100644
+--- a/Install/Sql/create_ConstDesc.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,10 +0,0 @@
+-CREATE TABLE IF NOT EXISTS ConstDesc (
+- id INT NOT NULL AUTO_INCREMENT COMMENT "编号" ,
+- value VARCHAR(128) COMMENT "常量值" ,
+- type_name VARCHAR(128) COMMENT "类型名称" ,
+- PRIMARY KEY(id)) AUTO_INCREMENT = 1 ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table ConstDesc add column id INT NOT NULL AUTO_INCREMENT COMMENT "编号";
+-alter table ConstDesc add column value VARCHAR(128) COMMENT "常量值";
+-alter table ConstDesc add column type_name VARCHAR(128) COMMENT "类型名称";
+-*/
+Index: Install/Sql/create_tbServerMgr.sql
+===================================================================
+diff --git a/Install/Sql/create_tbServerMgr.sql b/Install/Sql/create_tbServerMgr.sql
+deleted file mode 100644
+--- a/Install/Sql/create_tbServerMgr.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,28 +0,0 @@
+-CREATE TABLE IF NOT EXISTS tbServerMgr (
+- id BIGINT UNSIGNED NOT NULL COMMENT "ID" ,
+- contract VARCHAR(128) COMMENT "合同号" ,
+- machine_addr VARCHAR(128) COMMENT "机器码" ,
+- ip VARCHAR(128) COMMENT "IP地址" ,
+- bus_name VARCHAR(128) COMMENT "服务器ID" ,
+- server_desc VARCHAR(128) COMMENT "描述信息" ,
+- cur_count INT UNSIGNED COMMENT "当前服务器数" ,
+- last_login_time BIGINT UNSIGNED COMMENT "上一次登录时间" ,
+- last_logout_time BIGINT UNSIGNED COMMENT "上一次下线时间" ,
+- create_time BIGINT UNSIGNED COMMENT "创建时间" ,
+- INDEX(contract),
+- INDEX(machine_addr),
+- INDEX(ip),
+- INDEX(bus_name),
+- PRIMARY KEY(id))  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table tbServerMgr add column id BIGINT UNSIGNED NOT NULL COMMENT "ID";
+-alter table tbServerMgr add column contract VARCHAR(128) COMMENT "合同号";
+-alter table tbServerMgr add column machine_addr VARCHAR(128) COMMENT "机器码";
+-alter table tbServerMgr add column ip VARCHAR(128) COMMENT "IP地址";
+-alter table tbServerMgr add column bus_name VARCHAR(128) COMMENT "服务器ID";
+-alter table tbServerMgr add column server_desc VARCHAR(128) COMMENT "描述信息";
+-alter table tbServerMgr add column cur_count INT UNSIGNED COMMENT "当前服务器数";
+-alter table tbServerMgr add column last_login_time BIGINT UNSIGNED COMMENT "上一次登录时间";
+-alter table tbServerMgr add column last_logout_time BIGINT UNSIGNED COMMENT "上一次下线时间";
+-alter table tbServerMgr add column create_time BIGINT UNSIGNED COMMENT "创建时间";
+-*/
+Index: Install/Sql/create_NameDesc.sql
+===================================================================
+diff --git a/Install/Sql/create_NameDesc.sql b/Install/Sql/create_NameDesc.sql
+deleted file mode 100644
+--- a/Install/Sql/create_NameDesc.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,9 +0,0 @@
+-CREATE TABLE IF NOT EXISTS NameDesc (
+- id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT "编号" ,
+- name VARCHAR(64) COMMENT "名字" ,
+- INDEX(name),
+- PRIMARY KEY(id)) AUTO_INCREMENT = 1 ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table NameDesc add column id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT "编号";
+-alter table NameDesc add column name VARCHAR(64) COMMENT "名字";
+-*/
+Index: Install/Sql/create_tbEventLog.sql
+===================================================================
+diff --git a/Install/Sql/create_tbEventLog.sql b/Install/Sql/create_tbEventLog.sql
+deleted file mode 100644
+--- a/Install/Sql/create_tbEventLog.sql	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ /dev/null	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
+@@ -1,14 +0,0 @@
+-CREATE TABLE IF NOT EXISTS tbEventLog (
+- user_id BIGINT UNSIGNED NOT NULL ,
+- event_id BIGINT UNSIGNED NOT NULL ,
+- create_time INT ,
+- expire_time INT ,
+- data BLOB /*!99104 COMPRESSED */ ,
+- PRIMARY KEY(user_id,event_id))  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-/*
+-alter table tbEventLog add column user_id BIGINT UNSIGNED NOT NULL;
+-alter table tbEventLog add column event_id BIGINT UNSIGNED NOT NULL;
+-alter table tbEventLog add column create_time INT;
+-alter table tbEventLog add column expire_time INT;
+-alter table tbEventLog add column data BLOB ;
+-*/
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CMakeRunConfigurationManager\" shouldGenerate=\"true\" shouldDeleteObsolete=\"true\">\n    <generated>\n      <config projectName=\"ShmNFrame\" targetName=\"evpp\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFGlobalServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFKernelPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFLogicServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFSnsServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFPluginLoader\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFRouteAgentServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFGameServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFProxyServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFWorldServerPlayerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFShmPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFRobotPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFWorldServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFNetPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFProxyClientPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFRouteServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFLoginServerPlayerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFLogicServerPlayerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFProxyAgentServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFMasterServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFStoreServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFTestPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFMessageDefine\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFLoginServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"mysqlpp\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFWebServerPlugin\" />\n      <config projectName=\"ShmNFrame\" targetName=\"NFCommLogicPlugin\" />\n    </generated>\n  </component>\n  <component name=\"CMakeSettings\" AUTO_RELOAD=\"true\">\n    <configurations>\n      <configuration PROFILE_NAME=\"Debug\" CONFIG_NAME=\"Debug\" GENERATION_OPTIONS=\"-DCMAKE_BUILD_TYPE=DynamicDebug\" GENERATION_DIR=\"Build/build64_debug\" ENABLED=\"true\" />\n      <configuration PROFILE_NAME=\"Release\" CONFIG_NAME=\"Release\" GENERATION_OPTIONS=\"-DCMAKE_BUILD_TYPE=DynamicRelease\" GENERATION_DIR=\"Build/build64_release\" ENABLED=\"true\" />\n    </configurations>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5\" name=\"默认变更列表\" comment=\"makefile\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ChangesViewManager\">\n    <option name=\"groupingKeys\">\n      <option value=\"directory\" />\n    </option>\n  </component>\n  <component name=\"ClangdSettings\">\n    <option name=\"formatViaClangd\" value=\"false\" />\n  </component>\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"CMakeBuildProfile:Debug\" />\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"45894cda-87c5-4976-a6d3-49dad2b6a142\" />\n        <option name=\"url\" value=\"https://github.com/yigao/NFShmServer.git\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"1ujzzYRcDPHLLows0GpEXsI7QMX\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.cidr.known.project.marker\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"true\" />\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.mappings\" value=\"true\" />\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.symlinks\" value=\"true\" />\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.date\" value=\"false\" />\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.permissions\" value=\"false\" />\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.size\" value=\"false\" />\n    <property name=\"cf.first.check.clang-format\" value=\"false\" />\n    <property name=\"cidr.known.project.marker\" value=\"true\" />\n    <property name=\"cmake.loaded.for.project\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/Install/Bin/Dynamic_Release\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"CMakeSettings\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/Install/Bin/Dynamic_Release\" />\n      <recent name=\"$PROJECT_DIR$/Install/Bin/Dynamic_Debug\" />\n      <recent name=\"$PROJECT_DIR$/Install\" />\n      <recent name=\"$PROJECT_DIR$/Install/TcpPlugin_Zookpeer\" />\n      <recent name=\"$PROJECT_DIR$/Install/TcpPlugin\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin\" />\n      <recent name=\"$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerUserPlugin\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"CMake 应用程序.NFPluginLoader\">\n    <configuration default=\"true\" type=\"CLionExternalRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\">\n      <method v=\"2\">\n        <option name=\"CLION.EXTERNAL.BUILD\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFCommLogicPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFCommLogicPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFGameServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFGameServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFGlobalServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=MasterServer --ID=1.1.1.0 --Config=../../Config --Plugin=../../GlobalPlugin --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFGlobalServerPlugin\" CONFIG_NAME=\"Debug\" RUN_PATH=\"$PROJECT_DIR$/Install/Bin/Dynamic_Debug/NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFKernelPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFKernelPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFLogicServerPlayerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=LogicServer --ID=15.100.10.1 --Config=../../Config --Plugin=../../TcpPlugin_server2 --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFLogicServerPlayerPlugin\" CONFIG_NAME=\"Debug\" RUN_TARGET_PROJECT_NAME=\"ShmNFrame\" RUN_TARGET_NAME=\"NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFLogicServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFLogicServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFLoginServerPlayerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFLoginServerPlayerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFLoginServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFLoginServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFMasterServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=MasterServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../Plugin2 --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFMasterServerPlugin\" CONFIG_NAME=\"Debug\" RUN_PATH=\"$PROJECT_DIR$/Install/Bin/Dynamic_Debug/NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFMessageDefine\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../TcpPlugin --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFMessageDefine\" CONFIG_NAME=\"Debug\" RUN_PATH=\"$PROJECT_DIR$/Install/Bin/Dynamic_Debug/NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFNetPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFNetPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFPluginLoader\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../BusPlugin --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFPluginLoader\" CONFIG_NAME=\"Debug\" RUN_TARGET_PROJECT_NAME=\"ShmNFrame\" RUN_TARGET_NAME=\"NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFProxyAgentServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFProxyAgentServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFProxyClientPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFProxyClientPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFProxyServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFProxyServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFRobotPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=RobotServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../TcpPlugin --Param=33,1,127.0.0.1,7051 --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFRobotPlugin\" CONFIG_NAME=\"Debug\" RUN_TARGET_PROJECT_NAME=\"ShmNFrame\" RUN_TARGET_NAME=\"NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFRouteAgentServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFRouteAgentServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFRouteServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFRouteServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFShmPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFShmPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFSnsServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFSnsServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFStoreServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFStoreServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFTestPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFTestPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFWebServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFWebServerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFWorldServerPlayerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFWorldServerPlayerPlugin\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"NFWorldServerPlugin\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" PROGRAM_PARAMS=\"--Server=WorldServer --ID=15.100.3.1 --Config=../../Config --Plugin=../../Plugin2 --restart\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"NFWorldServerPlugin\" CONFIG_NAME=\"Debug\" RUN_PATH=\"$PROJECT_DIR$/Install/Bin/Dynamic_Debug/NFPluginLoader\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"evpp\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"evpp\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"mysqlpp\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"ShmNFrame\" TARGET_NAME=\"mysqlpp\" CONFIG_NAME=\"Debug\">\n      <method v=\"2\">\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"lua.app\" factoryName=\"Lua Application\">\n      <option name=\"program\" value=\"/usr/bin/lua\" />\n      <option name=\"file\" value=\"\" />\n      <option name=\"workingDir\" value=\"$PROJECT_DIR$/src/NFGameLogic/NFGameFishPlugin_2004/NFFishTypeLightningJellyFish.cpp\" />\n      <option name=\"debuggerType\" value=\"2\" />\n      <option name=\"params\" value=\"\" />\n      <option name=\"charset\" value=\"UTF-8\" />\n      <option name=\"showConsole\" value=\"true\" />\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"CMake 应用程序.NFMessageDefine\" />\n      <item itemvalue=\"CMake 应用程序.NFKernelPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFNetPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFShmPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFPluginLoader\" />\n      <item itemvalue=\"CMake 应用程序.NFCommLogicPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFGameServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFGlobalServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFLogicServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFLoginServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFMasterServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFProxyAgentServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFProxyServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFRouteAgentServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFRouteServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFSnsServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFStoreServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFWebServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFWorldServerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFLogicServerPlayerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFLoginServerPlayerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFProxyClientPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFWorldServerPlayerPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFRobotPlugin\" />\n      <item itemvalue=\"CMake 应用程序.NFTestPlugin\" />\n      <item itemvalue=\"CMake 应用程序.evpp\" />\n      <item itemvalue=\"CMake 应用程序.mysqlpp\" />\n    </list>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\n      <changelist id=\"bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5\" name=\"默认变更列表\" comment=\"\" />\n      <created>1625194049912</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1625194049912</updated>\n      <workItem from=\"1625194052445\" duration=\"1765000\" />\n      <workItem from=\"1625196189084\" duration=\"14228000\" />\n      <workItem from=\"1625290408827\" duration=\"12307000\" />\n      <workItem from=\"1625623443677\" duration=\"8053000\" />\n      <workItem from=\"1625636571549\" duration=\"3290000\" />\n      <workItem from=\"1625727785574\" duration=\"13835000\" />\n      <workItem from=\"1625810208378\" duration=\"150000\" />\n      <workItem from=\"1625810455568\" duration=\"42000\" />\n      <workItem from=\"1625810589335\" duration=\"587000\" />\n      <workItem from=\"1625901193166\" duration=\"5088000\" />\n      <workItem from=\"1625968303694\" duration=\"23340000\" />\n      <workItem from=\"1626072312954\" duration=\"1910000\" />\n      <workItem from=\"1626083475958\" duration=\"1791000\" />\n      <workItem from=\"1626085412911\" duration=\"27501000\" />\n      <workItem from=\"1626168092522\" duration=\"3537000\" />\n      <workItem from=\"1626335577238\" duration=\"7613000\" />\n      <workItem from=\"1626401682089\" duration=\"1728000\" />\n      <workItem from=\"1626661631765\" duration=\"3963000\" />\n      <workItem from=\"1627285430993\" duration=\"2551000\" />\n      <workItem from=\"1627298045540\" duration=\"2167000\" />\n      <workItem from=\"1627302865799\" duration=\"1951000\" />\n      <workItem from=\"1630031388736\" duration=\"26000\" />\n      <workItem from=\"1630031434543\" duration=\"42000\" />\n      <workItem from=\"1630031477601\" duration=\"13000\" />\n      <workItem from=\"1632297359921\" duration=\"271000\" />\n      <workItem from=\"1632297666157\" duration=\"5544000\" />\n      <workItem from=\"1632461798544\" duration=\"55000\" />\n      <workItem from=\"1633026258306\" duration=\"3067000\" />\n      <workItem from=\"1634370756344\" duration=\"15000\" />\n      <workItem from=\"1635333767349\" duration=\"1364000\" />\n      <workItem from=\"1654652542312\" duration=\"5893000\" />\n      <workItem from=\"1654660697861\" duration=\"34802000\" />\n      <workItem from=\"1654736205434\" duration=\"2659000\" />\n      <workItem from=\"1654738989887\" duration=\"2658000\" />\n      <workItem from=\"1654741675973\" duration=\"1504000\" />\n      <workItem from=\"1654749881573\" duration=\"1982000\" />\n      <workItem from=\"1654752346426\" duration=\"50974000\" />\n      <workItem from=\"1654910432686\" duration=\"5182000\" />\n      <workItem from=\"1654940688676\" duration=\"8596000\" />\n      <workItem from=\"1655087437489\" duration=\"19827000\" />\n      <workItem from=\"1655131259867\" duration=\"2209000\" />\n      <workItem from=\"1655169199475\" duration=\"17370000\" />\n      <workItem from=\"1655216703923\" duration=\"4470000\" />\n      <workItem from=\"1655221217362\" duration=\"1668000\" />\n      <workItem from=\"1655380540421\" duration=\"187000\" />\n      <workItem from=\"1655380822806\" duration=\"174000\" />\n      <workItem from=\"1655729978316\" duration=\"5715000\" />\n      <workItem from=\"1655782948316\" duration=\"5759000\" />\n      <workItem from=\"1655863482468\" duration=\"3691000\" />\n      <workItem from=\"1655885625821\" duration=\"9355000\" />\n    </task>\n    <task id=\"LOCAL-00036\" summary=\"serial nmber\">\n      <created>1635334215782</created>\n      <option name=\"number\" value=\"00036\" />\n      <option name=\"presentableId\" value=\"LOCAL-00036\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1635334215783</updated>\n    </task>\n    <task id=\"LOCAL-00037\" summary=\"serial nmber\">\n      <created>1635334323152</created>\n      <option name=\"number\" value=\"00037\" />\n      <option name=\"presentableId\" value=\"LOCAL-00037\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1635334323152</updated>\n    </task>\n    <task id=\"LOCAL-00038\" summary=\"serial nmber\">\n      <created>1635334392726</created>\n      <option name=\"number\" value=\"00038\" />\n      <option name=\"presentableId\" value=\"LOCAL-00038\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1635334392726</updated>\n    </task>\n    <task id=\"LOCAL-00039\" summary=\"serial nmber\">\n      <created>1654652721579</created>\n      <option name=\"number\" value=\"00039\" />\n      <option name=\"presentableId\" value=\"LOCAL-00039\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654652721579</updated>\n    </task>\n    <task id=\"LOCAL-00040\" summary=\"serial nmber\">\n      <created>1654652732766</created>\n      <option name=\"number\" value=\"00040\" />\n      <option name=\"presentableId\" value=\"LOCAL-00040\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654652732766</updated>\n    </task>\n    <task id=\"LOCAL-00041\" summary=\"frame\">\n      <created>1654656314465</created>\n      <option name=\"number\" value=\"00041\" />\n      <option name=\"presentableId\" value=\"LOCAL-00041\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654656314465</updated>\n    </task>\n    <task id=\"LOCAL-00042\" summary=\"frame\">\n      <created>1654662097781</created>\n      <option name=\"number\" value=\"00042\" />\n      <option name=\"presentableId\" value=\"LOCAL-00042\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654662097781</updated>\n    </task>\n    <task id=\"LOCAL-00043\" summary=\"frame\">\n      <created>1654685233489</created>\n      <option name=\"number\" value=\"00043\" />\n      <option name=\"presentableId\" value=\"LOCAL-00043\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654685233489</updated>\n    </task>\n    <task id=\"LOCAL-00044\" summary=\"frame\">\n      <created>1654685326420</created>\n      <option name=\"number\" value=\"00044\" />\n      <option name=\"presentableId\" value=\"LOCAL-00044\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654685326420</updated>\n    </task>\n    <task id=\"LOCAL-00045\" summary=\"frame\">\n      <created>1654685532051</created>\n      <option name=\"number\" value=\"00045\" />\n      <option name=\"presentableId\" value=\"LOCAL-00045\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654685532051</updated>\n    </task>\n    <task id=\"LOCAL-00046\" summary=\"frame\">\n      <created>1654685911294</created>\n      <option name=\"number\" value=\"00046\" />\n      <option name=\"presentableId\" value=\"LOCAL-00046\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654685911294</updated>\n    </task>\n    <task id=\"LOCAL-00047\" summary=\"frame\">\n      <created>1654690061962</created>\n      <option name=\"number\" value=\"00047\" />\n      <option name=\"presentableId\" value=\"LOCAL-00047\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654690061962</updated>\n    </task>\n    <task id=\"LOCAL-00048\" summary=\"frame\">\n      <created>1654694294701</created>\n      <option name=\"number\" value=\"00048\" />\n      <option name=\"presentableId\" value=\"LOCAL-00048\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654694294701</updated>\n    </task>\n    <task id=\"LOCAL-00049\" summary=\"frame\">\n      <created>1654705225843</created>\n      <option name=\"number\" value=\"00049\" />\n      <option name=\"presentableId\" value=\"LOCAL-00049\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654705225843</updated>\n    </task>\n    <task id=\"LOCAL-00050\" summary=\"frame\">\n      <created>1654706470217</created>\n      <option name=\"number\" value=\"00050\" />\n      <option name=\"presentableId\" value=\"LOCAL-00050\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654706470218</updated>\n    </task>\n    <task id=\"LOCAL-00051\" summary=\"frame\">\n      <created>1654750192877</created>\n      <option name=\"number\" value=\"00051\" />\n      <option name=\"presentableId\" value=\"LOCAL-00051\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654750192878</updated>\n    </task>\n    <task id=\"LOCAL-00052\" summary=\"frame\">\n      <created>1654754621770</created>\n      <option name=\"number\" value=\"00052\" />\n      <option name=\"presentableId\" value=\"LOCAL-00052\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654754621772</updated>\n    </task>\n    <task id=\"LOCAL-00053\" summary=\"frame\">\n      <created>1654757617308</created>\n      <option name=\"number\" value=\"00053\" />\n      <option name=\"presentableId\" value=\"LOCAL-00053\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654757617308</updated>\n    </task>\n    <task id=\"LOCAL-00054\" summary=\"frame\">\n      <created>1654757626317</created>\n      <option name=\"number\" value=\"00054\" />\n      <option name=\"presentableId\" value=\"LOCAL-00054\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654757626317</updated>\n    </task>\n    <task id=\"LOCAL-00055\" summary=\"frame\">\n      <created>1654769031106</created>\n      <option name=\"number\" value=\"00055\" />\n      <option name=\"presentableId\" value=\"LOCAL-00055\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654769031106</updated>\n    </task>\n    <task id=\"LOCAL-00056\" summary=\"frame\">\n      <created>1654798209916</created>\n      <option name=\"number\" value=\"00056\" />\n      <option name=\"presentableId\" value=\"LOCAL-00056\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654798209916</updated>\n    </task>\n    <task id=\"LOCAL-00057\" summary=\"frame\">\n      <created>1654827314543</created>\n      <option name=\"number\" value=\"00057\" />\n      <option name=\"presentableId\" value=\"LOCAL-00057\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654827314543</updated>\n    </task>\n    <task id=\"LOCAL-00058\" summary=\"frame\">\n      <created>1654828108151</created>\n      <option name=\"number\" value=\"00058\" />\n      <option name=\"presentableId\" value=\"LOCAL-00058\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654828108151</updated>\n    </task>\n    <task id=\"LOCAL-00059\" summary=\"frame\">\n      <created>1654828624108</created>\n      <option name=\"number\" value=\"00059\" />\n      <option name=\"presentableId\" value=\"LOCAL-00059\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654828624108</updated>\n    </task>\n    <task id=\"LOCAL-00060\" summary=\"frame\">\n      <created>1654828797591</created>\n      <option name=\"number\" value=\"00060\" />\n      <option name=\"presentableId\" value=\"LOCAL-00060\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654828797591</updated>\n    </task>\n    <task id=\"LOCAL-00061\" summary=\"frame\">\n      <created>1654829813559</created>\n      <option name=\"number\" value=\"00061\" />\n      <option name=\"presentableId\" value=\"LOCAL-00061\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654829813559</updated>\n    </task>\n    <task id=\"LOCAL-00062\" summary=\"frame\">\n      <created>1654847625171</created>\n      <option name=\"number\" value=\"00062\" />\n      <option name=\"presentableId\" value=\"LOCAL-00062\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654847625171</updated>\n    </task>\n    <task id=\"LOCAL-00063\" summary=\"frame\">\n      <created>1654853601995</created>\n      <option name=\"number\" value=\"00063\" />\n      <option name=\"presentableId\" value=\"LOCAL-00063\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654853601995</updated>\n    </task>\n    <task id=\"LOCAL-00064\" summary=\"frame\">\n      <created>1654855187212</created>\n      <option name=\"number\" value=\"00064\" />\n      <option name=\"presentableId\" value=\"LOCAL-00064\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654855187212</updated>\n    </task>\n    <task id=\"LOCAL-00065\" summary=\"frame\">\n      <created>1654855196969</created>\n      <option name=\"number\" value=\"00065\" />\n      <option name=\"presentableId\" value=\"LOCAL-00065\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654855196969</updated>\n    </task>\n    <task id=\"LOCAL-00066\" summary=\"frame\">\n      <created>1654857765782</created>\n      <option name=\"number\" value=\"00066\" />\n      <option name=\"presentableId\" value=\"LOCAL-00066\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654857765783</updated>\n    </task>\n    <task id=\"LOCAL-00067\" summary=\"frame\">\n      <created>1654859638832</created>\n      <option name=\"number\" value=\"00067\" />\n      <option name=\"presentableId\" value=\"LOCAL-00067\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654859638832</updated>\n    </task>\n    <task id=\"LOCAL-00068\" summary=\"frame\">\n      <created>1654874708814</created>\n      <option name=\"number\" value=\"00068\" />\n      <option name=\"presentableId\" value=\"LOCAL-00068\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654874708814</updated>\n    </task>\n    <task id=\"LOCAL-00069\" summary=\"frame\">\n      <created>1654877392390</created>\n      <option name=\"number\" value=\"00069\" />\n      <option name=\"presentableId\" value=\"LOCAL-00069\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654877392390</updated>\n    </task>\n    <task id=\"LOCAL-00070\" summary=\"frame\">\n      <created>1654940727501</created>\n      <option name=\"number\" value=\"00070\" />\n      <option name=\"presentableId\" value=\"LOCAL-00070\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654940727502</updated>\n    </task>\n    <task id=\"LOCAL-00071\" summary=\"frame\">\n      <created>1654943826294</created>\n      <option name=\"number\" value=\"00071\" />\n      <option name=\"presentableId\" value=\"LOCAL-00071\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654943826294</updated>\n    </task>\n    <task id=\"LOCAL-00072\" summary=\"frame\">\n      <created>1654962841339</created>\n      <option name=\"number\" value=\"00072\" />\n      <option name=\"presentableId\" value=\"LOCAL-00072\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1654962841340</updated>\n    </task>\n    <task id=\"LOCAL-00073\" summary=\"frame\">\n      <created>1655113710620</created>\n      <option name=\"number\" value=\"00073\" />\n      <option name=\"presentableId\" value=\"LOCAL-00073\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655113710621</updated>\n    </task>\n    <task id=\"LOCAL-00074\" summary=\"frame\">\n      <created>1655119359612</created>\n      <option name=\"number\" value=\"00074\" />\n      <option name=\"presentableId\" value=\"LOCAL-00074\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655119359612</updated>\n    </task>\n    <task id=\"LOCAL-00075\" summary=\"frame\">\n      <created>1655132785033</created>\n      <option name=\"number\" value=\"00075\" />\n      <option name=\"presentableId\" value=\"LOCAL-00075\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655132785034</updated>\n    </task>\n    <task id=\"LOCAL-00076\" summary=\"frame\">\n      <created>1655175384210</created>\n      <option name=\"number\" value=\"00076\" />\n      <option name=\"presentableId\" value=\"LOCAL-00076\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655175384211</updated>\n    </task>\n    <task id=\"LOCAL-00077\" summary=\"frame\">\n      <created>1655198875998</created>\n      <option name=\"number\" value=\"00077\" />\n      <option name=\"presentableId\" value=\"LOCAL-00077\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655198875998</updated>\n    </task>\n    <task id=\"LOCAL-00078\" summary=\"frame\">\n      <created>1655222161147</created>\n      <option name=\"number\" value=\"00078\" />\n      <option name=\"presentableId\" value=\"LOCAL-00078\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655222161148</updated>\n    </task>\n    <task id=\"LOCAL-00079\" summary=\"frame\">\n      <created>1655730165008</created>\n      <option name=\"number\" value=\"00079\" />\n      <option name=\"presentableId\" value=\"LOCAL-00079\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655730165008</updated>\n    </task>\n    <task id=\"LOCAL-00080\" summary=\"frame\">\n      <created>1655786331722</created>\n      <option name=\"number\" value=\"00080\" />\n      <option name=\"presentableId\" value=\"LOCAL-00080\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655786331723</updated>\n    </task>\n    <task id=\"LOCAL-00081\" summary=\"delete\">\n      <created>1655886876090</created>\n      <option name=\"number\" value=\"00081\" />\n      <option name=\"presentableId\" value=\"LOCAL-00081\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655886876091</updated>\n    </task>\n    <task id=\"LOCAL-00082\" summary=\"shell\">\n      <created>1655888486638</created>\n      <option name=\"number\" value=\"00082\" />\n      <option name=\"presentableId\" value=\"LOCAL-00082\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655888486638</updated>\n    </task>\n    <task id=\"LOCAL-00083\" summary=\"makefile\">\n      <created>1655892765103</created>\n      <option name=\"number\" value=\"00083\" />\n      <option name=\"presentableId\" value=\"LOCAL-00083\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655892765103</updated>\n    </task>\n    <task id=\"LOCAL-00084\" summary=\"makefile\">\n      <created>1655894116308</created>\n      <option name=\"number\" value=\"00084\" />\n      <option name=\"presentableId\" value=\"LOCAL-00084\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1655894116309</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"85\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.History.Properties\">\n    <option name=\"COLUMN_ID_ORDER\">\n      <list>\n        <option value=\"Default.Root\" />\n        <option value=\"Default.Author\" />\n        <option value=\"Default.Date\" />\n        <option value=\"Default.Subject\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n        <entry key=\"e6bed79f-9738-4e61-a63a-01d4c945a57e\">\n          <value>\n            <State>\n              <option name=\"SHOW_ONLY_AFFECTED_CHANGES\" value=\"true\" />\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"HEAD\" />\n                      </list>\n                    </value>\n                  </entry>\n                  <entry key=\"roots\">\n                    <value>\n                      <list>\n                        <option value=\"$PROJECT_DIR$\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"OPEN_GENERIC_TABS\">\n      <map>\n        <entry key=\"e6bed79f-9738-4e61-a63a-01d4c945a57e\" value=\"TOOL_WINDOW\" />\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"bug\" />\n    <MESSAGE value=\"plugin\" />\n    <MESSAGE value=\"show user id\" />\n    <MESSAGE value=\"vip level\" />\n    <MESSAGE value=\"vip recharge\" />\n    <MESSAGE value=\"tb server mgr\" />\n    <MESSAGE value=\"check\" />\n    <MESSAGE value=\"serial nmber\" />\n    <MESSAGE value=\"frame\" />\n    <MESSAGE value=\"delete\" />\n    <MESSAGE value=\"shell\" />\n    <MESSAGE value=\"makefile\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"makefile\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFGlobalServer/NFGlobalServerModule.cpp</url>\n          <line>132</line>\n          <option name=\"timeStamp\" value=\"33\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserMisc/NFTransBank.cpp</url>\n          <line>540</line>\n          <option name=\"timeStamp\" value=\"65\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFMasterServer/NFMasterServerPlugin/NFMasterServerModule.cpp</url>\n          <line>250</line>\n          <option name=\"timeStamp\" value=\"87\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFMasterServer/NFMasterServerPlugin/NFMasterServerModule.cpp</url>\n          <line>216</line>\n          <option name=\"timeStamp\" value=\"88\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFRouteAgentServer/NFRouteAgentServerPlugin/NFRouteAgentServerModule.cpp</url>\n          <line>482</line>\n          <option name=\"timeStamp\" value=\"101\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFRouteAgentServer/NFRouteAgentServerPlugin/NFRouteAgentServerModule.cpp</url>\n          <line>585</line>\n          <option name=\"timeStamp\" value=\"105\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFLoginServer/NFLoginServerPlugin/NFLoginServerModule.cpp</url>\n          <line>650</line>\n          <option name=\"timeStamp\" value=\"221\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFServer/NFLoginServer/NFLoginServerPlugin/NFLoginServerModule.cpp</url>\n          <line>127</line>\n          <option name=\"timeStamp\" value=\"243\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.cpp</url>\n          <line>84</line>\n          <option name=\"timeStamp\" value=\"246\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"com.jetbrains.cidr.execution.debugger.OCBreakpointType\">\n          <url>file://$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.cpp</url>\n          <line>69</line>\n          <option name=\"timeStamp\" value=\"248\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 83aa15e91122a14268488b159556dd0558f6dda8)
++++ b/.idea/workspace.xml	(date 1655909349436)
+@@ -40,6 +40,19 @@
+   <component name="ChangeListManager">
+     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Excel/ErrorInfo.xls" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Excel/MailTemplate.xls" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_ConstDesc.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbAccountTable.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbEventLog.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbServerMgr.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserDetailData.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Install/Sql/create_tbUserSimpleData.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/makefiles/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/Makefile" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/makefiles/define.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/define.makefile" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/makefiles/excel_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/excel_gen.makefile" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/makefiles/sql_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/sql_gen.makefile" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -113,11 +126,6 @@
+     </key>
+   </component>
+   <component name="RunManager" selected="CMake 应用程序.NFPluginLoader">
+-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+-      <method v="2">
+-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+-      </method>
+-    </configuration>
+     <configuration name="NFCommLogicPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFCommLogicPlugin" CONFIG_NAME="Debug">
+       <method v="2">
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+@@ -256,6 +264,11 @@
+     <configuration name="mysqlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="mysqlpp" CONFIG_NAME="Debug">
+       <method v="2">
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
++      <method v="2">
++        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+       </method>
+     </configuration>
+     <configuration default="true" type="lua.app" factoryName="Lua Application">
+@@ -355,14 +368,8 @@
+       <workItem from="1655729978316" duration="5715000" />
+       <workItem from="1655782948316" duration="5759000" />
+       <workItem from="1655863482468" duration="3691000" />
+-      <workItem from="1655885625821" duration="9355000" />
+-    </task>
+-    <task id="LOCAL-00036" summary="serial nmber">
+-      <created>1635334215782</created>
+-      <option name="number" value="00036" />
+-      <option name="presentableId" value="LOCAL-00036" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1635334215783</updated>
++      <workItem from="1655885625821" duration="10216000" />
++      <workItem from="1655907203407" duration="2145000" />
+     </task>
+     <task id="LOCAL-00037" summary="serial nmber">
+       <created>1635334323152</created>
+@@ -700,7 +707,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1655894116309</updated>
+     </task>
+-    <option name="localTasksCounter" value="85" />
++    <task id="LOCAL-00085" summary="makefile">
++      <created>1655906879451</created>
++      <option name="number" value="00085" />
++      <option name="presentableId" value="LOCAL-00085" />
++      <option name="project" value="LOCAL" />
++      <updated>1655906879451</updated>
++    </task>
++    <option name="localTasksCounter" value="86" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
