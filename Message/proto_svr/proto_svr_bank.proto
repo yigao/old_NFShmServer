@@ -1,0 +1,23 @@
+import "yd_fieldoptions.proto";
+import "proto_common.proto";
+import "proto_cs_bank.proto";
+
+package proto_ff;
+
+// 服务器内部的消息id，是个统一的
+//
+enum Proto_BankSvrMsgID
+{
+  ///////////////////bank///////////////////////////////////
+  NF_GIVE_BANK_JETTON_AUTO_PSUH_TRANSFER = 270;
+  ///////////////////bank///////////////////////////////////
+}
+
+//////////////////////////////////bank///////////////////////////////////////
+message Proto_STSGiveJettonAutoPush
+{
+  optional uint64 user_id = 1;
+  optional tbGiveBankJetton record = 2;
+}
+
+//////////////////////////////////bank///////////////////////////////////////

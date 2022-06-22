@@ -1,0 +1,100 @@
+package proto_email;
+
+// 命令字
+enum Proto_EMAIL_CS_CMD {
+  //1150--1169邮件//////////////////////////////////////////////////////////////////////////////////
+  NF_CS_SNS_MAIL_LIST_REQ = 1150; //请求邮件列表Proto_CSMailListReq
+  NF_SC_SNS_MAIL_LIST_RSP = 1151; //邮件数据返回Proto_CSMailListRsp
+  NF_CS_SNS_MAIL_READ_REQ = 1152;	//请求读取邮件Proto_CSMailReadReq
+  NF_SC_SNS_MAIL_READ_RSP = 1153; //读取邮件结果返回Proto_CSMailReadRsp
+  NF_CS_SNS_MAIL_DEL_REQ  = 1154; //请求删除邮件Proto_CSMailDelReq
+  NF_SC_SNS_MAIL_DEL_RSP  = 1155; //删除邮件结果返回Proto_CSMailDelRsp
+  NF_SC_SNS_MAIL_AUTO_PUSH_RSP      = 1156; //系统自动推送邮件Proto_CSMailAutoPushRsp
+
+  NF_CS_SNS_MAIL_GET_ITEM_REQ		= 1157;			// 获取邮件物品Proto_CSMailGetItemReq
+  NF_SC_SNS_MAIL_GET_ITEM_RSP		= 1158;			//获取邮件物品返回Proto_CSMailGetItemRsp
+  //////////////////////////////////////////////////////////////////////////////////
+}
+
+//client need
+message UserMailData
+{
+  optional uint64 id			= 1; //唯一ID
+  optional string send_name	= 2; //发送者名字
+  optional string title		= 3; //邮件标题
+  optional string content		= 4; //自定义邮件内容
+  optional uint64 send_time	= 5; 														//发送时间
+  optional uint32 status = 6; //邮件状态
+  optional int32 usAreaId = 7;//运营商id
+  //optional int64 add_gold = 8;  //赠送的gold
+}
+
+message MailItem
+{
+  optional uint64 id					= 1;	// 唯一id
+  optional int32 add_gold = 2;  //赠送
+  //repeated ItemData item_list = 3[(yd_fieldoptions.field_arysize) = 5];
+}
+
+//1150--1169邮件/////////////////////////////////////////////////////////////////////
+//NF_CS_SNS_MAIL_LIST_REQ = 1150;
+message Proto_CSMailListReq
+{
+  optional int32 begin                            = 1;    // 开始的序号(1开始)
+  optional int32 end                                      = 2;    // 结束的序号
+}
+
+//NF_CS_SNS_MAIL_LIST_RSP = 1151;
+message Proto_CSMailListRsp
+{
+  optional int32 result = 1;
+  repeated UserMailData role_mail_list      = 2;
+  optional int32 all_count				= 3;	//
+  optional int32 no_read_count		= 4;	//
+}
+
+// 通知服务器,客户端读取某邮件。mail_id为0表示一键清除
+message Proto_CSMailReadReq
+{
+  optional uint64 mail_id                         = 1; //表示一键读取所有的邮件
+}
+
+message Proto_CSMailReadRsp
+{
+  optional uint32 result = 1;
+  repeated uint64 mail_id_list = 2;
+}
+
+// 获取邮件物品(0表示一键获取)
+message Proto_CSMailGetItemReq
+{
+  optional uint64 mail_id                         = 1;//=0 表示一键获取所有邮件里的物品
+}
+
+message Proto_CSMailGetItemRsp
+{
+  repeated MailItem item_list               = 1;
+  optional uint32 no_read_count = 2; //剩余未读取的数目
+}
+
+// mail_id 为0表示一键清除
+message Proto_CSMailDelReq
+{
+  repeated uint64 mail_id                         = 1;// size = 0 一键删除所有邮件读取的邮件
+}
+
+message Proto_CSMailDelRsp
+{
+  optional int32 result = 1;
+  repeated uint64 mail_id_list                         = 2;
+  optional int32 all_count				= 3;	//
+  optional int32 no_read_count		= 4;	//
+}
+
+message Proto_CSMailAutoPushRsp
+{
+  optional int32 all_count				= 1;	//
+  optional int32 no_read_count		= 2;	//
+}
+
+//1150--1169邮件/////////////////////////////////////////////////////////////////////

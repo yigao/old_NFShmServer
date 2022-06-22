@@ -1,0 +1,416 @@
+package proto_ff;
+
+// 这里一定要包含自定义的协议
+import "yd_fieldoptions.proto";
+import "proto_common.proto";
+
+message FishLevelDesc
+{
+	optional int32 LevelID = 1 [(yd_fieldoptions.db_field_comment) = "LevelID", (yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY];
+	optional string LevelName = 2 [(yd_fieldoptions.db_field_comment) = "LevelName", (yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	optional string CannonLevelVal = 3 [(yd_fieldoptions.db_field_comment) = "CannonLevelVal", (yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	repeated int32  VecCannonLevelVal = 4 [(yd_fieldoptions.field_arysize)=10];
+	optional string CannonShowNum = 5 [(yd_fieldoptions.db_field_comment) = "CannonShowNum", (yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	repeated int32 VecCannonShowNum = 6 [(yd_fieldoptions.field_arysize)=10];
+	optional int32 MinMoney = 7 [(yd_fieldoptions.db_field_comment) = "MinMoney"];
+	optional int32 MaxMoney = 8 [(yd_fieldoptions.db_field_comment) = "MaxMoney"];
+	optional int32 StartGame = 9 [(yd_fieldoptions.db_field_comment) = "StartGame"];
+	optional int32 Flag = 10 [(yd_fieldoptions.db_field_comment) = "Flag"];
+}
+
+message Sheet_FishLevelDesc
+{
+	repeated FishLevelDesc FishLevelDesc_List = 1  [(yd_fieldoptions.field_arysize)=100];
+}
+
+message FishConfigDesc
+{
+	optional int32 fish_id = 1 [(yd_fieldoptions.field_cname) = "鱼id", (yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY];
+	optional int32 fish_type = 2 [(yd_fieldoptions.field_cname) = "鱼的玩法类型"];
+	optional int32 build_fish_type = 3 [(yd_fieldoptions.field_cname) = "客户端创建鱼类型"];
+	optional int32 ratio_min = 4  [(yd_fieldoptions.field_cname) = "倍率最小值"];
+	optional int32 ratio_max = 5  [(yd_fieldoptions.field_cname) = "倍率最大值"];
+	optional int32 double_award_min_ratio = 6  [(yd_fieldoptions.field_cname) = "可能触发双倍奖励所需最低倍率"];
+	optional int32 child_fish_count = 7  [(yd_fieldoptions.field_cname) = "组合鱼携带子鱼个数"];
+	repeated string child_fish_ids = 8  [(yd_fieldoptions.field_cname) = "组合鱼位置可选子鱼id列表", (yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128, (yd_fieldoptions.field_arysize) = 6, (yd_fieldoptions.db_field_arysize)=6];
+	optional int32 damage_radius = 9  [(yd_fieldoptions.field_cname) = "鱼死亡伤害半径"];
+	optional string damage_fish_ids = 10  [(yd_fieldoptions.field_cname) = "鱼死亡可伤害的鱼id列表", (yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+}
+
+message Sheet_FishConfigDesc
+{
+	repeated FishConfigDesc FishConfigDesc_List = 1  [(yd_fieldoptions.field_arysize)=500];
+}
+
+message GunValueConfig
+{
+	optional int32 id = 1 [(yd_fieldoptions.field_cname) = "炮值ID", (yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY];
+	optional int32 value = 2 [(yd_fieldoptions.field_cname) = "炮值"];
+	optional int32 room_id = 3 [(yd_fieldoptions.field_cname) = "房间名字"];
+	optional int32 gun_id = 4 [(yd_fieldoptions.field_cname) = "炮管ID"];
+}
+
+message Sheet_GunValueConfig
+{
+	repeated GunValueConfig GunValueConfig_List = 1  [(yd_fieldoptions.field_arysize)=500];
+}
+
+message FishAlgoDesc
+{
+	optional int32 AlgoID = 1 [(yd_fieldoptions.field_cname) = "AlgoID", (yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY];	//算法ID自增
+	optional int32 GamePlatform = 2 [(yd_fieldoptions.field_cname) = "GamePlatform"];		//游戏平台：1棋牌，2电玩
+	optional string AlgoName = 3 [(yd_fieldoptions.field_cname) = "AlgoName", (yd_fieldoptions.field_bufsize) = 64, (yd_fieldoptions.db_field_bufsize)=64];//算法名称
+	optional string AlgoDesc = 4 [(yd_fieldoptions.field_cname) = "AlgoDesc", (yd_fieldoptions.field_bufsize) = 64, (yd_fieldoptions.db_field_bufsize)=64];//算法描述
+	optional int64 ChangeTimes = 5 [(yd_fieldoptions.field_cname) = "ChangeTimes"];			///换场定时统计时间(秒)
+	optional int64 ChangeLiuShui = 6 [(yd_fieldoptions.field_cname) = "ChangeLiuShui"];	//换表流水
+	optional int64 Chang1_RangeLow = 7 [(yd_fieldoptions.field_cname) = "Chang1_RangeLow"];	//小场范围最小
+	optional int64 Chang1_RangeHigh = 8 [(yd_fieldoptions.field_cname) = "Chang1_RangeHigh"]; //小场范围最大
+	optional int64 Chang1_Chi1 = 9 [(yd_fieldoptions.field_cname) = "Chang1_Chi1"]; //小场---一级吃阀值
+	optional int64 Chang1_Chi2 = 10 [(yd_fieldoptions.field_cname) = "Chang1_Chi2"]; //小场---二级吃阀值
+	optional int64 Chang1_Chi3 = 11 [(yd_fieldoptions.field_cname) = "Chang1_Chi3"]; //小场---三级吃阀值
+	optional int64 Chang1_Fang1 = 12 [(yd_fieldoptions.field_cname) = "Chang1_Fang1"]; //小场---一级放阀值
+	optional int64 Chang1_Fang2 = 13 [(yd_fieldoptions.field_cname) = "Chang1_Fang2"]; //小场---二级放阀值
+	optional int64 Chang1_Fang3 = 14 [(yd_fieldoptions.field_cname) = "Chang1_Fang3"]; //小场---三级放阀值
+	optional int64 Chang1_RateChi1 = 15 [(yd_fieldoptions.field_cname) = "Chang1_RateChi1"]; //小场---吃的概率(百分比)--三级吃
+	optional int64 Chang1_RateChi2 = 16 [(yd_fieldoptions.field_cname) = "Chang1_RateChi2"]; //小场---吃的概率(百分比)--二级吃
+	optional int64 Chang1_RateChi3 = 17 [(yd_fieldoptions.field_cname) = "Chang1_RateChi3"]; //小场---吃的概率(百分比)--一级吃
+	optional int64 Chang1_RatePing = 18 [(yd_fieldoptions.field_cname) = "Chang1_RatePing"];//小场---吃的概率(百分比)--平区间
+	optional int64 Chang1_RateFang1 = 19 [(yd_fieldoptions.field_cname) = "Chang1_RateFang1"];//小场---吃的概率(百分比)--一级放
+	optional int64 Chang1_RateFang2 = 20 [(yd_fieldoptions.field_cname) = "Chang1_RateFang2"];//小场---吃的概率(百分比)--二级放
+	optional int64 Chang1_RateFang3 = 21 [(yd_fieldoptions.field_cname) = "Chang1_RateFang3"]; //小场---吃的概率(百分比)--三级放
+
+	optional int64 Chang2_RangeLow = 22 [(yd_fieldoptions.field_cname) = "Chang2_RangeLow"];	//小场范围最小
+	optional int64 Chang2_RangeHigh = 23 [(yd_fieldoptions.field_cname) = "Chang2_RangeHigh"]; //小场范围最大
+	optional int64 Chang2_Chi1 = 24 [(yd_fieldoptions.field_cname) = "Chang2_Chi1"]; //小场---一级吃阀值
+	optional int64 Chang2_Chi2 = 25 [(yd_fieldoptions.field_cname) = "Chang2_Chi2"]; //小场---二级吃阀值
+	optional int64 Chang2_Chi3 = 26 [(yd_fieldoptions.field_cname) = "Chang2_Chi3"]; //小场---三级吃阀值
+	optional int64 Chang2_Fang1 = 27 [(yd_fieldoptions.field_cname) = "Chang2_Fang1"]; //小场---一级放阀值
+	optional int64 Chang2_Fang2 = 28 [(yd_fieldoptions.field_cname) = "Chang2_Fang2"]; //小场---二级放阀值
+	optional int64 Chang2_Fang3 = 29 [(yd_fieldoptions.field_cname) = "Chang2_Fang3"]; //小场---三级放阀值
+	optional int64 Chang2_RateChi1 = 30 [(yd_fieldoptions.field_cname) = "Chang2_RateChi1"]; //小场---吃的概率(百分比)--三级吃
+	optional int64 Chang2_RateChi2 = 31 [(yd_fieldoptions.field_cname) = "Chang2_RateChi2"]; //小场---吃的概率(百分比)--二级吃
+	optional int64 Chang2_RateChi3 = 32 [(yd_fieldoptions.field_cname) = "Chang2_RateChi3"]; //小场---吃的概率(百分比)--一级吃
+	optional int64 Chang2_RatePing = 33 [(yd_fieldoptions.field_cname) = "Chang2_RatePing"];//小场---吃的概率(百分比)--平区间
+	optional int64 Chang2_RateFang1 = 34 [(yd_fieldoptions.field_cname) = "Chang2_RateFang1"];//小场---吃的概率(百分比)--一级放
+	optional int64 Chang2_RateFang2 = 35 [(yd_fieldoptions.field_cname) = "Chang2_RateFang2"];//小场---吃的概率(百分比)--二级放
+	optional int64 Chang2_RateFang3 = 36 [(yd_fieldoptions.field_cname) = "Chang2_RateFang3"]; //小场---吃的概率(百分比)--三级放
+
+	optional int64 Chang3_RangeLow = 37 [(yd_fieldoptions.field_cname) = "Chang3_RangeLow"];	//小场范围最小
+	optional int64 Chang3_RangeHigh = 38 [(yd_fieldoptions.field_cname) = "Chang3_RangeHigh"]; //小场范围最大
+	optional int64 Chang3_Chi1 = 39 [(yd_fieldoptions.field_cname) = "Chang3_Chi1"]; //小场---一级吃阀值
+	optional int64 Chang3_Chi2 = 40 [(yd_fieldoptions.field_cname) = "Chang3_Chi2"]; //小场---二级吃阀值
+	optional int64 Chang3_Chi3 = 41 [(yd_fieldoptions.field_cname) = "Chang3_Chi3"]; //小场---三级吃阀值
+	optional int64 Chang3_Fang1 = 42 [(yd_fieldoptions.field_cname) = "Chang3_Fang1"]; //小场---一级放阀值
+	optional int64 Chang3_Fang2 = 43 [(yd_fieldoptions.field_cname) = "Chang3_Fang2"]; //小场---二级放阀值
+	optional int64 Chang3_Fang3 = 44 [(yd_fieldoptions.field_cname) = "Chang3_Fang3"]; //小场---三级放阀值
+	optional int64 Chang3_RateChi1 = 45 [(yd_fieldoptions.field_cname) = "Chang3_RateChi1"]; //小场---吃的概率(百分比)--三级吃
+	optional int64 Chang3_RateChi2 = 46 [(yd_fieldoptions.field_cname) = "Chang3_RateChi2"]; //小场---吃的概率(百分比)--二级吃
+	optional int64 Chang3_RateChi3 = 47 [(yd_fieldoptions.field_cname) = "Chang3_RateChi3"]; //小场---吃的概率(百分比)--一级吃
+	optional int64 Chang3_RatePing = 48 [(yd_fieldoptions.field_cname) = "Chang3_RatePing"];//小场---吃的概率(百分比)--平区间
+	optional int64 Chang3_RateFang1 = 49 [(yd_fieldoptions.field_cname) = "Chang3_RateFang1"];//小场---吃的概率(百分比)--一级放
+	optional int64 Chang3_RateFang2 = 50 [(yd_fieldoptions.field_cname) = "Chang3_RateFang2"];//小场---吃的概率(百分比)--二级放
+	optional int64 Chang3_RateFang3 = 51 [(yd_fieldoptions.field_cname) = "Chang3_RateFang3"]; //小场---吃的概率(百分比)--三级放
+
+	optional int64 Clear_MaxVal = 52 [(yd_fieldoptions.field_cname) = "Clear_MaxVal"];//当总押 或 总得 达到一定的值之后 自动进行清理数据
+	optional int64 Clear_Fang3Mul = 53 [(yd_fieldoptions.field_cname) = "Clear_Fang3Mul"]; //当y值大于三级放多少倍时候 自动清理数据 , 0是默认不处理
+	optional int32 Clear_Chi3Mul = 54 [(yd_fieldoptions.field_cname) = "Clear_Chi3Mul"];//当y值小于三级吃多少倍时候 自动清理数据 , 0是默认不处理
+	optional int32 Clear_InitShoot = 55 [(yd_fieldoptions.field_cname) = "Clear_InitShoot"];//清理数据后 总得初始值
+	optional int32 Clear_InitCapture = 56 [(yd_fieldoptions.field_cname) = "Clear_InitCapture"];//清理数据后 总押初始值
+	optional int32 Clear_InitDrawRate = 57 [(yd_fieldoptions.field_cname) = "Clear_InitDrawRate"];//清理数据后 初始抽水率,百分比
+	optional int32 Clear_InitPoolRate = 58 [(yd_fieldoptions.field_cname) = "Clear_InitPoolRate"];//鱼身上奖池初始值,百分比
+	optional int32 Is_delete = 59 [(yd_fieldoptions.field_cname) = "Is_delete"]; //是否删除
+	optional int32 FishAlgoType = 60 [(yd_fieldoptions.field_cname) = "FishAlgoType"]; //算法类型：0吃放表算法(默认)，1概率算法    参考eFishAlgoTypeInter
+}
+
+message Sheet_FishAlgoDesc
+{
+	repeated FishAlgoDesc FishAlgoDesc_List = 1[(yd_fieldoptions.field_arysize)=200];
+}
+
+message UserDeskAlgoInfo
+{
+	optional int32 AlgoID = 1; //玩家算法ID
+	optional float DrawRate = 2;  //玩家抽水率(百分比)
+	optional double CurTotalShoot = 3; //当前总押
+	optional double CurTotalCapture = 4;  //当前总得
+	optional int64 CurAlgoChang = 5;//当前场索引
+	optional int64 CurAlgoStatus = 6;//当前算法吃放平状态
+}
+
+message DeskInfoDesc
+{
+	optional int32 id = 1 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY, (yd_fieldoptions.db_field_auto_increment) = true, (yd_fieldoptions.db_field_comment) = "ID"];
+	optional int32 RoomID = 2 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_INDEX, (yd_fieldoptions.db_field_comment) = "房间ID"];  //房间id
+	optional int32 DeskID = 3 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_INDEX, (yd_fieldoptions.db_field_comment) = "桌子ID"];   //桌子id
+	optional int32 AlgoType = 4[(yd_fieldoptions.db_field_comment) = "算法类型"]; //算法类型:1捕鱼,2押分
+	repeated UserDeskAlgoInfo AlgoData = 5 [(yd_fieldoptions.field_arysize) = 3, (yd_fieldoptions.db_field_arysize)=3];
+	optional int32 GameLevel = 6[(yd_fieldoptions.db_field_comment) = "算法等级"];   // 当前游戏算法等级（负吃，0正常，正放）
+	optional int64 YValueA = 7[(yd_fieldoptions.db_field_comment) = "玩家累积奖池"];  // 算法Y值
+	optional int64 YValueB = 8[(yd_fieldoptions.db_field_comment) = "黑白名单累积奖池"];  // GM Y值
+	optional int64 FreePool = 9[(yd_fieldoptions.db_field_comment) = "免费赠送奖池"];  // 免费赠送奖池（可以影响YValue）
+	optional int64 YValue = 10[(yd_fieldoptions.db_field_comment) = "累积奖池总和"];  // 总Y值(llYValueA+llYValueB+llFreePool)
+}
+
+message Sheet_DeskInfoDesc
+{
+	repeated DeskInfoDesc DeskInfoDesc_List = 1[(yd_fieldoptions.field_arysize)=200];
+}
+
+message FishInitPoolData
+{
+	optional int32 fish_id =1;
+	optional int32 num = 2;
+}
+
+message FishInitPool
+{
+	repeated FishInitPoolData InitPoolCount = 1 [(yd_fieldoptions.field_arysize) = 100];
+}
+
+message SeatDangRange_B
+{
+	repeated int64 value = 1 [(yd_fieldoptions.field_arysize) = 8];
+}
+
+message SeatAlgoSetup
+{
+	optional int32 SeatCtrlIsOpen = 1; 																											//座位算法功能开关(0关，1开)
+	repeated int64 SeatDangRange_Def_A = 2 [(yd_fieldoptions.field_arysize) = 7];						//默认难度范围( 切值流水 , [  C3 , C2 , C1 ,  F1 , F2 , F3 ] )
+	repeated int64 SeatDangRange_Def_B = 3 [(yd_fieldoptions.field_arysize) = 7];						//默认难度范围( 切值流水 , [  C3 , C2 , C1 ,  F1 , F2 , F3 ] )
+	repeated int64 SeatDangRange_Def_Robot = 4 [(yd_fieldoptions.field_arysize) = 7];				//默认难度范围( 切值流水 , [  C3 , C2 , C1 ,  F1 , F2 , F3 ] )
+	repeated SeatDangRange_B SeatDangRange_B = 5 [(yd_fieldoptions.field_arysize) = 10];		//桌子独立难度( 桌子号 ,  切值流水  , [  C3 , C2 , C1 ,  F1 , F2 , F3 ] ）
+	optional int64 ClearDataMaxVal = 6;																											//当总押 或 总得 达到一定的值之后 自动进行清理数据
+	optional double ClearDataFangCondation = 7;																							//当y值大于三级放多少倍时候 自动清理数据 , 0是默认不处理
+	optional double ClearDataChiCondation = 8;																							//当y值小于三级吃多少倍时候 自动清理数据 , 0是默认不处理
+}
+
+message HuanDangRange
+{
+	repeated int64 value = 1 [(yd_fieldoptions.field_arysize) = 8];
+}
+
+message DangChiRange
+{
+	repeated int64 value = 1 [(yd_fieldoptions.field_arysize) = 7];
+}
+
+message FishAlgorithmSetup
+{
+	optional int64 HuanChangTimes = 1;																											///换场定时统计时间(秒)
+	repeated HuanDangRange HuanDangRange = 2 [(yd_fieldoptions.field_arysize) = 3];					///换挡区间范围配置----场范围最小 , 场范围最大 , [ C3 , C2 , C1 , F1 , F2 , F3 ]
+	repeated DangChiRange DangChiRange = 3 [(yd_fieldoptions.field_arysize) = 3]; 					///吃比例----------[三级吃 , 二级吃 , 一级吃 , 平区间 , 一级放 , 二级放 , 三级放]
+	optional int64 HuanBiaoLiuShuiVal = 4;																									///换表流水,算法状态由低到高进行切换表的时候要判断流水是否达到
+  optional int64 PoolInitBFB = 5;																													///鱼身上奖池初始值,百分比
+	optional int64 ClearDataMaxVal = 6;																											///当总押 或 总得 达到一定的值之后 自动进行清理数据
+	optional double ClearDataFangCondation = 7;																							//当y值大于三级放多少倍时候 自动清理数据 , 0是默认不处理
+	optional double ClearDataChiCondation = 8;																							//当y值小于三级吃多少倍时候 自动清理数据 , 0是默认不处理
+	optional int64 ClearDataInitShoot = 9;																									///清理数据后 总押初始值
+	optional int64 ClearDataInitCapture = 10;																								///清理数据后 总得初始值
+	optional double ClearDataInitDrawRate = 11;																							//清理数据后 初始抽水率,百分比
+}
+
+message FishAlgorithmFileName
+{
+	optional string FileNameChi1 = 1 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi2 = 2 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi5 = 3 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi10 = 4 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi20 = 5 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi50 = 6 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi100 = 7 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameChi200 = 8 [(yd_fieldoptions.field_bufsize)=32];
+
+	optional string FileNameFang1 = 11 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang2 = 12 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang5 = 13 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang10 = 14 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang20 = 15 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang50 = 16 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang100 = 17 [(yd_fieldoptions.field_bufsize)=32];
+	optional string FileNameFang200 = 18 [(yd_fieldoptions.field_bufsize)=32];
+}
+
+message FishAlgorithmCsvItem
+{
+	repeated int32 value = 1 [(yd_fieldoptions.field_arysize) = 500];
+}
+
+message FishAlgorithmCsv
+{
+	repeated FishAlgorithmCsvItem item = 1 [(yd_fieldoptions.field_arysize) = 10];
+}
+
+message FishNormalSetup
+{
+	optional int32 SwitchBossTime = 1; //切换BOSS时间
+  optional int32 SwitchSceneTime = 2; //切换场景
+	optional int32 InitSceneIndex = 3; //初始场景
+	optional int32 AwardPoolSaveToDBTime = 4; //奖池存盘时间间隔(单位: 秒)
+	optional int32 ClearTraceTime = 5; //定时清除鱼轨迹信息的定时器时间间隔
+	repeated int32 CannonLevelVal = 6 [(yd_fieldoptions.field_arysize) = 10]; //炮弹等级值
+	repeated int32 CannonShowNum = 7 [(yd_fieldoptions.field_arysize) = 10]; //炮弹等级对应的炮管数, 就是客户端显示的炮管数
+	repeated double BulletHarmAddBFB = 8 [(yd_fieldoptions.field_arysize) = 2] ; //子弹的威力值增加(最小炮, 最大炮)的威力值(百分比), 其他中间炮的威力值自动根据差值计算
+	optional int32 BulletCountInScreen = 9; //每个玩家在屏幕中的子弹的个数, 子弹数超过此值 将发不出子弹
+	optional int32 TotalSceneCount = 10; //总场景数
+	optional int32 ScreenFishMaxCount = 11; //屏幕中鱼最多个数
+	optional int32 ClientNotOperateTipTimes = 12;  //客户端多久没操作提示退出游戏(秒)
+  optional int32 ClientExitTimes = 13; //客户端退出倒计时时间(秒)
+	optional int32 TestFishMustKilled = 14; //测试用,用于鱼被打中必死,这样方便测试看鱼死亡特效,如果需要请设置为1, 正式上线要配置为0
+	optional int32 ClientLessMoneyTip = 15; //客户端低于多少富贵豆 进行提示
+	optional int32 TurnTableCalcMinByOneJu = 16;  //更新在线抽奖转盘局数,在线多少分钟算一局游戏
+	optional int32 UserSettlementTimes = 17; //用户定时结算时间(分钟)
+	optional int32 TipBaoJiMoney = 18; //用户钱高于多少提示爆机
+	optional int32 BatchSendFishesInterval = 19; //分批次发送鱼, 每批次的时间间隔
+	optional int32 BatchSendFishesCount = 20; //分批次发送鱼, 每次发送鱼的个数
+	optional int32 SwitchScenePrepareTime = 21;  //切鱼阵时的准备时间
+  optional int32 SwitchSceneFishGoAwayTime = 22;  //切鱼阵时, 鱼游走时间
+}
+
+message FishPoolSaveBaseMul
+{
+	repeated int32 value = 1 [(yd_fieldoptions.field_arysize) = 10];
+}
+
+message FishPoolSaveRelaCount
+{
+	repeated int32 value = 1 [(yd_fieldoptions.field_arysize) = 10];
+}
+
+message FishPoolSaveHitCountCfg
+{
+	repeated int32 value = 1 [(yd_fieldoptions.field_arysize) = 10];
+}
+
+message FishPoolSaveConnonHitCount
+{
+	repeated double value = 1 [(yd_fieldoptions.field_arysize) = 10];
+}
+
+message FishPoolSave
+{
+	optional int32 dwFishID = 1;         //鱼类标识
+	optional int32 btFishKind = 2;       //鱼群种类enFishKind
+	optional int32 btFishKindGroup1 = 3; //鱼群种类-FishKind是三元四喜, 一网打尽, 红鱼(特殊小木船) 才有用   v1.1
+	optional int32 btFishKindGroup2 = 4; //鱼群种类-FishKind是三元四喜才有用
+	optional int32 btFishKindGroup3 = 5; //鱼群种类-FishKind是三元四喜才有用
+	optional int32 btFishKindGroup4 = 6; //鱼群种类-FishKind是四喜才有用
+	optional bool bKilled = 7;             //是否被杀,被杀后, 配置的最低打击次数就生效啦
+	optional bool bRobotKilled = 8;        //是否是机器人打死的
+	optional bool bKilledByOtherRela = 9;  //是否是被关联杀死的 如炸弹或者红鱼或者百发百中
+	optional bool bKilledByAlgoA = 10;      //是否是算法A赠送用户打死的   v1.2
+	optional int32 btKilledCannonIndex = 11; //被杀的时候的炮索引
+	optional bool bFloatMul = 12;           //倍数是否是浮动的
+	repeated FishPoolSaveBaseMul arBaseMul = 13 [(yd_fieldoptions.field_arysize) = 3];    //基础倍数 -- 每个炮的倍数独立分开 2015.09.19
+	repeated FishPoolSaveRelaCount arRelaCount = 14 [(yd_fieldoptions.field_arysize) = 3];  //红鱼或者百发百中关联鱼个数 -- 每个炮的独立分开 2015.09.19
+	//配置打击次数和奖池
+	repeated FishPoolSaveHitCountCfg arHitCountCfg = 15 [(yd_fieldoptions.field_arysize) = 3];     //配置的最低打击次数
+	repeated FishPoolSaveConnonHitCount arConnonHitCount = 16 [(yd_fieldoptions.field_arysize) = 3];  //玩家每个炮等级击打的次数, 炮奖池
+}
+
+message FishKindFishPoolSave
+{
+	repeated FishPoolSave fish_pool = 1 [(yd_fieldoptions.field_arysize) = 500];
+}
+
+message FishKindFishPoolSaveArray
+{
+	repeated FishKindFishPoolSave fish_kind = 1 [(yd_fieldoptions.field_arysize) = 150];
+}
+
+message GMCtrlLevelDesc
+{
+	optional int32 ControlLevel = 1 [(yd_fieldoptions.field_cname) = "ControlLevel", (yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY];	//算法ID自增
+	optional string Name = 2 [(yd_fieldoptions.field_cname) = "Name", (yd_fieldoptions.field_bufsize) = 64, (yd_fieldoptions.db_field_bufsize)=64];//算法名称
+	optional int32 ControlRate = 3 [(yd_fieldoptions.field_cname) = "ControlRate"];
+}
+
+message Sheet_GMCtrlLevelDesc
+{
+	repeated GMCtrlLevelDesc GMCtrlLevelDesc_List = 1[(yd_fieldoptions.field_arysize)=20];
+}
+
+message LineGameSystemControlInfo
+{
+	optional int32 RoomID = 1[(yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY, (yd_fieldoptions.db_field_comment) = "房间ID"];
+	optional int32 AreaID = 2;
+	optional int64 TotalProfit = 3 [(yd_fieldoptions.db_field_comment) = "系统总利润"];
+	optional int32 CurrentSystemControl = 4 [(yd_fieldoptions.db_field_comment) = "控制难度"]; //根据系统当前盈利和下面的10个阈值，得出的当前系统控制难度
+}
+
+message Sheet_LineGameSystemControlInfo
+{
+	repeated LineGameSystemControlInfo LineGameSystemControlInfo_List = 1[(yd_fieldoptions.field_arysize)=20];
+}
+
+message LineLevelDesc
+{
+	optional int32 LevelID = 1 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY];
+	optional string LevelName = 2 [(yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	optional string CannonLevelVal = 3 [(yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	repeated int32  VecCannonLevelVal = 4 [(yd_fieldoptions.field_arysize)=10];
+	optional string CannonShowNum = 5 [(yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	repeated int32 VecCannonShowNum = 6 [(yd_fieldoptions.field_arysize)=10];
+	optional int32 MinMoney = 7;
+	optional int32 MaxMoney = 8;
+	optional int32 StartGame = 9;
+	optional int32 Flag = 10;
+	optional int32 MaxWinTimes = 11;
+	optional string Chip = 12 [(yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	repeated int64 VecChips = 13 [(yd_fieldoptions.field_arysize)=10]; 
+	optional string GMLevelRate = 14 [(yd_fieldoptions.field_bufsize)=128, (yd_fieldoptions.db_field_bufsize)=128];
+	repeated int32 VecGMLevelRate = 15 [(yd_fieldoptions.field_arysize)=10]; 
+}
+
+message Sheet_LineLevelDesc
+{
+	repeated LineLevelDesc LineLevelDesc_List = 1  [(yd_fieldoptions.field_arysize)=100];
+}
+
+message LineDeskInfoDesc
+{
+	optional int32 id = 1 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY, (yd_fieldoptions.db_field_auto_increment) = true];
+	optional int32 RoomID = 2 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_INDEX];  //房间id
+	optional int32 DeskID = 3 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_INDEX];   //桌子id
+	optional int32 AlgoID = 4; 
+	optional int32 DrawRate = 5; 
+}
+
+message Sheet_LineDeskInfoDesc
+{
+	repeated LineDeskInfoDesc LineDeskInfoDesc_List = 1[(yd_fieldoptions.field_arysize)=200];
+}
+
+message LineAlgoDesc
+{
+	optional int32 AlgoID = 1 [(yd_fieldoptions.db_field_type) = E_FIELDTYPE_PRIMARYKEY, (yd_fieldoptions.db_field_auto_increment) = true];
+	optional string AlgoName = 2 [(yd_fieldoptions.field_bufsize)=32, (yd_fieldoptions.db_field_bufsize)=32]; 
+	optional string AlgoDesc = 3 [(yd_fieldoptions.field_bufsize)=32, (yd_fieldoptions.db_field_bufsize)=32];
+	optional int64 Level_Chi5= 4;
+	optional int64 Level_Chi4= 5;
+	optional int64 Level_Chi3= 6;
+	optional int64 Level_Chi2= 7;
+	optional int64 Level_Chi1= 8;
+	optional int64 Level_Fang1= 9;
+	optional int64 Level_Fang2= 10;
+	optional int64 Level_Fang3= 11;
+	optional int64 Level_Fang4= 12;
+	optional int64 Level_Fang5= 13;
+	optional string UserLuckSection = 14 [(yd_fieldoptions.field_bufsize)=64, (yd_fieldoptions.db_field_bufsize)=64];
+	repeated int32 VecUserLuckSection = 15 [(yd_fieldoptions.field_arysize)=5];
+	optional string UserNewSection = 16 [(yd_fieldoptions.field_bufsize)=64, (yd_fieldoptions.db_field_bufsize)=64];
+	repeated int32 VecUserNewSection = 17 [(yd_fieldoptions.field_arysize)=5];
+	optional string UserNewLuckVal = 18 [(yd_fieldoptions.field_bufsize)=64, (yd_fieldoptions.db_field_bufsize)=64];
+	repeated int32 VecUserNewLuckVal = 19 [(yd_fieldoptions.field_arysize)=5];
+	optional string UserRechargeSection = 20 [(yd_fieldoptions.field_bufsize)=64, (yd_fieldoptions.db_field_bufsize)=64];
+	repeated int32 VecUserRechargeSection = 21 [(yd_fieldoptions.field_arysize)=5];
+	optional string UserRechargeLuckyVal = 22 [(yd_fieldoptions.field_bufsize)=64, (yd_fieldoptions.db_field_bufsize)=64];
+	repeated int32 VecUserRechargeLuckyVal = 23 [(yd_fieldoptions.field_arysize)=5];
+	optional int32 UserLuceFlag = 24;
+}
+
+message Sheet_LineAlgoDesc
+{
+	repeated LineAlgoDesc LineAlgoDesc_List = 1[(yd_fieldoptions.field_arysize)=10];
+}
+
+

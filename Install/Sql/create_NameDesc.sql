@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS NameDesc (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT "编号" ,
+ name VARCHAR(64) COMMENT "名字" ,
+ INDEX(name),
+ PRIMARY KEY(id)) AUTO_INCREMENT = 1 ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*
+alter table NameDesc add column id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT "编号";
+alter table NameDesc add column name VARCHAR(64) COMMENT "名字";
+*/

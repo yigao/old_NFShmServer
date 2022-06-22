@@ -1,0 +1,189 @@
+syntax = "proto2";
+package gameqznn;
+
+enum Proto_CS_CMD {
+	NF_CS_MSG_GameStatusReq    = 10001; //游戏状态请求
+	NF_SC_MSG_GameStatusRsp    = 10002; //游戏状态返回
+	NF_SC_MSG_UserEnterDeskRsp = 10004; //玩家进入桌子
+	NF_SC_MSG_UserLeaveDeskRsp = 10006; //玩家离开桌子
+	
+
+	NF_SC_MSG_GameStartRsp        = 10010; //游戏开始
+	//NF_CS_MSG_UserAgreeStartReq = 10011; //玩家同意游戏开始
+	NF_SC_MSG_StartQiangNtRsp     = 10014; //开始抢庄
+	NF_CS_MSG_UserQiangNtReq      = 10015; //玩家抢庄
+	NF_SC_MSG_UserQiangNtRsp      = 10016; //抢庄响应
+	NF_SC_MSG_NtInfoRsp           = 10018; //确定庄家
+	NF_SC_MSG_StartXiaZhuRsp      = 10020; //开始下注
+	NF_CS_MSG_UserXiaZhuReq       = 10021; //玩家下注
+	NF_SC_MSG_UserXiaZhuRsp       = 10022; //下注响应
+	NF_SC_MSG_SendCardsRsp        = 10024; //发牌
+	NF_SC_MSG_StartOpenCardsRsp   = 10026; //开始开牌
+	NF_CS_MSG_UserOpenCardsReq    = 10027; //开牌请求
+	NF_SC_MSG_UserOpenCardsRsp    = 10028; //开牌响应
+	NF_SC_MSG_AccountRsp          = 10030; //结算	
+	
+	
+	NF_SCMSG_SystemError = 11001; //系统错误
+}
+
+//NF_CS_MSG_GameStatusReq = 10001; //游戏状态请求
+message GameStatusReq
+{
+	optional int32 gameId = 1; //游戏ID
+}
+
+message PlayerInfo
+{
+	optional bool  isWatchUser  = 1; //0-不是观查者 1-是观查者
+	optional bool  isQiang      = 2; //0-未抢庄  1-已抢庄
+	optional bool  isXiaZhu     = 3; //0-未下注  1-已下注
+	optional bool  isKaiPai     = 4; //0-未开牌  1-已开牌
+	optional int32 index        = 5; //抢庄/下注的index
+	optional int32 betMoney     = 6; //底注值
+	optional int32  userId      = 7;    //玩家Id
+	optional string userName    = 8;    //玩家名字
+	optional int64  userMoney   = 9;    //玩家的钱
+	optional int64  userWinMoney= 10;   //玩家赢钱 正:赢   负:输
+	optional int32  winType     = 11;   //0-无效, 1-通吃, 2-通赔
+	optional int32 usChairId    = 12;   //玩家座位号 
+	optional int32 usFaceId     = 13;   //头像id
+	repeated Card  cards        = 14; //前三个牛牛牌，后两个点数牌
+	optional int32 cardType     = 15; //版类型：牛一,牛二...
+}
+
+//NF_SC_MSG_GameStatusRsp = 10002; //游戏状态返回
+message GameStatusRsp
+{
+	optional int32 gameStatus            = 1;   //游戏当时所在的状态
+	optional int32 curStausLeftTime      = 2;   //当前状态剩余时间
+	repeated PlayerInfo Players          = 3;   //玩家列表
+	repeated int32 qiangNtMulList        = 4;   //抢庄倍数列表
+	repeated int32 xiaZhuMulList         = 5;   //下注倍数列表
+	optional int32 betMoney              = 6;   //底注值
+	optional int32 ntChairId             = 7;   //庄家座位号
+}
+
+//NF_SC_MSG_UserEnterDeskRsp = 10004; //玩家进入桌子
+message UserEnterDeskRsp
+{
+	optional PlayerInfo playerInfo = 1;
+}
+
+//NF_SC_MSG_UserLeaveDeskRsp = 10006; //玩家离开桌子
+message UserLeaveDeskRsp
+{
+	optional uint32 chair_id = 1;
+}
+//=============================================================================
+//抢庄牛牛相关
+//NF_SC_MSG_GameStartRsp        = 10012; //游戏开始
+message GameStartRsp
+{
+	repeated PlayerInfo Players   = 1;   //玩家列表
+}
+
+//NF_SC_MSG_StartQiangNtRsp     = 10014; //开始抢庄
+message StartQiangNtRsp
+{
+	optional int32 leftTime = 1; //抢庄倒计时ms
+}
+
+//NF_CS_MSG_UserQiangNtReq      = 10015; //玩家抢庄
+message UserQiangNtReq
+{
+	optional int32 chipMulIndex = 1; //抢庄下注倍数index  0-不抢
+}
+
+//NF_SC_MSG_UserQiangNtRsp      = 10016; //抢庄响应
+message UserQiangNtRsp
+{
+	optional int32 usChairId = 1; //玩家座位号 
+	optional bool  bIsQiang  = 2; //false-不抢 true-抢庄
+	optional int32 qiangIndex= 3; //0-不抢  >0-index
+	optional int32 usErrorCode=4; //错误码 0-成功  eg:钱太少抢不了
+}
+
+//NF_SC_MSG_NtInfoRsp           = 10018; //确定庄家
+message NtInfoRsp
+{
+	optional int32 usChairId = 1;   //庄家座位号 
+	optional int32 usNtMul   = 2;   //庄家抢庄倍数
+	optional int32 leftTime  = 3;   //倒计时时间
+	repeated int32 maxMulQiangNt = 4; //抢庄最大值相同的玩家座位号
+}
+
+//NF_SC_MSG_StartXiaZhuRsp      = 10020; //开始下注
+message StartXiaZhuRsp
+{
+	optional int32 leftTime  = 1; //倒计时时间
+}
+
+//NF_CS_MSG_UserXiaZhuReq       = 10021; //玩家下注
+message UserXiaZhuReq
+{
+	optional int64 n64BetMulIndex = 1; //下注倍数index
+}
+
+//NF_SC_MSG_UserXiaZhuRsp       = 10022; //下注响应
+message UserXiaZhuRsp
+{
+	optional int32 usChairId      = 1; //玩家座位号 
+	optional int64 n64BetMulIndex = 2; //下注倍数index
+	optional int64 n64BetMoney    = 3; //下注值
+	optional int64 n64UserMoney   = 4; //玩家身上的钱
+	optional int32 usErrorCode    = 5; //错误码 0-成功
+}
+
+//NF_SC_MSG_SendCardsRsp        = 10024; //发牌
+message Card
+{
+	optional int32 cardType  = 1; //花色 1-方块 2-梅花 3-红桃 4-黑桃
+	optional int32 cardPoint = 2; //点数 A-K  1-13
+}
+message PlayerCards
+{
+	optional int32 usChairId     = 1; //玩家座位号
+	optional int32 usCardCount   = 2; //牌张数
+	repeated Card  cards         = 3; //牌列表
+}
+
+//NF_SC_MSG_SendCardsRsp        = 10024; //发牌
+message SendCardsRsp
+{
+	repeated PlayerCards palyerCardList    = 1;
+	optional int32 leftTime                = 2; //倒计时时间
+}
+
+//NF_SC_MSG_StartOpenCardsRsp   = 10026; //开始开牌
+message StartOpenCardsRsp
+{
+	optional int32 leftTime  = 1; //倒计时时间
+	
+}
+
+//NF_CS_MSG_UserOpenCardsReq        = 10027; //开牌请求
+message UserOpenCardsReq
+{
+	optional int32 Reserved = 1; 
+}
+
+//NF_SC_MSG_UserOpenCardsRsp        = 10028; //开牌响应
+message UserOpenCardsRsp
+{
+	optional int32 usChairId     = 1; //玩家座位号
+	repeated Card  cards         = 2; //前三个牛牛牌，后两个点数牌
+	optional int32 cardType      = 3; //版类型：牛一,牛二...
+	optional int32 usErrorCode   = 4; //错误码 0-成功
+}
+
+//NF_SC_MSG_AccountRsp          = 10030; //结算	
+message AccountRsp
+{
+	repeated PlayerInfo Players    = 1;
+	optional int32 leftTime        = 2; //倒计时时间开始下一局
+	optional int32 usWinnerChairId = 3; //赢者玩家座位号
+}
+
+
+//=============================================================================

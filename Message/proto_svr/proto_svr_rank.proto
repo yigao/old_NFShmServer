@@ -1,0 +1,52 @@
+import "yd_fieldoptions.proto";
+import "proto_common.proto";
+import "proto_cs_rank.proto";
+
+package proto_ff;
+
+// 服务器内部的消息id，是个统一的
+//
+enum Proto_RankSvrMsgID
+{
+  ///////////////////rank///////////////////////////////////
+  NF_STSns_UPDATE_RANK_REQ = 280;
+  NF_SnsTS_UPDATE_RANK_RSP = 281;
+  NF_LTS_GET_COMMON_RANK_REQ = 284;
+  NF_STL_GET_COMMON_RANK_RSP = 285;
+  ///////////////////rank///////////////////////////////////
+}
+
+message Proto_STSnsUpdateRankReq
+{
+  optional enRankType       rank_type = 1;
+  optional RankCommonScore  score     = 2;
+}
+
+message Proto_SnsTSUpdateRankRsp
+{
+  optional enRankType       rank_type = 1;
+  optional uint64           id        = 2;
+  optional int32            rank_old = 3;
+  optional int32            rank_new = 4;
+}
+
+//NF_LTS_GET_COMMON_RANK_REQ = 284;
+message Proto_LTSGetCommonRankReq
+{
+  optional enRankType         rank_type = 1; //
+  optional uint64             user_id = 2; // role of query this list
+  optional int32              rank_from = 10;
+  optional int32              rank_to	 = 11;
+}
+
+//NF_STL_GET_COMMON_RANK_RSP = 285;
+message Proto_STLGetCommonRankRsp
+{
+  optional int32              result = 1; // 0
+  optional uint64             user_id = 2;
+  optional enRankType         rank_type = 3; //
+  optional int32              my_rank = 4;
+  optional uint64             my_score = 5;
+  optional int32 	            rank_max = 6;
+  repeated proto_rank.RankInfo           rank_list = 7;
+}

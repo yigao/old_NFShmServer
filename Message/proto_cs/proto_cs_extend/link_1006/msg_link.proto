@@ -1,0 +1,154 @@
+syntax = "proto2";
+package gamelink;
+
+enum Proto_CS_CMD {
+	NF_CS_MSG_GameStatusReq = 10001; //游戏状态请求
+	NF_SC_MSG_GameStatusRsp = 10002; //游戏状态返回
+	
+	NF_CS_MSG_LinkPlayReq = 10011;
+	NF_SC_MSG_LinkPlayRsp = 10012;
+	
+	NF_CS_MSG_EnterMiniGameReq = 10013; //进入小游戏请求
+	NF_SC_MSG_EnterFreeGameRsp = 10014; //免费游戏返回
+	NF_SC_MSG_FinishMiniGameRsp= 10016; //小游戏结束
+	
+	
+	NF_SC_MSG_UpdateJackpotRsp = 11000; //刷新Jackpot
+	
+	NF_SCMSG_SystemError = 11001; //系统错误
+}
+
+enum Game_TYPE {
+	GameType_Main = 0;
+	GameType_Free = 1;
+	GameType_Mary = 2;
+    GameType_Guess= 3;
+}
+
+//NF_CS_MSG_GameStatusReq = 10001; //游戏状态请求
+message GameStatusReq
+{
+	optional int32 gameId = 1; //游戏ID
+}
+
+message Col 
+{
+	repeated int32 row = 1;
+} 
+
+message Point 
+{
+	optional int32 posX = 1; //col
+	optional int32 posY = 2; //row 
+}
+
+message ExtScore
+{
+	optional Point pos   = 1;
+	optional int64 score = 2;
+}
+
+//NF_SC_MSG_GameStatusRsp = 10002; //游戏状态返回
+message GameStatusRsp
+{	
+	optional int32 gameType     = 1;   //游戏当时所在的状态 0-主游戏 1-免费游戏 2-小玛丽 其它 3 4 ...
+	repeated int64 chipScores   = 2;   //下注值列表
+	optional int32 curChipIndex = 3;   //当前下注序号,从1开始
+	optional int32 userId       = 4;   //玩家Id
+	optional string userName    = 5;   //玩家名字
+	optional int64 userMoney    = 6;   //玩家的钱
+	repeated Col cols           = 7;   //游戏初始化数据
+}
+
+
+message LinkPlayReq {
+	optional int32 chipIndex = 1;  //压注索引
+	optional int32 gameType  = 2;  //请求所在的游戏类型  0-主游戏 1-免费游戏  其它 2 3 4 ...
+}
+
+message LinkPlayRsp {
+	message PrizeLine {
+		optional int32 lineId     = 1; //中奖线ID
+		optional int32 winIconId  = 2; //中奖的图标
+		optional int32 openType   = 3; //开奖类型  按线/按个数/在线上的个数
+		optional int32 winMul     = 4; //本条线中奖倍数
+		optional int64 score      = 5; //本条线中奖的分数
+		repeated Point linePoints = 6; //中奖线的坐标
+	}
+	
+	message MouseWheelPrize
+	{
+		optional Point PrizePos   = 1;  //神秘图标坐标
+		optional int32 PrizeIndex = 2;  //转轮里中奖Index
+		optional int64 PrizeValue = 3;  //中奖分数
+		optional int32 WheelType  = 4;  //转轮类型 1-老鼠滚轮  2-金鼠滚轮
+	}
+	
+	repeated Col cols = 1;         //主游戏数据
+	optional int64 chipScore  = 2; //压注分数
+	optional int64 winScore   = 3; //本次赢的分数
+	optional int64 userScore  = 4; //用户身上的钱
+	optional int32 lineCount  = 5; //中奖线条数
+	repeated PrizeLine prizeLines  = 6;  //中奖线列表
+	optional int32 gameType        = 7;  //本次自己游戏类型
+	optional int32 triggerMiniGame = 8;  //触发的小游戏ID
+	optional int32 freeGameCount   = 9;  //免费游戏总次数
+	optional int32 freeGameIndex   = 10; //免费游戏当前次数
+	optional int64 freeGameScore   = 11; //免费游戏累加分数
+	optional int32 freeGameExtMul  = 12; //免费游戏附加倍数
+	
+}
+
+//=============================================================================
+//进入小游戏请求
+message EnterMiniGameReq {
+	optional int32 gameType  = 1; //游戏类型
+}
+
+//退出小游戏
+message FinishMiniGameRsp {
+	optional int32 curGameType  = 1; //当前游戏类型
+	optional int32 nextGameType = 2; //下一个游戏类型
+	optional int64 winGameScore = 3; //本次赢的分数
+	optional int64 userScore    = 4; //用户身上的钱
+	
+	optional int32 nextGamePlayCount    = 5;
+	optional int32 nextGameCurPlayCount = 6;
+	optional int64 nextGameTotalScore   = 7;
+	
+	optional int32 usWildIconMul        = 8; //福星高照免费游戏wild图标倍数
+}
+
+//=============================================================================
+//NF_SC_MSG_EnterFreeGameRsp = 10014; //免费游戏返回
+//免费游戏
+message EnterFreeGameRsp {
+	optional int32 gameType        = 1;  //游戏类型
+	optional int32 freeGameCount   = 2;  //免费游戏总次数
+	optional int32 freeGameIndex   = 3;  //免费游戏当前次数
+	optional int64 freeGameScore   = 4;  //免费游戏累加分数
+	optional int32 freeGameExtMul  = 5;  //免费游戏附加倍数
+}
+
+//=============================================================================
+//NF_SCMSG_SystemError = 11001; //系统错误
+message SystemError {
+	optional int32 errorType = 1;     //错误类型 0-无错  1-状态错误
+	optional int32 curGameStatus = 2; //0-主游戏  1-免费游戏
+}
+
+//NF_SC_MSG_UpdateJackpotRsp = 11000, //刷新Jackpot
+message UpdateJackpotRsp
+{
+	message Jackpot {
+	    optional int32 jackpotType       = 1; //类型: 1-小奖, 2-中奖, 3-大奖, 4-巨奖
+		optional int64 jackpotStartValue = 2; //开始值
+		optional int64 jackpotAddValue   = 3; //增加值
+		optional int32 jackpotAddTime    = 4; //增加时间/ms
+	}
+
+	repeated Jackpot JackpotValues = 1;
+}
+
+
+

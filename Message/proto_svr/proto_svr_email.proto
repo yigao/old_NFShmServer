@@ -1,0 +1,116 @@
+import "yd_fieldoptions.proto";
+import "proto_common.proto";
+import "proto_cs_email.proto";
+
+package proto_ff;
+
+// 服务器内部的消息id，是个统一的
+//
+enum Proto_EmailSvrMsgID
+{
+  ////////////////////////////mail/////////////////////////
+  NF_LTS_MAIL_LIST_REQ = 235;
+  NF_STL_MAIL_LIST_RSP = 236;
+  NF_LTS_MAIL_READ_REQ = 237;
+  NF_STL_MAIL_READ_RSP = 238;
+  NF_LTS_MAIL_DEL_REQ = 239;
+  NF_STL_MAIL_DEL_RSP = 240;
+  NF_OtherTS_MAIL_CREATE_REQ = 241;
+  NF_STOther_MAIL_CREATE_RSP = 242;
+  NF_STL_MAIL_MAIL_AUTO_PUSH_RSP = 243;
+  NF_LTS_MAIL_GET_ITEM_REQ = 244;
+  NF_STL_MAIL_GET_ITEM_RSP = 245;
+  NF_STL_MAIL_READ_ITEM_REQ = 246;
+  NF_LTS_MAIL_READ_ITEM_RSP = 247;
+  //////////////////////////////mail///////////////////////////////
+}
+
+message Proto_GSMailCreateReq
+{
+  optional uint64 role_id = 1;
+  optional tbUserMailDetail role_mail = 2;
+}
+
+message Proto_SGMailCreateRsp
+{
+  optional uint64 role_id = 1;
+  optional tbUserMailDetail role_mail = 2;
+  optional int32 result = 3;
+}
+
+//////////////////////////////////mail///////////////////////////////////////
+message Proto_LTSMailListReq
+{
+  optional uint64 user_id = 1;
+  optional proto_email.Proto_CSMailListReq cs_req	= 2;
+}
+message Proto_STLMailListRsp
+{
+  optional uint64 user_id = 1;
+  optional proto_email.Proto_CSMailListRsp cs_rsp = 2;
+}
+message Proto_LTSMailReadReq
+{
+  optional uint64 user_id = 1;
+  optional uint64 mail_id = 2;
+}
+message Proto_STLMailReadRsp
+{
+  optional uint64 user_id = 1;
+  optional proto_email.Proto_CSMailReadRsp cs_rsp = 2;
+}
+message Proto_STLMailAutoPushRsp
+{
+  optional uint64 user_id 		= 1;
+  repeated proto_email.UserMailData role_mail_list 	= 2;
+  optional int32 all_count				= 3;	//
+  optional int32 no_read_count		= 4;	//
+}
+
+message Proto_LTSMailDelReq
+{
+  optional uint64 user_id = 1;
+  optional proto_email.Proto_CSMailDelReq cs_req = 2;
+}
+message Proto_STLMailDelRsp
+{
+  optional uint64 user_id = 1;
+  optional proto_email.Proto_CSMailDelRsp cs_rsp = 2;
+}
+
+message Proto_OtherTSMailCreateReq
+{
+  optional uint64 user_id = 1;
+  optional tbUserMailDetail role_mail = 2;
+}
+message Proto_STOtherMailCreateRsp
+{
+  optional uint64 user_id = 1;
+  optional tbUserMailDetail role_mail = 2;
+  optional int32 result = 3;
+}
+
+message Proto_LTSMailGetItemReq
+{
+  optional uint64 user_id = 1;
+  optional uint64 mail_id = 2;
+}
+message Proto_STLMailGetItemRsp
+{
+  optional uint64 user_id = 1;
+  optional proto_email.Proto_CSMailGetItemRsp cs_rsp = 2;
+}
+
+message Proto_STLMailReadItemReq
+{
+  optional uint64 user_id 		= 1;
+  repeated proto_email.MailItem item_list        = 2;
+}
+
+message Proto_LTSMailReadItemRsp
+{
+  optional uint64 user_id 		= 1;
+  repeated proto_email.MailItem get_id			= 4;	// 获取过物品的邮件id
+  repeated proto_email.MailItem id				= 5;	// 余下没有获取物品的邮件id
+}
+//////////////////////////////////mail///////////////////////////////////////

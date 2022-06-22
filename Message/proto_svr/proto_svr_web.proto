@@ -1,0 +1,305 @@
+import "yd_fieldoptions.proto";
+import "proto_common.proto";
+
+package proto_ff;
+
+// 服务器内部的消息id，是个统一的
+//
+enum Proto_WebSvrMsgID
+{
+  ///////////////////web///////////////////////////////////
+  NF_WebToSns_SetBaoDi_REQ = 300;
+  NF_WebToSns_SetTaxBaoDi_REQ = 301;
+  NF_WebToSns_ModifyAgent_REQ = 302;
+  NF_WebToSns_ModifyLiuShui_REQ = 303;
+  NF_WebToLogic_SetBan_REQ = 304;
+  NF_WebToLogic_SetTransfer_REQ = 305;
+  NF_SERVER_CMD_CheckAgent_REQ = 306;
+  NF_WebToSns_SendUserMail_REQ = 307;
+  NF_WebToLogic_ZhuanZhang_REQ = 308;
+  NF_WebToLogic_GiveMoney_REQ = 309;
+  NF_WebToSns_SetWhiteBlack_REQ = 310;
+  NF_WebToSns_DeleteWhiteBlack_REQ = 311;
+  NF_WebToWorld_ClearJiangChi_Req = 312;
+  NF_WebToWorld_SetJiangChi_Req = 313;
+  NF_WebToWorld_SetRoomStatus_Req = 314;
+  NF_WebToSns_SetGMCtrlGiveData_REQ = 315;
+  NF_WebToSns_DeleteGMCtrlGiveData_REQ = 316;
+
+  NF_WebToLogic_ModifyShowUserId_Req = 317;
+  NF_WebToLogic_ModifyNickName_Req = 318;
+  NF_WebToLogic_ModifyVipLevel_Req = 319;
+  NF_WebToLogic_ModifyAccountPassword_Req = 320;
+  NF_WebToLogic_ModifyBankPassword_Req = 321;
+  NF_WebToLogic_ModifyVipRecharge_Req = 322;
+  ///////////////////web///////////////////////////////////
+}
+
+//公共返回协议
+message Proto_Web_CommonRspNotify
+{
+  optional int32 result = 1;
+  optional string msg = 2;
+}
+
+message Proto_Web_KillServer
+{
+  optional uint64 request_id = 1;
+  optional string contract = 2;
+  optional string machine_addr = 3;
+  optional string ip = 4;
+  optional string bus_name = 5;
+}
+
+//setbaodi
+//设置流水保底
+message Proto_Web_SetBaoDi
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint32 new_baodi = 3;
+}
+
+//settaxbaodi
+//设置税收保底
+message Proto_Web_SetTaxBaoDi
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint32 new_tax_baodi = 3;
+}
+
+//modifyagent
+//修改上级代理ID
+message Proto_Web_ModifyAgent
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint64 new_agent_id = 3;
+}
+
+//modifyliushui
+//修改流水
+message Proto_Web_ModifyLiuShui
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint64 liu_shui = 3;
+}
+
+//setban
+//封号
+message Proto_Web_SetBan
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional bool is_ban = 3;
+}
+
+//settransfer
+//禁止转账
+message Proto_Web_SetTransfer
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional bool no_transfer = 3;
+}
+
+//sendusermail
+//给玩家发邮件
+message Proto_Web_SendUserMail
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2; //收件者ID
+  optional string send_name	= 3; //发送者名字
+  optional string title		= 4; //邮件标题
+  optional string content		= 5; //自定义邮件内容
+}
+
+//zhuangzhang
+//转账充值
+message Proto_Web_ZhuangZhang
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2; //
+  optional int64  amount = 3;  //转账金额
+}
+
+//givemoney
+//赠送钱
+message Proto_Web_GiveMoney
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2; //
+  optional int64  amount = 3;  //转账金额
+}
+
+
+message WhileBlackGameList
+{
+  optional uint32 game_id = 1;
+  optional uint32 room_id = 2;
+}
+
+//setuserwhiteblacklist
+//设置玩家游戏的黑白名单
+//NF_WebToSns_SetWhiteBlack_REQ 设置黑白名单
+message Proto_Web_SetWhiteBlackReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2; //
+  optional uint32 roster_type = 3; //0=黑名单,1=白名单
+  optional uint64 start_time = 4;  //开始时间
+  optional uint64 end_time = 5;  //结束时间
+  optional int32  control_level = 6;
+  optional uint64 opt_mark = 7;  //输盈最大总额
+  optional uint64 max_win_jetton = 8;  //输盈最大总额
+  optional float  rate_mark = 9;  //输盈概率
+  repeated WhileBlackGameList game_list = 10; //游戏类型
+}
+
+//deleteuserwhiteblacklist
+//删除玩家游戏的黑白名单
+//NF_WebToSns_DeleteWhiteBlack_REQ
+message Proto_Web_DeleteWhiteBlackReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 whiteblack_id = 2;
+}
+
+//setgmctrlgivedata
+//NF_WebToSns_SetGMCtrlGiveData_REQ = 315;
+message Proto_Web_SetGMCtrlGiveDataReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2; //
+  optional uint32 control_type = 3; //0=黑名单,1=白名单
+  optional uint64 start_time = 4;  //开始时间
+  optional uint64 end_time = 5;  //结束时间
+  optional uint32 game_id = 6;
+  optional int32  state = 7;
+  optional uint64 jackpot_type = 8;  //送彩金类型:0=普通彩金, 1=小彩金, 2=中彩金, 3=大彩金, 4=超级彩金"
+  optional uint64 jackpot_rate = 9;  //送彩金的百分比
+  optional float  jackpot_jetton = 10;  //送彩金金额
+}
+
+//deletegmctrlgivedata
+//NF_WebToSns_DeleteGMCtrlGiveData_REQ = 316;
+message Proto_Web_DeleteGMCtrlGiveDataReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 id = 2;
+}
+
+message Web_ModifyDbData
+{
+  optional string db_name = 1;
+  optional string tb_name = 2;
+  repeated string db_field_key = 3;
+  repeated string db_field_value = 4;
+  repeated string db_cond_key = 5;
+  repeated string db_cond_value = 6;
+}
+
+//clearjiangchi
+//清理奖池
+//NF_WebToWorld_ClearJiangChi_Req
+message Proto_Web_ClearJiangChiReq
+{
+  optional uint64 request_id = 1;
+  optional uint32 game_id = 2;
+  optional uint32 room_id = 3;
+  optional Web_ModifyDbData modify_db = 4;
+}
+
+//setjiangchi
+//配置奖池
+//NF_WebToWorld_SetJiangChi_Req
+message Proto_Web_SetJiangChiReq
+{
+  optional uint64 request_id = 1;
+  optional uint32 game_id = 2;
+  optional uint32 room_id = 3;
+  optional int64 jiang_chi = 4;
+  optional Web_ModifyDbData modify_db = 5;
+}
+
+//setroomstatus
+//
+//NF_WebToWorld_SetRoomStatus_Req
+message Proto_Web_SetRoomStatusReq
+{
+  optional uint64 request_id = 1;
+  optional uint32 game_id = 2;
+  optional uint32 room_id = 3;
+  optional uint32 status = 4;
+  optional Web_ModifyDbData modify_db = 5;
+}
+
+//addtedeemcode
+message Proto_Web_AddTedeemCodeReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 gold = 2;
+  optional uint32 count = 3;
+  optional string code_name = 4;
+}
+
+//NF_WebToLogic_ModifyShowUserId_Req;
+//modifyuserid
+message Proto_Web_ModifyShowUserIdReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint64 show_userid = 3;
+}
+
+
+//NF_WebToLogic_ModifyNickName_Req;
+//modifyname
+message Proto_Web_ModifyNickNameReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional string nick_name = 3;
+}
+
+//NF_WebToLogic_ModifyVipLevel_Req;
+//modifyviplevel
+message Proto_Web_ModifyVipLevelReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint32 vip_level = 3;
+}
+
+//NF_WebToLogic_ModifyAccountPassword_Req;
+//modifypassword
+message Proto_Web_ModifyAccountPasswordReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional string password = 3;
+}
+
+//NF_WebToLogic_ModifyBankPassword_Req;
+//modifybankpassword
+message Proto_Web_ModifyBankPasswordReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional string bank_password = 3;
+}
+
+//NF_WebToLogic_ModifyVipRecharge_Req
+//viprecharge
+message Proto_Web_ModifyVipRechargeReq
+{
+  optional uint64 request_id = 1;
+  optional uint64 user_id = 2;
+  optional uint64 recharge_user_id = 3;
+  optional string recharge_user_name = 4;
+  optional uint32 recharge_user_level = 5;
+  optional uint64 amount = 6;
+  optional uint64 recharge_show_userid = 7;
+}
