@@ -12,7 +12,10 @@
 - 验证Python模块是否被正确安装,如果没有报错，说明安装正常, 打开python, 然后输入import google.protobuf.internal,没有报错说明安装没问题
 - python 
 >>> import google.protobuf.internal
->>> 
+
+## 安装xlrd python模块，用来读取excel之用
+- 解压thirdparty/pkg目录下得xlrd-0.9.4.tar.gz, 会有一个xlrd-0.9.4目录，里面有xlrd的源文件, cd xlrd-0.9.4
+- 执行python setup.py install
 
 ## windows安装make, 执行tools/mingw-get-setup
 - 安装MinGW的时候选择Basic setup下选择mingw32-base包就可以了。
