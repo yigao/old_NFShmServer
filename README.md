@@ -21,15 +21,22 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 ## Dependencies
 
 - libevent
-- easylogging++
+- spdlog
 - google protobuf
 - hiredis
-- ajson
+- rapidjson
 - concurrentqueue
 - RapidXML
 - LuaIntf
 - navigation
 - lua
+- mysql
+- mysqlpp
+- curl
+- evpp
+- openssl
+- theron
+- zookeeper
 
 ## IF YOU CAN NOT BUILD THE DEPENDENCIES THEN PLEASE RUN THE CMDS BELOW TO SET UP THE ENVIRONMENT:
 
