@@ -38,7 +38,7 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 - theron
 - zookeeper
 
-## IF YOU CAN NOT BUILD THE DEPENDENCIES THEN PLEASE RUN THE CMDS BELOW TO SET UP THE ENVIRONMENT:
+## linux centos 安装可能需要的环境:
 
 * sudo apt-get install g++
 * sudo apt-get install cmake
