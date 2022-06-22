@@ -18,6 +18,49 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 - 配套的 U3D 客户端，一个捕鱼项目，暂时没有上传
 - 丰富的插件(DB, script, HTTP, WebSocket 等)
 
+## Dependencies
+
+- libevent
+- easylogging++
+- google protobuf
+- hiredis
+- ajson
+- concurrentqueue
+- RapidXML
+- LuaIntf
+- navigation
+- lua
+
+## IF YOU CAN NOT BUILD THE DEPENDENCIES THEN PLEASE RUN THE CMDS BELOW TO SET UP THE ENVIRONMENT:
+
+* sudo apt-get install g++
+* sudo apt-get install cmake
+* sudo apt-get install automake
+* sudo apt-get install zip unzip
+
+## Supported Compilers
+
+* GCC >= 7 (**Tested on Centos 7**)
+
+## Build and Install
+### FOR LINUX(UBUNTU, CENTOS) ---- please use administrator(or sudo) to do these:
+1. Git pull all source
+2. Run **build_dynamic_debug.sh** to build Debug of NFShmServer
+3. Run **build_dynamic_release.sh** to build Release of NFShmServer
+4. Run the server， 分几种情况执行:
+    - 根据使用master服务器来做分布式还是使用zookpeer，需要先配置好zookpeer，分几种种执行方式：
+    -  如果你想把所有的分布式进程放到一个进程一个线程里执行的话，只要是方便调试:
+    -    内网使用TCP通信,master服务器来做分布式:./NFPluginLoader --Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../TcpPlugin --restart
+    -    内网使用Bus通信,master服务器来做分布式:./NFPluginLoader --Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../BusPlugin --restart
+    -    内网使用TCP通信,zookpeer服务器来做分布式:./NFPluginLoader --Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../TcpPlugin_Zookpeer --restart
+    -    内网使用Bus通信,zookpeer服务器来做分布式:./NFPluginLoader --Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../BusPlugin_Zookpeer --restart
+    - 如果你想分布式执行:
+    -    内网使用TCP通信,master服务器来做分布式:执行脚本CreateScript.sh或CreateScript_TcpPlugin.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
+    -    内网使用Bus通信,master服务器来做分布式:执行脚本CreateScript_BusPlugin.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
+    -    内网使用TCP通信,zookpeer服务器来做分布式:执行脚本CreateScript_TcpPlugin_Zookpeer.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
+    -    内网使用Bus通信,zookpeer服务器来做分布式:执行脚本CreateScript_BusPlugin_Zookpeer.sh，会生成Start.sh,Stop.sh,ReStart.sh,Alllog.sh等脚本，执行Start.sh，会一个一个启动服务器，执行Alllog.sh可以查看所有服务器的日志。
+      
+
 #### 一些很赞的项目
 
 [PSS](https://github.com/freeeyes/PSS)
