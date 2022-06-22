@@ -40,22 +40,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServer/NFWorldServer/NFWorldServerPlugin/NFWorldServerModule.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServer/NFWorldServer/NFWorldServerPlugin/NFWorldServerModule.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFTransGetUserDetail.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFTransGetUserDetail.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFTransGetUserDetail.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFTransGetUserDetail.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFUserDetail.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFUserDetail.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFUserDetailMgr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFUserDetailMgr.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFUserEventLog.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetail/NFUserEventLog.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetailModule.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerPlayerPlugin/NFUserDetailModule.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWorldServer/NFWorldServerPlayerPlugin/NFWorldPlayerMgr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFWorldServer/NFWorldServerPlayerPlugin/NFWorldPlayerMgr.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWorldServer/NFWorldServerPlayerPlugin/NFWorldPlayerModule.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFWorldServer/NFWorldServerPlayerPlugin/NFWorldPlayerModule.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFBankAction.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFBankAction.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFMailAction.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFMailAction.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFCTestModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFCTestModule.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +173,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NFPluginLoader" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../BusPlugin_Zookpeer --restart" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFPluginLoader" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ShmNFrame" RUN_TARGET_NAME="NFPluginLoader">
+    <configuration name="NFPluginLoader" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--Server=AllServer --ID=1.1.1.1 --Config=../../Config --Plugin=../../BusPlugin --restart" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFPluginLoader" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ShmNFrame" RUN_TARGET_NAME="NFPluginLoader">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -371,14 +355,7 @@
       <workItem from="1655729978316" duration="5715000" />
       <workItem from="1655782948316" duration="5759000" />
       <workItem from="1655863482468" duration="3691000" />
-      <workItem from="1655885625821" duration="7560000" />
-    </task>
-    <task id="LOCAL-00035" summary="serial nmber">
-      <created>1632315242000</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1632315242000</updated>
+      <workItem from="1655885625821" duration="9355000" />
     </task>
     <task id="LOCAL-00036" summary="serial nmber">
       <created>1635334215782</created>
@@ -716,7 +693,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655892765103</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="makefile">
+      <created>1655894116308</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1655894116309</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -821,11 +805,6 @@
           <url>file://$PROJECT_DIR$/src/NFServer/NFRouteAgentServer/NFRouteAgentServerPlugin/NFRouteAgentServerModule.cpp</url>
           <line>585</line>
           <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/NFTest/NFRobotPlugin/NFTestRobot.cpp</url>
-          <line>158</line>
-          <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/NFServer/NFLoginServer/NFLoginServerPlugin/NFLoginServerModule.cpp</url>
