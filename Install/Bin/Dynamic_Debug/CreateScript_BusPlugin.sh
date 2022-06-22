@@ -41,11 +41,11 @@ do_work()
 	echo "rm $1_$2_log.sh -rf" >> Clear.sh
 	echo "rm $1_$2_run.sh -rf" >> Clear.sh
 
-  touch Monitor.sh
-  chmod a+x Monitor.sh
-  echo  "$PWD/$1_$2_bin -d --Server=$1 --ID=$2 --Config=$3 --Plugin=$4 --start" >> Monitor.sh
+	touch Monitor.sh
+	chmod a+x Monitor.sh
+	echo  "$PWD/$1_$2_bin -d --Server=$1 --ID=$2 --Config=$3 --Plugin=$4 --start" >> Monitor.sh
 
-  let log_count=log_count+1
+	let log_count=log_count+1
   touch Alllog.sh
   chmod a+x Alllog.sh
 
@@ -63,26 +63,17 @@ rm Alllog.sh
 echo "main()" >> Alllog.sh
 echo "{" >> Alllog.sh
 
-do_work MasterServer 1.1.1.0 ../../Config ../../GlobalPlugin
-do_work MasterServer 1.1.1.1 ../../Config ../../Plugin3
-do_work RouteServer 15.100.7.1 ../../Config ../../Plugin3
-do_work RouteAgentServer 15.100.6.1 ../../Config ../../Plugin3
-do_work StoreServer 15.100.8.1 ../../Config ../../Plugin3
-do_work LoginServer 15.100.2.1 ../../Config ../../Plugin3
-do_work WorldServer 15.100.3.1 ../../Config ../../Plugin3
-do_work SnsServer 15.100.9.1 ../../Config ../../Plugin3
-do_work LogicServer 15.100.10.1 ../../Config ../../Plugin3
-do_work WebServer 15.100.11.1 ../../Config ../../Plugin3
-do_work ProxyServer 15.100.5.1 ../../Config ../../Plugin3
+do_work MasterServer 1.1.1.1 ../../Config ../../BusPlugin
+do_work RouteServer 15.100.7.1 ../../Config ../../BusPlugin
+do_work RouteAgentServer 15.100.6.1 ../../Config ../../BusPlugin
+do_work StoreServer 15.100.8.1 ../../Config ../../BusPlugin
+do_work LoginServer 15.100.2.1 ../../Config ../../BusPlugin
+do_work WorldServer 15.100.3.1 ../../Config ../../BusPlugin
+do_work LogicServer 15.100.10.1 ../../Config ../../BusPlugin
+do_work ProxyServer 15.100.5.1 ../../Config ../../BusPlugin
+do_work ProxyAgentServer 15.100.13.1 ../../Config ../../BusPlugin
 
-do_work GameServer 15.2001.4.1 ../../Config2001_1 ../../Config2001_1
-do_work GameServer 15.2002.4.1 ../../Config2002_1 ../../Config2002_1
-do_work GameServer 15.2003.4.1 ../../Config2003_1 ../../Config2003_1
-do_work GameServer 15.2004.4.1 ../../Config2004_1 ../../Config2004_1
-
-do_work MonitorServer 15.100.12.1 ../../Config ../../Plugin3
-
-echo	"tail --follow=name --retry $log_str --max-unchanged-stats=3 -n 5 -q | awk '"'/INFO/ {print "\033[32m" $0 "\033[39m"} /DEBUG/ {print  $0 }  /WARNING/ {print "\033[33m" $0 "\033[39m"} /TRACE/ {print "\033[33m" $0 "\033[39m"} /ERROR/ {print "\033[31m" $0 "\033[39m"} '"'" >> Alllog.sh
+echo	"tail --follow=name --retry $log_str --max-unchanged-stats=4 -n 5 -q | awk '"'/INFO/ {print "\033[32m" $0 "\033[39m"} /DEBUG/ {print  $0 }  /WARNING/ {print "\033[33m" $0 "\033[39m"} /TRACE/ {print "\033[33m" $0 "\033[39m"} /ERROR/ {print "\033[31m" $0 "\033[39m"} '"'" >> Alllog.sh
 
 echo "}" >> Alllog.sh
 echo "main" >> Alllog.sh

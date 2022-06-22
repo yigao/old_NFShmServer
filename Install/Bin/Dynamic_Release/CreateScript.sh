@@ -63,83 +63,17 @@ rm Alllog.sh
 echo "main()" >> Alllog.sh
 echo "{" >> Alllog.sh
 
-do_work MasterServer 1.1.1.1 ../../Config ../../Plugin
-do_work RouteServer 15.100.7.1 ../../Config ../../Plugin
-do_work RouteAgentServer 15.100.6.1 ../../Config ../../Plugin
-do_work StoreServer 15.100.8.1 ../../Config ../../Plugin
-do_work LoginServer 15.100.2.1 ../../Config ../../Plugin
-do_work WorldServer 15.100.3.1 ../../Config ../../Plugin
-do_work SnsServer 15.100.9.1 ../../Config ../../Plugin
-do_work LogicServer 15.100.10.1 ../../Config ../../Plugin
-do_work WebServer 15.100.11.1 ../../Config ../../Plugin
-do_work ProxyServer 15.100.5.1 ../../Config ../../Plugin
-do_work ProxyAgentServer 15.100.13.1 ../../Config ../../Plugin
+do_work MasterServer 1.1.1.1 ../../Config ../../TcpPlugin
+do_work RouteServer 15.100.7.1 ../../Config ../../TcpPlugin
+do_work RouteAgentServer 15.100.6.1 ../../Config ../../TcpPlugin
+do_work StoreServer 15.100.8.1 ../../Config ../../TcpPlugin
+do_work LoginServer 15.100.2.1 ../../Config ../../TcpPlugin
+do_work WorldServer 15.100.3.1 ../../Config ../../TcpPlugin
+do_work LogicServer 15.100.10.1 ../../Config ../../TcpPlugin
+do_work ProxyServer 15.100.5.1 ../../Config ../../TcpPlugin
+do_work ProxyAgentServer 15.100.13.1 ../../Config ../../TcpPlugin
 
-do_work GameServer 15.2001.4.1 ../../Config2001_1 ../../Config2001_1
-do_work GameServer 15.2001.4.2 ../../Config2001_2 ../../Config2001_2
-do_work GameServer 15.2001.4.3 ../../Config2001_3 ../../Config2001_3
-do_work GameServer 15.2001.4.4 ../../Config2001_4 ../../Config2001_4
-do_work GameServer 15.2001.4.5 ../../Config2001_5 ../../Config2001_5
-do_work GameServer 15.2002.4.1 ../../Config2002_1 ../../Config2002_1
-do_work GameServer 15.2002.4.2 ../../Config2002_2 ../../Config2002_2
-do_work GameServer 15.2002.4.3 ../../Config2002_3 ../../Config2002_3
-do_work GameServer 15.2002.4.4 ../../Config2002_4 ../../Config2002_4
-do_work GameServer 15.2002.4.5 ../../Config2002_5 ../../Config2002_5
-do_work GameServer 15.2003.4.1 ../../Config2003_1 ../../Config2003_1
-do_work GameServer 15.2003.4.2 ../../Config2003_2 ../../Config2003_2
-do_work GameServer 15.2003.4.3 ../../Config2003_3 ../../Config2003_3
-do_work GameServer 15.2003.4.4 ../../Config2003_4 ../../Config2003_4
-do_work GameServer 15.2003.4.5 ../../Config2003_5 ../../Config2003_5
-do_work GameServer 15.2004.4.1 ../../Config2004_1 ../../Config2004_1
-do_work GameServer 15.2004.4.2 ../../Config2004_2 ../../Config2004_2
-do_work GameServer 15.2004.4.3 ../../Config2004_3 ../../Config2004_3
-do_work GameServer 15.2004.4.4 ../../Config2004_4 ../../Config2004_4
-do_work GameServer 15.2004.4.5 ../../Config2004_5 ../../Config2004_5
-do_work GameServer 15.1001.4.1 ../../Config1001_1 ../../Config1001_1
-do_work GameServer 15.1001.4.2 ../../Config1001_2 ../../Config1001_2
-do_work GameServer 15.1001.4.3 ../../Config1001_3 ../../Config1001_3
-do_work GameServer 15.1001.4.4 ../../Config1001_4 ../../Config1001_4
-do_work GameServer 15.1001.4.5 ../../Config1001_5 ../../Config1001_5
-do_work GameServer 15.1002.4.1 ../../Config1002_1 ../../Config1002_1
-do_work GameServer 15.1002.4.2 ../../Config1002_1 ../../Config1002_2
-do_work GameServer 15.1002.4.3 ../../Config1002_1 ../../Config1002_3
-do_work GameServer 15.1002.4.4 ../../Config1002_1 ../../Config1002_4
-do_work GameServer 15.1002.4.5 ../../Config1002_1 ../../Config1002_5
-do_work GameServer 15.1003.4.1 ../../Config1003_1 ../../Config1003_1
-do_work GameServer 15.1003.4.2 ../../Config1003_2 ../../Config1003_2
-do_work GameServer 15.1003.4.3 ../../Config1003_3 ../../Config1003_3
-do_work GameServer 15.1003.4.4 ../../Config1003_4 ../../Config1003_4
-do_work GameServer 15.1003.4.5 ../../Config1003_5 ../../Config1003_5
-do_work GameServer 15.1004.4.1 ../../Config1004_1 ../../Config1004_1
-do_work GameServer 15.1004.4.2 ../../Config1004_2 ../../Config1004_2
-do_work GameServer 15.1004.4.3 ../../Config1004_3 ../../Config1004_3
-do_work GameServer 15.1004.4.4 ../../Config1004_4 ../../Config1004_4
-do_work GameServer 15.1004.4.5 ../../Config1004_5 ../../Config1004_5
-do_work GameServer 15.1005.4.1 ../../Config1005_1 ../../Config1005_1
-do_work GameServer 15.1005.4.2 ../../Config1005_2 ../../Config1005_2
-do_work GameServer 15.1005.4.3 ../../Config1005_3 ../../Config1005_3
-do_work GameServer 15.1005.4.4 ../../Config1005_4 ../../Config1005_4
-do_work GameServer 15.1005.4.5 ../../Config1005_5 ../../Config1005_5
-do_work GameServer 15.1006.4.1 ../../Config1006_1 ../../Config1006_1
-do_work GameServer 15.1006.4.2 ../../Config1006_2 ../../Config1006_2
-do_work GameServer 15.1006.4.3 ../../Config1006_3 ../../Config1006_3
-do_work GameServer 15.1006.4.4 ../../Config1006_4 ../../Config1006_4
-do_work GameServer 15.1006.4.5 ../../Config1006_5 ../../Config1006_5
-do_work GameServer 15.1007.4.1 ../../Config1007_1 ../../Config1007_1
-do_work GameServer 15.1007.4.2 ../../Config1007_2 ../../Config1007_2
-do_work GameServer 15.1007.4.3 ../../Config1007_3 ../../Config1007_3
-do_work GameServer 15.1007.4.4 ../../Config1007_4 ../../Config1007_4
-do_work GameServer 15.1007.4.5 ../../Config1007_5 ../../Config1007_5
-do_work GameServer 15.1008.4.1 ../../Config1008_1 ../../Config1008_1
-do_work GameServer 15.1008.4.2 ../../Config1008_2 ../../Config1008_2
-do_work GameServer 15.1008.4.3 ../../Config1008_3 ../../Config1008_3
-do_work GameServer 15.1008.4.4 ../../Config1008_4 ../../Config1008_4
-do_work GameServer 15.1008.4.5 ../../Config1008_5 ../../Config1008_5
-do_work GameServer 15.3001.4.1 ../../Config3001_1 ../../Config3001_1
-do_work GameServer 15.3002.4.1 ../../Config3002_1 ../../Config3002_1
-do_work GameServer 15.4001.4.1 ../../Config4001_1 ../../Config4001_1
-
-echo	"tail --follow=name --retry $log_str --max-unchanged-stats=3 -n 5 -q | awk '"'/INFO/ {print "\033[32m" $0 "\033[39m"} /DEBUG/ {print  $0 }  /WARNING/ {print "\033[33m" $0 "\033[39m"} /TRACE/ {print "\033[33m" $0 "\033[39m"} /ERROR/ {print "\033[31m" $0 "\033[39m"} '"'" >> Alllog.sh
+echo	"tail --follow=name --retry $log_str --max-unchanged-stats=4 -n 5 -q | awk '"'/INFO/ {print "\033[32m" $0 "\033[39m"} /DEBUG/ {print  $0 }  /WARNING/ {print "\033[33m" $0 "\033[39m"} /TRACE/ {print "\033[33m" $0 "\033[39m"} /ERROR/ {print "\033[31m" $0 "\033[39m"} '"'" >> Alllog.sh
 
 echo "}" >> Alllog.sh
 echo "main" >> Alllog.sh

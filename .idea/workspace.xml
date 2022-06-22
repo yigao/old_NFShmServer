@@ -38,12 +38,44 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="frame">
+    <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/NFPluginLoader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/libNFKernelPlugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/libNFNetPlugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/libNFShmPlugin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript2.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript3.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript4.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/VMProtectLicense.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/libVMProtectSDK64.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/LogConfig.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/LoginServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/MasterServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/Plugin.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/ProxyAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/RouteAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/RouteServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server1/StoreServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/LogConfig.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/LogicServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/Plugin.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/ProxyAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/ProxyServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/RouteAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_server2/WorldServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/LogConfig.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/LoginServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/MasterServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/Plugin.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/ProxyAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/RouteAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/RouteServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server1/StoreServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/LogConfig.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/LogicServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/Plugin.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/ProxyAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/ProxyServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/RouteAgentServer.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin_server2/WorldServer.lua" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +102,14 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="45894cda-87c5-4976-a6d3-49dad2b6a142" />
+        <option name="url" value="https://github.com/yigao/NFShmServer.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectId" id="1ujzzYRcDPHLLows0GpEXsI7QMX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -91,7 +131,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Install/Bin/Dynamic_Release" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
@@ -351,14 +391,7 @@
       <workItem from="1655729978316" duration="5715000" />
       <workItem from="1655782948316" duration="5759000" />
       <workItem from="1655863482468" duration="3691000" />
-      <workItem from="1655885625821" duration="1124000" />
-    </task>
-    <task id="LOCAL-00032" summary="serial nmber">
-      <created>1627298175711</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1627298175711</updated>
+      <workItem from="1655885625821" duration="2791000" />
     </task>
     <task id="LOCAL-00033" summary="serial nmber">
       <created>1627299783262</created>
@@ -696,7 +729,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655786331723</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="delete">
+      <created>1655886876090</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1655886876091</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,7 +804,8 @@
     <MESSAGE value="check" />
     <MESSAGE value="serial nmber" />
     <MESSAGE value="frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame" />
+    <MESSAGE value="delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
