@@ -45,8 +45,9 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 * sudo apt-get install automake
 * sudo apt-get install zip unzip
 
-## 如果你需要编译makefile，用来编译excel，编译protobuf，用来生成代码解析excel, 并生成能放在共享内存里的代码
+## 安装Excel工具
 * 请参考文档https://github.com/yigao/NFShmServer/blob/master/doc/README.md, 安装需要的protobuf库
+* 也可以看看文档https://github.com/yigao/NFShmServer/blob/master/doc/Excel工具使用.doc
 
 ## Supported Compilers
 
