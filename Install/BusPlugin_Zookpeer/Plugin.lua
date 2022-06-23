@@ -64,22 +64,19 @@ LoadPlugin =
 			"NFLoginServerPlugin",
 			"NFLoginServerPlayerPlugin",
 
-			--"NFGameServerPlugin",
-			--"NFGameServerPlayerPlugin",
-			--"NFGameFishPlugin_2001",
-			--"NFFishAlgoPlugin",
+			"NFGameServerPlugin",
 
 			"NFWorldServerPlugin",
 			"NFWorldServerPlayerPlugin",
 
-			--"NFSnsServerPlugin",
-			--"NFSnsServerPlayerPlugin",
+			"NFSnsServerPlugin",
+			"NFSnsServerPlayerPlugin",
 
 			"NFLogicServerPlugin",
 			"NFLogicServerPlayerPlugin",
 
-			--"NFWebServerPlugin",
-			--"NFWebServerLogicPlugin",
+			"NFWebServerPlugin",
+			"NFWebServerLogicPlugin",
 
 			--"NFMonitorServerPlugin",
 		};
@@ -131,7 +128,6 @@ LoadPlugin =
 			"NFShmPlugin",
 
 			"NFGameServerPlugin",
-			"NFGameServerPlayerPlugin",
 			"NFGameFishPlugin",
 			"NFFishAlgoPlugin",
 		};

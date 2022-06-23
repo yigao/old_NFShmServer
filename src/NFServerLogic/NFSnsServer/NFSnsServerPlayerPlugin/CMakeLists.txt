@@ -1,16 +1,11 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(NFSnsServerPlugin)
+PROJECT(NFSnsServerPlayerPlugin)
+include_directories( ${INCLUDE_DIR} "./")
 
-include_directories( ${INCLUDE_DIR} "../../../NFServer/NFSnsServer/NFSnsServerPlugin")
-
-AUX_SOURCE_DIRECTORY(../../../NFServer/NFSnsServer/NFSnsServerPlugin SRC)
-AUX_SOURCE_DIRECTORY(NFMail SRC)
-AUX_SOURCE_DIRECTORY(NFUserSimple SRC)
-AUX_SOURCE_DIRECTORY(NFOnlineUser SRC)
-AUX_SOURCE_DIRECTORY(NFEventLog SRC)
-AUX_SOURCE_DIRECTORY(NFRank SRC)
-AUX_SOURCE_DIRECTORY(NFSystemStat SRC)
-AUX_SOURCE_DIRECTORY(NFRedeemCode SRC)
+AUX_SOURCE_DIRECTORY(. SRC)
+AUX_SOURCE_DIRECTORY(./NFUserSimple SRC)
+AUX_SOURCE_DIRECTORY(./NFOnlineUser SRC)
+AUX_SOURCE_DIRECTORY(./NFEventLog SRC)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
 	SET(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/Build/Lib/Release")
@@ -22,13 +17,6 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "DynamicRelease")
 	SET(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release")
 	ADD_LIBRARY( ${PROJECT_NAME} SHARED ${SRC} )
 	TARGET_LINK_LIBRARIES(${PROJECT_NAME} NFMessageDefine)
-
-	ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD
-			COMMAND mv ${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.so ${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.bak.so
-			COMMAND  ${CMAKE_SOURCE_DIR}/tools/VMProtect/vmprotect_con ${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.bak.so ${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.upx.so
-			COMMAND  ${CMAKE_SOURCE_DIR}/tools/NFAddSoShell --contract=${CMAKE_CONTRACE_INFO} --machineaddr=${CMAKE_MACHINE_ADDR} --srcfile=${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.upx.so --dstfile=${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.so
-			COMMAND rm ${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.bak.so ${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Release/lib${PROJECT_NAME}.upx.so
-			)
 elseif(CMAKE_BUILD_TYPE STREQUAL "DynamicDebug")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 	SET(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/Install/Bin/Dynamic_Debug")

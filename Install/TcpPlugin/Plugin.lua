@@ -64,17 +64,19 @@ LoadPlugin =
 			"NFLoginServerPlugin",
 			"NFLoginServerPlayerPlugin",
 
-			--"NFGameServerPlugin",
+			"NFGameServerPlugin",
 
 			"NFWorldServerPlugin",
 			"NFWorldServerPlayerPlugin",
 
-			--"NFSnsServerPlugin",
+			"NFSnsServerPlugin",
+			"NFSnsServerPlayerPlugin",
 
 			"NFLogicServerPlugin",
 			"NFLogicServerPlayerPlugin",
 
-			--"NFWebServerPlugin",
+			"NFWebServerPlugin",
+			"NFWebServerLogicPlugin",
 
 			--"NFMonitorServerPlugin",
 		};
@@ -196,6 +198,7 @@ LoadPlugin =
 			"NFShmPlugin",
 
 			"NFSnsServerPlugin",
+			"NFSnsServerPlayerPlugin",
 		};
 		ServerType = NF_ST_SNS_SERVER;
 	},
@@ -208,6 +211,7 @@ LoadPlugin =
 			"NFNetPlugin",
 
 			"NFWebServerPlugin",
+			"NFWebServerLogicPlugin",
 		};
 		ServerType = NF_ST_WEB_SERVER;
 	},

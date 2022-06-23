@@ -8,19 +8,16 @@
 // -------------------------------------------------------------------------
 
 #include "NFTransSnsUserOnline.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFSnsUserSimpleUtil.h"
+#include "NFUserSimple/NFSnsUserSimpleUtil.h"
 #include "NFComm/NFCore/NFTime.h"
 #include "NFComm/NFMessageDefine/proto_svr_common.pb.h"
 #include "NFComm/NFMessageDefine/proto_common.pb.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFOnlineUser.h"
 #include "NFOnlineUserMgr.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFSnsUserSimple.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFSnsUserSimpleUtil.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMail.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMailCreate.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineModule.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailUtil.h"
+#include "NFUserSimple/NFSnsUserSimple.h"
+#include "NFUserSimple/NFSnsUserSimpleUtil.h"
+#include "NFOnlineModule.h"
 
 IMPLEMENT_IDCREATE_WITHTYPE(NFTransSnsUserOnline, EOT_TRANS_SNS_USER_ONLINE, NFTransSnsBase)
 

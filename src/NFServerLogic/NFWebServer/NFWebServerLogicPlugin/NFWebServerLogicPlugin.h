@@ -1,9 +1,9 @@
 // -------------------------------------------------------------------------
-//    @FileName         :    NFWebServerPlugin.h
+//    @FileName         :    NFWebServerLogicPlugin.h
 //    @Author           :    xxxxx
 //    @Date             :   xxxx-xx-xx
 //    @Email			:    xxxxxxxxx@xxx.xxx
-//    @Module           :    NFWebServerPlugin.h
+//    @Module           :    NFWebServerLogicPlugin.h
 //
 // -------------------------------------------------------------------------
 
@@ -15,10 +15,10 @@
 #include <string>
 
 //////////////////////////////////////////////////////////////////////////
-class NFWebServerPlugin : public NFIPlugin
+class NFWebServerLogicPlugin : public NFIPlugin
 {
 public:
-    explicit NFWebServerPlugin(NFIPluginManager* p):NFIPlugin(p)
+    explicit NFWebServerLogicPlugin(NFIPluginManager* p):NFIPlugin(p)
     {
     }
 

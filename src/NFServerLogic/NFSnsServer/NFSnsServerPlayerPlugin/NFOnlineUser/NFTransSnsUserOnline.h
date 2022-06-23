@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFTransSnsBase.h"
+#include "NFUserSimple/NFTransSnsBase.h"
 #include "NFComm/NFMessageDefine/proto_svr_common.pb.h"
 #include "NFComm/NFMessageDefine/proto_common_s.h"
 #include "NFComm/NFMessageDefine/proto_svr_login.pb.h"

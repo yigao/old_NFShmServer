@@ -24,7 +24,9 @@
       <config projectName="ShmNFrame" targetName="NFMasterServerPlugin" />
       <config projectName="ShmNFrame" targetName="NFStoreServerPlugin" />
       <config projectName="ShmNFrame" targetName="NFTestPlugin" />
+      <config projectName="ShmNFrame" targetName="NFSnsServerPlayerPlugin" />
       <config projectName="ShmNFrame" targetName="NFMessageDefine" />
+      <config projectName="ShmNFrame" targetName="NFWebServerLogicPlugin" />
       <config projectName="ShmNFrame" targetName="NFLoginServerPlugin" />
       <config projectName="ShmNFrame" targetName="mysqlpp" />
       <config projectName="ShmNFrame" targetName="NFWebServerPlugin" />
@@ -39,14 +41,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
-      <change afterPath="$PROJECT_DIR$/Install/Config/Data/NameDesc.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Install/Sql/create_NameDesc.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Message/ResMetaS/ResMeta.proto" beforeDir="false" afterPath="$PROJECT_DIR$/Message/ResMetaS/ResMeta.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefiles/define.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/define.makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefiles/excel_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/excel_gen.makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefiles/sql_gen.makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefiles/sql_gen.makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta.pb.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFComm/NFMessageDefine/ResMeta.pb.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin/Plugin.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Install/BusPlugin/Plugin.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin_Zookpeer/Plugin.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Install/BusPlugin_Zookpeer/Plugin.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFEventLog/NFTransSnsSendEventLog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFEventLog/NFTransSnsSendEventLog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFGMCtrlGiveDataDesc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFGMCtrlGiveDataDesc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFActivityMail.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFActivityMail.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFMailDesc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFMailDesc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMail.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMail.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMailCreate.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMailCreate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMail.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMail.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailCacheInfo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailCacheInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailMgr.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailMgr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailUtil.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFUserMailUtil.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineModule.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineModule.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineModule.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFOnlineUser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFOnlineUser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFTransSnsUserOnline.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFTransSnsUserOnline.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFTransSnsUserOnline.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFTransSnsUserOnline.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRank/NFGetRankTrans.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRank/NFGetRankTrans.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRank/NFRankCommon.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRank/NFRankCommon.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRank/NFRankMgr.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRank/NFRankMgr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRedeemCode/NFRedeemCode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRedeemCode/NFRedeemCode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRedeemCode/NFRedeemCodeMgr.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRedeemCode/NFRedeemCodeMgr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRedeemCode/NFRedeemCodeTrans.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFRedeemCode/NFRedeemCodeTrans.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsServerModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsServerModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsServerPlugin.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsServerPlugin.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsSystemStatModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsSystemStatModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsWebHandleModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsWebHandleModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsWebHandleTrans.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSnsWebHandleTrans.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFGameDay.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFGameDay.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemDay.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemDay.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemStat.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemStat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemStatMgr.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemStatMgr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserMailModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserMailModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFTransSnsBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFTransSnsBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFWhiteBlackListDesc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFWhiteBlackListDesc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/NFCWebServerModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/NFCWebServerModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/NFCWebUserManagerModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/NFCWebUserManagerModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/NFWebServerPlugin.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFServerLogic/NFWebServer/NFWebServerLogicPlugin/NFWebServerPlugin.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,24 +167,29 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Install/Bin/Dynamic_Release" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Install/TcpPlugin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Install/TcpPlugin" />
+      <recent name="$PROJECT_DIR$/Install/BusPlugin_Zookpeer" />
+      <recent name="$PROJECT_DIR$/src/NFServerLogic" />
       <recent name="$PROJECT_DIR$/Install/Bin/Dynamic_Release" />
       <recent name="$PROJECT_DIR$/Install/Bin/Dynamic_Debug" />
-      <recent name="$PROJECT_DIR$/Install" />
-      <recent name="$PROJECT_DIR$/Install/TcpPlugin_Zookpeer" />
-      <recent name="$PROJECT_DIR$/Install/TcpPlugin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin" />
       <recent name="$PROJECT_DIR$/src/NFServerLogic/NFLogicServer/NFLogicServerUserPlugin" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake 应用程序.NFCommLogicPlugin">
+  <component name="RunManager" selected="CMake 应用程序.NFPluginLoader">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NFCommLogicPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFCommLogicPlugin" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -215,6 +285,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NFSnsServerPlayerPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFSnsServerPlayerPlugin" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NFSnsServerPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFSnsServerPlugin" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -230,6 +305,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NFWebServerLogicPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFWebServerLogicPlugin" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NFWebServerPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFWebServerPlugin" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -241,11 +321,6 @@
       </method>
     </configuration>
     <configuration name="NFWorldServerPlugin" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--Server=WorldServer --ID=15.100.3.1 --Config=../../Config --Plugin=../../Plugin2 --restart" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFWorldServerPlugin" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/NFPluginLoader">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -319,6 +394,8 @@
       <item itemvalue="CMake 应用程序.NFLogicServerPlayerPlugin" />
       <item itemvalue="CMake 应用程序.NFLoginServerPlayerPlugin" />
       <item itemvalue="CMake 应用程序.NFProxyClientPlugin" />
+      <item itemvalue="CMake 应用程序.NFSnsServerPlayerPlugin" />
+      <item itemvalue="CMake 应用程序.NFWebServerLogicPlugin" />
       <item itemvalue="CMake 应用程序.NFWorldServerPlayerPlugin" />
       <item itemvalue="CMake 应用程序.NFRobotPlugin" />
       <item itemvalue="CMake 应用程序.NFTestPlugin" />
@@ -385,21 +462,8 @@
       <workItem from="1655782948316" duration="5759000" />
       <workItem from="1655863482468" duration="3691000" />
       <workItem from="1655885625821" duration="10216000" />
-      <workItem from="1655907203407" duration="7834000" />
-    </task>
-    <task id="LOCAL-00039" summary="serial nmber">
-      <created>1654652721579</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1654652721579</updated>
-    </task>
-    <task id="LOCAL-00040" summary="serial nmber">
-      <created>1654652732766</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1654652732766</updated>
+      <workItem from="1655907203407" duration="10518000" />
+      <workItem from="1655949562544" duration="5773000" />
     </task>
     <task id="LOCAL-00041" summary="frame">
       <created>1654656314465</created>
@@ -730,7 +794,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655915110216</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="makefile">
+      <created>1655915283286</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1655915283286</updated>
+    </task>
+    <task id="LOCAL-00089" summary="makefile">
+      <created>1655917808496</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1655917808496</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

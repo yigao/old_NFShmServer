@@ -11,10 +11,8 @@
 #include "NFComm/NFShmCore/NFServerFrameTypeDefines.h"
 #include "NFComm/NFPluginModule/NFCheck.h"
 #include "NFComm/NFCore/NFTime.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFMail/NFTransMail.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFSystemStat/NFSystemDay.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFUserSimple/NFSnsUserSimpleUtil.h"
+#include "NFUserSimple/NFSnsUserSimpleUtil.h"
 
 IMPLEMENT_IDCREATE_WITHTYPE(NFOnlineUser, EOT_SNS_ONLINE_USER_ID, NFShmObj)
 
@@ -102,7 +100,6 @@ void NFOnlineUser::OnTimer(int timeId, int callcount)
         NFSnsUserSimple*  pUserSimple = NFSnsUserSimpleUtil::GetInstance()->GetRoleSimpe(m_llUserID, false);
         if (pUserSimple)
         {
-            NFSystemDay::Instance()->CountValidPlayer(pUserSimple, this);
         }
     }
 }

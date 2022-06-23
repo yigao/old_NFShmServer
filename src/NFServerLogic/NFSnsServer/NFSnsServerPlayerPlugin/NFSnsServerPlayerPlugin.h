@@ -14,10 +14,10 @@
 #include <string>
 
 //////////////////////////////////////////////////////////////////////////
-class NFSnsServerPlugin : public NFIPlugin
+class NFSnsServerPlayerPlugin : public NFIPlugin
 {
 public:
-	explicit NFSnsServerPlugin(NFIPluginManager* p):NFIPlugin(p)
+	explicit NFSnsServerPlayerPlugin(NFIPluginManager* p):NFIPlugin(p)
 	{
 	}
 

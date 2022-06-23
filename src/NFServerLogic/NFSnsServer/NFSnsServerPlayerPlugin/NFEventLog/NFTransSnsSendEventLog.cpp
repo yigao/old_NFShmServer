@@ -12,8 +12,8 @@
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFComm/NFPluginModule/NFIKernelModule.h"
 #include "NFTransSnsSendEventLog.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFOnlineUserMgr.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFOnlineUser.h"
+#include "NFOnlineUser/NFOnlineUserMgr.h"
+#include "NFOnlineUser/NFOnlineUser.h"
 
 IMPLEMENT_IDCREATE_WITHTYPE(NFTransSnsSendEventLog, EOT_TRANS_SNS_SEND_EVENT_LOG_ID, NFTransBase)
 

@@ -13,7 +13,6 @@
 #include "NFComm/NFPluginModule/NFIDynamicModule.h"
 #include "NFServer/NFCommHead/NFCommLogicHead.h"
 #include "NFComm/NFMessageDefine/proto_svr_login.pb.h"
-#include "NFComm/NFMessageDefine/proto_svr_rank.pb.h"
 
 class NFSnsUserSimple;
 class NFOnlineUser;
@@ -48,15 +47,6 @@ public:
     int OnHandleChangeVipLevel(uint64_t unLinkId, uint64_t destLinkId, uint64_t req_trans_id, uint32_t nMsgId, const char* msg, uint32_t nLen);
 
     int OnHandleRouteToSuitLogicServer(uint64_t unLinkId, uint64_t playerId, uint64_t value2, uint32_t nMsgId, const char* msg, uint32_t nLen);
-
-    int OnHandleUpdateRankStore(uint64_t unLinkId, uint64_t destLinkId, uint64_t req_trans_id, uint32_t nMsgId, const char* msg, uint32_t nLen);
-
-    int OnHandleGetCommonRankReq(uint64_t unLinkId, uint64_t value, uint64_t value2, uint32_t nMsgId, const char* msg, uint32_t nLen);
-
-    int OnHandlePlayerEnterGame(uint64_t unLinkId, uint64_t value, uint64_t value2, uint32_t nMsgId, const char* msg, uint32_t nLen);
-    int OnHandlePlayerExitGame(uint64_t unLinkId, uint64_t value, uint64_t value2, uint32_t nMsgId, const char* msg, uint32_t nLen);
-
-    int OnHandleRedeemCodeReq(uint64_t unLinkId, uint64_t value, uint64_t value2, uint32_t nMsgId, const char* msg, uint32_t nLen);
 public:
     int OnPlayerLogin(NFSnsUserSimple* pSimple, NFOnlineUser* pUser);
     int OnNewPlayer(NFSnsUserSimple* pSimple, NFOnlineUser* pUser);

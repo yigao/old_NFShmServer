@@ -13,8 +13,8 @@
 #include "NFComm/NFMessageDefine/proto_cs.pb.h"
 #include "NFComm/NFMessageDefine/proto_common_s.h"
 #include "NFComm/NFMessageDefine/proto_svr_common.pb.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFOnlineUser.h"
-#include "NFServerLogic/NFSnsServer/NFSnsServerPlayerPlugin/NFOnlineUser/NFOnlineUserMgr.h"
+#include "NFOnlineUser/NFOnlineUser.h"
+#include "NFOnlineUser/NFOnlineUserMgr.h"
 #include "NFSnsUserSimple.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 
