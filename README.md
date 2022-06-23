@@ -75,7 +75,7 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 
 https://github.com/yigao/NFShmServer/wiki
 
-## 客户端下载，客户端代码还在整理，后面会开发，现在有一个捕鱼apk，可以玩玩
+## 客户端下载，客户端代码还在整理，后面会开源，现在有一个捕鱼apk，可以玩玩
 ![捕鱼客户端](https://github.com/yigao/NFShmServer/blob/master/doc/%E6%8D%95%E9%B1%BC%E6%B5%8B%E8%AF%951.apk)
 ## 服务器架构
 
