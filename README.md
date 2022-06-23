@@ -81,7 +81,8 @@ https://github.com/yigao/NFShmServer/wiki
 ![App Architecture](https://github.com/yigao/NFShmServer/blob/master/wiki/images/app_arch.png)
 
 ### 服务器整体架构
-![Server Architecture](https://github.com/ketoo/NoahGameFrame/wiki/images/architecture/NF_server_arch.png)
+![单物理机服务器架构](https://github.com/yigao/NFShmServer/blob/master/wiki/images/single_server_arch.png)
+![多物理机服务器架构](https://github.com/yigao/NFShmServer/blob/master/wiki/images/server_arch.png)
 
 #### 一些很赞的项目
 
