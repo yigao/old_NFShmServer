@@ -52,8 +52,17 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 ## Supported Compilers
 
 * GCC >= 7 (**Tested on Centos 7**)
+* MSVC >= VS2017 (Tested on Win10)
 
 ## Build and Install
+### FOR WINDOWS, MSVC >= 2017
+
+1. Git pull all source
+2. Build the solution
+3. Run the binary file by **Install/Bin/Debug/rund_allserver.bat**
+4. win上采用的静态编译方式，而不是动态加载so/dll文件，只共大家平时开发用，会把所有的程序都打包的到NFPluginLoader，
+然后通过配置文件来选择不同的程序运行，配置和在linux上的配置一样，到不用改动.
+
 ### FOR LINUX(UBUNTU, CENTOS) ---- please use administrator(or sudo) to do these:
 1. Git pull all source
 2. Run **build_dynamic_debug.sh** to build Debug of NFShmServer
