@@ -75,6 +75,14 @@ NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式�
 
 https://github.com/yigao/NFShmServer/wiki
 
+## 服务器架构
+
+### 进程架构:
+![App Architecture](https://github.com/ketoo/NoahGameFrame/wiki/images/architecture/NF_app_arch.png)
+
+### 服务器整体架构
+![Server Architecture](https://github.com/ketoo/NoahGameFrame/wiki/images/architecture/NF_server_arch.png)
+
 #### 一些很赞的项目
 
 [PSS](https://github.com/freeeyes/PSS)
