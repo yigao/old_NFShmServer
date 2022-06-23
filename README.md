@@ -78,7 +78,7 @@ https://github.com/yigao/NFShmServer/wiki
 ## 服务器架构
 
 ### 进程架构:
-![App Architecture](https://github.com/ketoo/NoahGameFrame/wiki/images/architecture/NF_app_arch.png)
+![App Architecture](https://github.com/yigao/NFShmServer/blob/master/wiki/images/app_arch.png)
 
 ### 服务器整体架构
 ![Server Architecture](https://github.com/ketoo/NoahGameFrame/wiki/images/architecture/NF_server_arch.png)
