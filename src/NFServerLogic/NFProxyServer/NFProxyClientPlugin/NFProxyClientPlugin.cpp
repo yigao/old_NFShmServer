@@ -21,7 +21,7 @@ NF_EXPORT void DllStartPlugin(NFIPluginManager* pm)
 
 NF_EXPORT void DllStopPlugin(NFIPluginManager* pm)
 {
-    DESTROY_PLUGIN(pm, NFProxyServerPlayerPlugin)
+    DESTROY_PLUGIN(pm, NFProxyClientPlugin)
 };
 
 #endif

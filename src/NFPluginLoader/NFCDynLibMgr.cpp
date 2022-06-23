@@ -1,4 +1,4 @@
-// -------------------------------------------------------------------------
+﻿// -------------------------------------------------------------------------
 //    @FileName         :    NFCDynLibMgr.cpp.c
 //    @Author           :    xxxxx
 //    @Date             :   xxxx-xx-xx
@@ -239,12 +239,12 @@ NFCSharedMem* NFCDynLibMgr::CreateShareMem(int iKey, size_t siSize, int enInitFl
 
 #if NF_PLATFORM == NF_PLATFORM_WIN
     std::string shmFileName = NF_FORMAT("{}_shm_key_{}.bus", NFIPluginManager::Instance()->GetAppName(), iKey);
-	std::wstring wShmFileName = NFStringUtility::s2ws(shmFileName);
-	hShmID = OpenFileMapping(FILE_MAP_ALL_ACCESS, false, wShmFileName.c_str());
+	//std::wstring wShmFileName = NFStringUtility::s2ws(shmFileName);
+	hShmID = OpenFileMapping(FILE_MAP_ALL_ACCESS, false, shmFileName.c_str());
 
 	if (hShmID == nullptr)
 	{
-		HANDLE hFileID = CreateFile(wShmFileName.c_str(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_ALWAYS, FILE_FLAG_SEQUENTIAL_SCAN, NULL);
+		HANDLE hFileID = CreateFile(shmFileName.c_str(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_ALWAYS, FILE_FLAG_SEQUENTIAL_SCAN, NULL);
 
 		if (hFileID == nullptr)
 		{
@@ -253,7 +253,7 @@ NFCSharedMem* NFCDynLibMgr::CreateShareMem(int iKey, size_t siSize, int enInitFl
 			exit(-1);
 		}
 
-		hShmID = CreateFileMapping(hFileID, nullptr, PAGE_READWRITE, 0, static_cast<DWORD>(siTempShmSize), wShmFileName.c_str());
+		hShmID = CreateFileMapping(hFileID, nullptr, PAGE_READWRITE, 0, static_cast<DWORD>(siTempShmSize), shmFileName.c_str());
 
 		if (hShmID == nullptr)
 		{

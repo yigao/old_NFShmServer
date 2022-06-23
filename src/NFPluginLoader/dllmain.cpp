@@ -32,7 +32,8 @@
 #pragma comment( lib, "NFCore.lib" )
 #pragma comment( lib, "NFPluginModule.lib" )
 #pragma comment( lib, "NFMessageDefine.lib" )
-#pragma comment( lib, "NFFishMessage.lib" )
+#pragma comment( lib, "NFKernelMessage.lib" )
+#pragma comment( lib, "NFShmCore.lib" )
 #else
 #pragma comment( lib, "user32.lib")
 #pragma comment( lib, "Dbghelp.lib" )
