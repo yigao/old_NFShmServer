@@ -78,12 +78,12 @@ https://github.com/yigao/NFShmServer/wiki
 ## 服务器架构
 
 ### 进程架构:
-![App Architecture](https://github.com/yigao/NFShmServer/blob/master/wiki/images/app_arch.png)
+![App Architecture](https://github.com/yigao/NFShmServer/blob/master/doc/app_arch.png)
 
 ### 单物理机服务器架构:
-![单物理机服务器架构](https://github.com/yigao/NFShmServer/blob/master/wiki/images/single_server_arch.png)
+![单物理机服务器架构](https://github.com/yigao/NFShmServer/blob/master/doc/single_server_arch.png)
 ### 多物理机服务器架构:
-![多物理机服务器架构](https://github.com/yigao/NFShmServer/blob/master/wiki/images/server_arch.png)
+![多物理机服务器架构](https://github.com/yigao/NFShmServer/blob/master/doc/server_arch.png)
 ### 服务器架构说明:
 - 所有的服务器都要链接master服务器，可以选择使用master服务器作为命名服务器，也可以选用zookeeper作为命名服务器，只需修改下配置即可
 - 每一个服务器都有一个类似IP地址的ID，作为唯一ID，比如master服务器ID是1.1.1.1， worldserver服务器ID是15.100.3.1， 服务器之间相互通讯，不需要知道对方部署在哪一台物理机上，只需要知道对方的唯一ID，就可以相互通讯
