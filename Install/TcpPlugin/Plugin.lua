@@ -23,8 +23,6 @@ LoadPlugin =
 			-----基础框架引擎-------------
 			"NFKernelPlugin",
 			"NFTestPlugin",
-			--"NFRobotPlugin",
-			"NFNetPlugin",
 		};
 		ServerType = NF_ST_NONE;
 	},

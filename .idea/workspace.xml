@@ -42,12 +42,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/doc/app进程架构.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/doc/多服务器分布式架构.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/doc/服务器架构.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/images/app_arch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/images/server_arch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/images/single_server_arch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/CreateScript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/shm_rm.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Install/Bin/Dynamic_Debug/shm_rm.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/TcpPlugin/Plugin.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Install/TcpPlugin/Plugin.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFCGameParseModule.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFCGameParseModule.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFCTestModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFCTestModule.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFTestPlugin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NFTest/NFTestPlugin/NFTestPlugin.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,11 +123,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake 应用程序.NFPluginLoader">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NFCommLogicPlugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="NFCommLogicPlugin" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -272,11 +268,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="excel2bin_new" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NFShmServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -401,6 +392,8 @@
       <workItem from="1655885625821" duration="10216000" />
       <workItem from="1655907203407" duration="10518000" />
       <workItem from="1655949562544" duration="7916000" />
+      <workItem from="1655971298218" duration="5701000" />
+      <workItem from="1655978242966" duration="2796000" />
     </task>
     <task id="LOCAL-00042" summary="frame">
       <created>1654662097781</created>

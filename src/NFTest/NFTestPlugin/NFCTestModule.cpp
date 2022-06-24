@@ -55,33 +55,9 @@ bool NFCTestModule::Init()
 	return true;
 }
 
-struct GaoStudent
-{
-public:
-    GaoStudent()
-    {
-        index = -1;
-        num = -1;
-    }
-    int index;
-    int num;
-};
-
-bool CompareGreaterGaoStudent(const GaoStudent& a, const GaoStudent& b)
-{
-    return a.num > b.num;
-}
-
-bool CompareLessGaoStudent(const GaoStudent& a, const GaoStudent& b)
-{
-    return a.num < b.num;
-}
 
 void NFCTestModule::OnTimer(uint32_t nTimerID)
 {
-    NFCommon::IsValidPhone("123");
-    NFCommon::IsValidPhone("18927427460");
-    NFCommon::IsValidPhone("1892742740");
     return;
 }
 
