@@ -4,6 +4,31 @@
 <p align="center"><img src="https://github.com/yigao/NFShmServer/blob/master/doc/logo.png" alt="nfshmserver" width="300"/></p>
 NFShmServer 是一个使用C++开发的轻量级,敏捷型,弹性的,分布式的共享内存的插件开发框架, 让你更快更简单的开发服务端应用. 部分思路来自UE4和Ogre.(当前主要用在游戏领域) 我写的开源架构，前几年开源过，后来自己做项目，又没开源了，现在没搞项目了，加上修改了2年了，打算重新开源
 
+---
+
+[![License](https://img.shields.io/github/license/yigao/NFShmServer.svg?colorB=f48041&style=flat-square)](https://opensource.org/licenses/Apache-2.0)
+![GitHub stars](https://img.shields.io/github/stars/yigao/NFShmServer.svg?style=flat-square&label=Stars&style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues-raw/yigao/NFShmServer.svg?style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yigao/NFShmServer.svg?style=flat-square)  
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ark&metric=alert_status)](https://sonarcloud.io/dashboard/index/ark)
+[![codecov](https://codecov.io/gh/OpenArkStudio/ARK/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenArkStudio/ARK)
+[![QQ Group](https://img.shields.io/badge/Chat%20on-QQ%20Group-orange.svg?longCache=true&style=flat-square)](https://shang.qq.com/wpa/qunwpa?idkey=1b8394bd9a42ba46606200a44911c1c6161235a38aecce95158ca646c2bafd81)
+[![Discord](https://img.shields.io/discord/471890201124536320.svg?label=Discord&style=flat-square)](https://discord.gg/GmyBbcv)
+[![996.icu](https://img.shields.io/badge/Link-996.icu-red.svg?&style=flat-square)](https://996.icu)
+
+</center>
+
+**Copyright © [NFShmServer]**  
+GitHub: https://github.com/yigao/NFShmServer
+
+码云: https://gitee.com/xiaoyi445_admin/NFShmServer
+
+QQ 群: [点击加群](https://shang.qq.com/wpa/qunwpa?idkey=1b8394bd9a42ba46606200a44911c1c6161235a38aecce95158ca646c2bafd81)  
+
+
+| CI             | master分支                                                                                                                | develop分支                                                                                                                         |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Github Actions | [![Github Action](https://github.com/yigao/NFShmServer/workflows/Github-CI/badge.svg)](https://github.com/yigao/NFShmServer/actions)      | [![Github Action](https://github.com/yigao/NFShmServer/workflows/Github-CI/badge.svg?branch=develop)](https://github.com/yigao/NFShmServer/actions) |
 ## 特性
 
 - 可以做到分布式架构不需要修改任何源码的情况下，做到单进程运行，加快平时的服务器开发。分布式运行只需要程序启动是参数修改即可
