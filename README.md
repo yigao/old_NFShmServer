@@ -23,7 +23,7 @@ GitHub: https://github.com/yigao/NFShmServer
 
 码云: https://gitee.com/xiaoyi445_admin/NFShmServer
 
-QQ 群: [点击加群](https://shang.qq.com/wpa/qunwpa?idkey=1b8394bd9a42ba46606200a44911c1c6161235a38aecce95158ca646c2bafd81)  
+QQ 群: [点击加群](https://shang.qq.com/wpa/qunwpa?idkey=3dShwRu-nyiWUWLw3iWzCyn-3ZU8EFfi)  
 
 
 | CI             | master分支                                                                                                                | develop分支                                                                                                                         |
