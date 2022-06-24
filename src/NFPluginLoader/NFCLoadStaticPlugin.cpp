@@ -26,6 +26,7 @@
 #include "NFCommPlugin/NFNetPlugin/NFNetPlugin.h"
 #include "NFCommPlugin/NFShmPlugin/NFShmPlugin.h"
 #include "NFTest/NFTestPlugin/NFTestPlugin.h"
+#include "NFTest/NFRobotPlugin/NFRobotPlugin.h"
 
 	//////////////////////////////CommLogic Plugin/////////////////////////////////
 #include "NFServer/NFCommLogic/NFCommLogicPlugin/NFCommLogicPlugin.h"
@@ -130,6 +131,9 @@ bool NFCPluginManager::RegisterStaticPlugin()
 
 	REGISTER_STATIC_PLUGIN(this, NFTestPlugin);
 	#pragma comment( lib, "NFTestPlugin.lib" )
+
+	REGISTER_STATIC_PLUGIN(this, NFRobotPlugin);
+	#pragma comment( lib, "NFRobotPlugin.lib" )
 
 	//////////////////////////////CommLogic Plugin/////////////////////////////////
 	REGISTER_STATIC_PLUGIN(this, NFCommLogicPlugin);

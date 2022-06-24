@@ -1,4 +1,4 @@
-#include "NFTestRobot.h"
+﻿#include "NFTestRobot.h"
 #include "NFComm/NFPluginModule/NFMessageMgr.h"
 #include "NFComm/NFMessageDefine/proto_cs.pb.h"
 #include "NFComm/NFCore/NFRandom.hpp"
@@ -361,12 +361,12 @@ int NFTestRobot::OnHandleAction()
 //        m_statusAction.push_back(pBankAction);
     }
 
-    int index = NFRandInt(0, (int)m_statusAction.size());
-    if (index >= 0 && index < (int)m_statusAction.size())
-    {
+//    int index = NFRandInt(0, (int)m_statusAction.size());
+//    if (index >= 0 && index < (int)m_statusAction.size())
+//    {
         //StatusAction* pA = m_statusAction[index];
         //pA->OnHandleAction();
-    }
+//    }
     return 0;
 }
 

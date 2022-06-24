@@ -93,6 +93,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NFWebServerLogicPlugin", "N
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NFWorldServerPlayerPlugin", "NFServerLogic\NFWorldServerPlayerPlugin\NFWorldServerPlayerPlugin.vcxproj", "{170096D6-8E0A-40E1-88F4-CAAC2D4B5EDD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NFRobotPlugin", "StaticNFrame\NFRobotPlugin\NFRobotPlugin.vcxproj", "{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -359,6 +361,14 @@ Global
 		{170096D6-8E0A-40E1-88F4-CAAC2D4B5EDD}.Release|x64.Build.0 = Release|x64
 		{170096D6-8E0A-40E1-88F4-CAAC2D4B5EDD}.Release|x86.ActiveCfg = Release|Win32
 		{170096D6-8E0A-40E1-88F4-CAAC2D4B5EDD}.Release|x86.Build.0 = Release|Win32
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Debug|x64.ActiveCfg = Debug|x64
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Debug|x64.Build.0 = Debug|x64
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Debug|x86.ActiveCfg = Debug|Win32
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Debug|x86.Build.0 = Debug|Win32
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Release|x64.ActiveCfg = Release|x64
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Release|x64.Build.0 = Release|x64
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Release|x86.ActiveCfg = Release|Win32
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -397,6 +407,7 @@ Global
 		{F63ACCA8-64D5-40A7-9BA5-896B45335E32} = {963D3F0A-9939-4091-A025-9A7CFEEB82D2}
 		{1147E624-A69F-4C8F-8E18-CD589F8C9758} = {963D3F0A-9939-4091-A025-9A7CFEEB82D2}
 		{170096D6-8E0A-40E1-88F4-CAAC2D4B5EDD} = {963D3F0A-9939-4091-A025-9A7CFEEB82D2}
+		{FF9734AE-91A3-47BD-A6E8-D4B93EB6F77D} = {6F18826C-17DA-40B3-B82F-149C736DA924}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9E4D707-2039-4F4A-BD91-34EECCA5E265}
