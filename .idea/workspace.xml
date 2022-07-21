@@ -41,7 +41,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfc154c0-ce35-4c6f-a6b9-b4a7f4d48cf5" name="默认变更列表" comment="makefile">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_6_22_10_40____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_6_22_10_51____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_6_22_10_59____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_6_22_5_11____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_22_下午10_40_取消提交了变更_[默认变更列表]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_22_下午10_51_取消提交了变更_[默认变更列表]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_22_下午10_59_取消提交了变更_[默认变更列表]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_6_22_下午5_11_取消提交了变更_[默认变更列表]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin/ProxyServer.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Install/BusPlugin/ProxyServer.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Install/BusPlugin/StoreServer.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Install/BusPlugin/StoreServer.lua" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,11 +261,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="evpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ShmNFrame" TARGET_NAME="evpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -392,14 +397,8 @@
       <workItem from="1655949562544" duration="7916000" />
       <workItem from="1655971298218" duration="5701000" />
       <workItem from="1655978242966" duration="2796000" />
-      <workItem from="1656113819505" duration="1088000" />
-    </task>
-    <task id="LOCAL-00043" summary="frame">
-      <created>1654685233489</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1654685233489</updated>
+      <workItem from="1656113819505" duration="5521000" />
+      <workItem from="1658384883124" duration="731000" />
     </task>
     <task id="LOCAL-00044" summary="frame">
       <created>1654685326420</created>
@@ -737,7 +736,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656114134275</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="makefile">
+      <created>1656120476774</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1656120476774</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
