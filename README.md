@@ -107,7 +107,36 @@ QQ 群: [点击加群762414765](https://shang.qq.com/wpa/qunwpa?idkey=3dShwRu-ny
       
 ## Tutorial && Documents
 
-https://github.com/yigao/NFShmServer/wiki
+**Tutorial Chapters**:
+
+* [**Tutorial 1: Compile NFShmServer 编译服务器**](https://github.com/yigao/NFShmServer/wiki/Tutorial:-CompileNF)
+
+* [**Tutorial 2: Import Mysql 导入数据库**](https://github.com/yigao/NFShmServer/wiki/Tutorial:-ImportMysql)
+
+* [**Tutorial 3: Start NFShmServer 开启服务器**](https://github.com/yigao/NFShmServer/wiki/Tutorial:-StartServer)
+
+* [**Tutorial 4: Start RobotServer 开启机器人**](https://github.com/yigao/NFShmServer/wiki/Tutorial:-StartRobot)
+
+-->
+-------
+
+**Concept Chapters**:
+
+* [**Chapter 1: NFPluginLoader核心类**](https://github.com/yigao/NFShmServer/wiki/Chapter-1:NFPluginLoader,Plugin,Module)
+* [**Chapter 2: 单个服务器进程的启动管理**](https://github.com/yigao/NFShmServer/wiki/Chapter-2:NFPluginLoader-main)
+* [**Chapter 3: 服务器启动参数介绍**](https://github.com/yigao/NFShmServer/wiki/Chapter-3:ProcessParameter)
+* [**Chapter 4: 服务器循环介绍**](https://github.com/yigao/NFShmServer/wiki/Chapter-4:Execute)
+* [**Chapter 5: NFKernelPlugin基础核心引擎介绍**](https://github.com/yigao/NFShmServer/wiki/Chapter-5:NFKernelPlugin)
+* [**Chapter 6: NFNetPlugin网络引擎介绍**](https://github.com/yigao/NFShmServer/wiki/Chapter-6:NFNetPlugin)
+* [**Chapter 10: 共享内存创建以及初始化**](https://github.com/yigao/NFShmServer/wiki/Chapter-10:Shm-Init)
+* [**Chapter 11: 创建共享内存**](https://github.com/yigao/NFShmServer/wiki/Chapter-11:CreateShareMem)
+* [**Chapter 12: 共享内存单个类的创建初始化**](https://github.com/yigao/NFShmServer/wiki/Chapter-12:SetAndInitObj)
+* [**Chapter 13: 共享内存几个核心类**](https://github.com/yigao/NFShmServer/wiki/Chapter-13:NFGlobalID,NFShmTimerManager,NFTransMng,NFDBObjMgr)
+* [**Chapter 14: 加载Excel配置的共享内存类**](https://github.com/yigao/NFShmServer/wiki/Chapter-14:NFCDescStoreModule)
+* [**Chapter 20: 日志系统**](https://github.com/yigao/NFShmServer/wiki/Chapter-20:NFCLogModule)
+* [**Chapter 21: 服务器配置加载系统**](https://github.com/yigao/NFShmServer/wiki/Chapter-21:NFCConfigModule)
+* [**Chapter 22: 定时器系统**](https://github.com/yigao/NFShmServer/wiki/Chapter-22:NFCTimerModule)
+* [**Chapter 23: 事件系统**](https://github.com/yigao/NFShmServer/wiki/Chapter-23:NFCEventModule)
 
 ## 客户端下载，客户端代码还在整理，后面会开源，现在有一个捕鱼apk，可以玩玩
 [game.apk](https://github.com/yigao/NFShmServer/blob/master/doc/%E6%8D%95%E9%B1%BC%E6%B5%8B%E8%AF%951.apk)
